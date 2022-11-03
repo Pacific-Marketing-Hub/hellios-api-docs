@@ -1,4 +1,4 @@
-# Authentication
+# Authentication - Example
 
 > To authorize, use this code:
 

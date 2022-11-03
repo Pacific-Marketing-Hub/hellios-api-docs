@@ -1,4 +1,4 @@
-# Errors
+# Errors - Example
 
 The Kittn API uses the following error codes:
 

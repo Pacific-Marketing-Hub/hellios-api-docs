@@ -1,4 +1,4 @@
-# Kittens
+# Kittens - Example
 
 ## Get All Kittens
 
