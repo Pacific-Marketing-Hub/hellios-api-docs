@@ -1,6 +1,10 @@
 # Unique header generation
 require './lib/unique_head.rb'
 
+# Global Variables
+set :url, 'https://www.example.com'
+config[:url]
+
 # Markdown
 set :markdown_engine, :redcarpet
 set :markdown,
