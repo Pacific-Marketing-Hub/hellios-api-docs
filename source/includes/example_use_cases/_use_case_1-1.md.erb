@@ -1,22 +1,22 @@
-## Get status information for all suppliers
+## Get status information for my organisation's suppliers
 
 ```csharp
     c# code snippet showing how to use GetSuppliers with vendor id
 ```
 
-The following use case provides an example of how to use the <code>GetSuppliers</code> and <code>GetSupplierInformation</code> methods to retrieve the status information for all suppliers stored on the Hellios platform.
+The following use case provides an example of how to use the <code>GetSuppliers</code> and <code>GetSupplierInformation</code> methods to retrieve the status information for suppliers tagged to your organisation.
 
-First use the <code>GetSuppliers</code> method to retrieve a list of all suppliers. As we are retrieving data for all suppliers (not just those tagged to your organisation), set the parameters as follows:
+First use the <code>GetSuppliers</code> method to retrieve suppliers tagged to your organisation. As we are retrieving data for your organisation's suppliers, you will need to include your Vendor ID in the <code>GetSuppliers</code> request. Set the parameters as follows:
 
-<code>type: All</code><br/>
-<code>tag: *NULL*</code><br/>
+<code>type: Tagged</code><br/>
+<code>tag: [Insert Your Vendor ID]</code><br/>
 <code>includeExpired: False</code>
 
 **Note:** By default, <code>GetSuppliers</code> will not return 'Expired' suppliers. If you want to include 'Expired' suppliers in the response, set <code>includeExpired: True</code>.
 
 The code examples opposite show how to post to the Hellios API using <code>GetSuppliers</code>.
 
-<code>GetSuppliers</code> will return a list of all suppliers in JSON format. Each supplier listed will include their unique Hellios supplier identifier, 'SupplierId'. The 'SupplierId' value allows you to retrieve data for any given supplier by using the <code>GetSupplierInformation</code> method.
+<code>GetSuppliers</code> will return a list of suppliers tagged to your organisation in JSON format. Each supplier listed will include their unique Hellios supplier identifier, 'SupplierId'. The 'SupplierId' value allows you to retrieve data for any given supplier by using the <code>GetSupplierInformation</code> method.
 
 ```csharp
     c# code snippet showing how to use GetSupplierInformation with SupplierId
@@ -24,7 +24,7 @@ The code examples opposite show how to post to the Hellios API using <code>GetSu
 
 The code examples opposite show how to post to the Hellios API using <code>GetSupplierInformation</code> with the 'SupplierId' parameter.
 
-Loop through the JSON list of suppliers retrieved via GetSuppliers. On each iteration of the loop, use the <code>GetSupplierInformation</code> method, passing in the individual 'SupplierId' value to retrieve data for that supplier.
+Loop through the JSON list of suppliers retrieved via GetSuppliers. On each iteration of the loop, use the <code>GetSupplierInformation</code> method, passing in the individual SupplierId value to retrieve data for that supplier.
 
 ```csharp
     c# code snippet showing all API requests / looping and individual API requests required to retrieve 

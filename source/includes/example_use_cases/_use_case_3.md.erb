@@ -1,0 +1,38 @@
+## Filter by suppliers who have changed recently
+
+```csharp
+    c# code snippet showing how to use GetSuppliers with vendor id
+```
+
+In this use case we will look at how to get information about suppliers whose status or information has changed within a specific period, for example the past 30 days. The benefit of using this filter means you only need to pull data via the API for suppliers who have actually changed, which should make updating your records faster. 
+
+First use the <code>GetSuppliers</code> method to retrieve a list of all suppliers. You may want to think about the parameters you pass in. In this particular use case, because you are looking for changes, it is likely you will want to include 'Expired' suppliers in the returned data. Failing to do so, would risk missing suppliers who have 'Expired' within the past X days (in our example case, 30 days.)
+
+In this example we are retrieving data for all suppliers, not just those tagged to your organisation.
+
+<code>type: All</code><br/>
+<code>tag: *NULL*</code><br/>
+<code>includeExpired: True</code>
+
+The code examples opposite show how to post to the Hellios API using <code>GetSuppliers</code>.
+
+<code>GetSuppliers</code> will return a list of all suppliers in JSON format. Each supplier listed will include two important atrributes:
+
+- a unique Hellios supplier identifier, 'SupplierId'
+- the date when the supplier information was last modified/updated, 'lastModified'
+
+Using the 'lastModified' attribute, you are able to filter the returned JSON list of suppliers to only include those modified within the past 30 days. Or, you could filter for suppliers updated within a specified date range.
+
+The 'SupplierId' value allows you to retrieve data for any given supplier by using the <code>GetSupplierInformation</code> method.
+
+Now loop through the reduced JSON list of suppliers modified within the past 30 days. On each iteration of the loop, use the <code>GetSupplierInformation</code> method, passing in the individual 'SupplierId' value to retrieve data for that supplier.
+
+```csharp
+    c# code snippet showing all API requests / looping and individual API requests required to retrieve 
+```
+
+The code examples opposite show how to loop through the JSON returned by <code>GetSuppliers</code>, then use <code>GetSupplierInformation</code> to retrieve individual supplier information.
+
+The JSON returned by <code>GetSupplierInformation</code> includes both supplier status data and questionnaire (answers) data, which provides the freedom to extract what you need.
+
+

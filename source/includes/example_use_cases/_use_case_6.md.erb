@@ -1,0 +1,43 @@
+## Get an individual supplier's questionnaire answers
+
+```csharp
+    c# code snippet showing how to use GetSuppliers with vendor id
+```
+
+To access an individual supplier's questionnaire answers, use the <code>GetSupplierInformation</code> method, passing in the unique 'SupplierId' parameter. However, you may need to use the <code>GetSuppliers</code> method first in order to find the unique 'SupplierId' value.
+
+If you already know the 'SupplierId' value, please skip straight to <a href="#uc6-getsupplierinformation">Get individual supplier information</a> below.
+
+If you need to find the 'SupplierId' value, first use the <code>GetSuppliers</code> method to retrieve a list of all suppliers. In this example we want to retrieve a list of all suppliers, including 'Expired' suppliers so will set the parameters as follows.
+
+<code>type: All</code><br/>
+<code>tag: *NULL*</code><br/>
+<code>includeExpired: True</code>
+
+The code examples opposite show how to post to the Hellios API using <code>GetSuppliers</code>.
+
+<code>GetSuppliers</code> will return a list of suppliers in JSON format. Each supplier listed will include two  atrributes important to this use case:
+
+- a unique Hellios supplier identifier, 'SupplierId'
+- the name of the supplier, 'Supplier Name'
+
+By parsing the JSON returned from <code>GetSuppliers</code> you should be able to locate the supplier you're interested by matching on their name (the 'Supplier Name' attribute.) Once you have located the supplier, extract their 'SupplierId', to use with the <code>GetSupplierInformation</code> method.
+
+<a name="uc6-getsupplierinformation"></a>
+
+**Get individual supplier information**
+
+The 'SupplierId' value allows you to retrieve data for any given supplier by using the <code>GetSupplierInformation</code> method. When posting to the <code>GetSupplierInformation</code> method, include the 'SupplierId' parameter.
+
+```csharp
+    c# code snippet showing all API request to GetSupplierInformation method
+```
+
+The code examples opposite show how to use <code>GetSupplierInformation</code> to retrieve data for an individual supplier. The JSON returned by <code>GetSupplierInformation</code> includes both supplier status data and questionnaire (answers) data, which provides the freedom to extract what you need.
+
+To access just the questionnaire answers for this particular supplier, you will need to extract specific attributes from the JSON. If you want to extract answers to specific questions, simply parse the JSON file to locate the corresponsing Report Label attributes that identify the questions you want the answer to.
+
+If you do not know the correct Report Label values for the questions you require, use the <code>GetAllReportLabels</code> method to retrieve a full list of the questionnaire questions, matched to Report Labels. <a href="#GetAllReportLabelsMethod">Click here</a> to view how to use the <code>GetAllReportLabels</code> method.
+
+
+

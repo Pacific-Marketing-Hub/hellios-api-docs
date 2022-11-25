@@ -1,0 +1,120 @@
+<a name="GetSuppliersMethod"></a>
+## GetSuppliers
+The <code>GetSuppliers</code> method can be used to retrieve a list of suppliers from the Hellios Odyssey platform via the external API. The method accepts various parameters to allow you to:
+
+- Search for a specific group of suppliers
+- Choose between all suppliers or only those tagged to your organisation
+- Include 'expired' suppliers
+
+
+<code>GetSuppliers</code> is the typical starting point for most interactions with the Hellios API. The returned JSON includes the <code>SupplierID</code> value for each supplier, which is required when using the <code>GetSupplierDetails</code> method.
+
+###Endpoint
+<code>GET /buyer/supplier/v1_0</code>
+
+###Parameters
+The <code>GetSuppliers</code> method accepts the following parameters.
+
+**<code>searchTerm</code>**
+
+Can be used to search for a specific group of suppliers or an individual supplier. The <code>searchTerm</code> parameter accepts alphanumeric characters to search for supplier name(s), Vendor ID to search for suppliers tagged to your organisation, or Hellios ID to search for an individual supplier. <span style="background-color:#39FF14">When searching against supplier name(s), the search will look for an exact match to the characters specified in the search term, within any part of the supplier name.</span>
+
+*Type*: String<br/>
+*Value(s):* Alphanumeric characters <span style="background-color:#39FF14">(min 3 alphanumeric characters)</span>, Vendor ID or Hellios ID<br/>
+*Requirement:* Optional
+
+**<code>onlyTagged</code>**
+
+To get data for only those suppliers tagged to your organisation, set this parameter to True. 
+
+*Type*: Boolean<br/>
+*Value(s):* False (default), True<br>
+*Requirement:* Optional (if not specified, will default to False)
+
+**<code>includeExpired</code>**
+
+To include suppliers whose information has expired within your search results, set this parameter to True.
+
+*Type*: Boolean<br/>
+*Value(s):* False (default), True<br>
+*Requirement:* Optional (if not specified, will default to False)
+
+<a name="GetSuppliersPageSize"></a>
+**<code>pageSize</code>**
+
+We recommend specifying a page size to limit the total number of results returned via each API call. Use this parameter to set the number of records to be returned per page. <span style="background-color:#39FF14">All results returned will include the number of pages of results available.</span>
+
+*Type*: Integer ($int32)<br/>
+*Value(s):* Numeric Integer <span style="background-color:#39FF14">(defaults to 100??????)</span><br>
+*Requirement:* Optional
+
+**<code>pageIndex</code>**
+
+Used in conjunction with the <code>pageSize</code> parameter, <code>pageIndex</code> allows a specific page of results to be returned. <span style="background-color:#39FF14">All results returned will include the number of pages of results available.</span>
+
+*Type*: Integer ($int32)<br/>
+*Value(s):* Numeric Integer<br>
+*Requirement:* Optional
+
+###Response
+The <code>GetSuppliers</code> method returns a collection of suppliers appropriate to the parameters specified when calling the API. For each supplier in the collection, the following attributes are returned.
+
+```csharp
+        Response code snippet to go here
+```
+
+
+Attribute | Type | Description
+--- | --- | ---
+externalId | *String* | Unique identifier for supplier (to be used with <code>GetSupplierDetails</code> method)
+companyName | *String* | Name of supplier organisation
+location | *String* | Location of the supplier <span style="background-color:#39FF14">Country? City? Full address?</span>
+vendorId | *String* | Vendor ID value if supplier is tagged to your organisation
+lastPublished | *Date/Time (yyyy-mm-ddThh:mm:ss:<span style="background-color:#39FF14">??</span>)* | Date/Time the supplier's information was last published
+questionnaireStatus | *String* | Current status of the supplier's questionnaire
+questionnaireRagStatus | *String* | Current RAG status of the supplier's questionnaire
+tagged | *Boolean* | Denotes if supplier is tagged to your organisation
+helliosID | *String* | Unique Hellios ID issued to each supplier
+riskLevel | *String* | Current risk level of the supplier
+documentRagStatus | *String* | Current RAG status of supplier's documents 
+companyRegistrationNumber | *String*| Legal company registration number of the supplier
+renewalDeadlineDate | *Date/Time (yyyy-mm-ddThh:mm:ss:<span style="background-color:#39FF14">??</span>)* | Date/Time the supplier is required to renewal their information
+lastUpdate |  *Date/Time (yyyy-mm-ddThh:mm:ss:<span style="background-color:#39FF14">??</span>)* | Date/Time the supplier's information was last updated
+
+<code>GetSuppliers</code> also returns three additional attributes to assist with pagination of future API calls when utilising the <code>pageSize</code> and <code>pageIndex</code> parameters as set out <a href="#GetSuppliersPageSize">above</a>.
+
+Attribute | Type | Description
+--- | --- | ---
+totalNumberOfRecords | *Integer* | Number of supplier records returned in the results
+totalNumberOfPages | *Integer* | Number of pages of records returned
+totalNumberOfTagged | *Integer* | Number of supplier records that are tagged to your organisation
+
+Example response:
+
+<span style="font-family:'Courier New';size:11px;">
+{<br/>
+&nbsp;"records": [<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;"externalId": "string",<br/>
+&nbsp;&nbsp;&nbsp;"companyName": "string",<br/>
+&nbsp;&nbsp;&nbsp;"location": "string",<br/>
+&nbsp;&nbsp;&nbsp;"vendorId": "string",<br/>
+&nbsp;&nbsp;&nbsp;"lastPublished": "2022-11-24T16:48:16.643Z",<br/>
+&nbsp;&nbsp;&nbsp;"questionnaireStatus": "None",<br/>
+&nbsp;&nbsp;&nbsp;"questionnaireRagStatus": "None",<br/>
+&nbsp;&nbsp;&nbsp;"tagged": true,<br/>
+&nbsp;&nbsp;&nbsp;"helliosId": "string",<br/>
+&nbsp;&nbsp;&nbsp;"riskLevel": "None",<br/>
+&nbsp;&nbsp;&nbsp;"documentRagStatus": "None",<br/>
+&nbsp;&nbsp;&nbsp;"companyRegistrationNumber": "string",<br/>
+&nbsp;&nbsp;&nbsp;"renewalDeadlineDate": "2022-11-24T16:48:16.643Z",<br/>
+&nbsp;&nbsp;&nbsp;"lastUpdate": "2022-11-24T16:48:16.643Z"<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;],<br/>
+&nbsp;"totalNumberOfRecords": 0,<br/>
+&nbsp;"totalNumberOfPages": 0,<br/>
+&nbsp;"totalNumberOfTagged": 0<br/>
+}
+</span>
+
+

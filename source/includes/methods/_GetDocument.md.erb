@@ -1,0 +1,26 @@
+<a name="GetDocumentMethod"></a>
+## GetDocument
+The <code>GetDocument</code> method can be used to retrieve a specifc document related to a supplier (for example a supplier's Public Liability Insurance Certificate.) This method requires a document indetifier to be provided, to identify the document required. Document IDs can be obtained using the <code>GetSupplierDetails</code> method, detailed above.
+
+###Endpoint
+<code>GET /buyer/supplier/document/v1_0/{documentIdentifier}</code>
+
+###Parameters
+The <code>GetDocument</code> method accepts the following parameters.
+
+<code>documentIdentifier</code>
+
+Use to specify which document you want to retrieve. <span style="background-color:#39FF14">The documentId value is a 16-digit, alphanumeric *guid* and will look similar to '1234-sdfsd-we34-QEW3'.</span>
+
+*Type:* String
+*Value(s):* documentIdentifier (obtained from <code>GetSupplierInformation</code> method)<br/>
+*Requirement:* Required
+
+###Response
+The <code>GetSuppliers</code> method returns the PDF file of the document requested
+
+Example response:
+
+<span style="background-color:#39FF14">NEED MORE INFO ON THE PDF - HOW IS IT DELIVERED? ACTUAL FILE? URL OF FILE?</span>
+
+

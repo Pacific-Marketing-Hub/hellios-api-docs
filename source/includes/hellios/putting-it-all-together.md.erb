@@ -1,0 +1,80 @@
+# Putting it all together
+
+In this section we'll walk through how to use the Hellios API in practice.
+
+In most instances, the starting point will be to retrieve a list of suppliers using the <code>GetSuppliers</code> method.
+
+The <code>GetSuppliers</code> method takes three parameters that allow you to retrieve all suppliers, just the suppliers tagged to your organisation and even suppliers that have 'Expired'.
+
+<code>GetSuppliers</code> includes three parameters that you can set - <code>type</code>, <code>tag</code> and <code>includeExpired</code>
+
+Here are some example scenarios to consider:
+
+**Example scenario 1**
+
+You want to update your systems with the latest supplier information from Hellios, but only for suppliers associated with your organisation.
+
+- <code>type: Tagged</code> - this limits the response to just suppliers tagged to your organisation<br/>
+- <code>tag: [*Insert your vendor ID*]</code> - this identifies which suppliers to include in the response<br/>
+- <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired
+
+**Example scenario 2**
+
+You want to find information for an individual supplier.
+
+- <code>type: All</code> - unless you know the supplier is tagged to your organisation, keep the request as wide as possible by bringing back all suppliers<br/>
+- <code>tag: *NULL*</code> - there is no need to specific your tag because you are requesting all suppliers<br/>
+- <code>includeExpired: True</code> - setting this to True ensures you bring back all suppliers, including those that have expired, in case the individual supplier you are looking for has expired
+
+**Example scenario 3**
+
+You want to locate your organisation's suppliers with a particular status and/or renewal date.
+
+- <code>type: Tagged</code> - this limits the response to just suppliers tagged to your organisation<br/>
+- <code>tag: [*Insert your vendor ID*]</code> - this identifies which suppliers to include in the response<br/>
+- <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired
+
+**Example scenario 4**
+
+You want to source a group of suppliers based on specific questions.
+
+- <code>type: All</code> - in this scenario you are using the data to source potential suppliers. Therefore, keep the request as wide as possible by bringing back all suppliers<br/>
+- <code>tag: *NULL*</code> - there is no need to specific your tag because you are requesting all suppliers<br/>
+- <code>includeExpired: False</code> - setting this to False ensures you don't request suppliers who have expired, as you wouldn't want to include them in your shortlist of potential suppliers
+
+**Example scenario 5**
+
+You want to find all of your organisation's suppliers whose insurance documents have expired.
+
+- <code>type: Tagged</code> - this limits the response to just suppliers tagged to your organisation<br/>
+- <code>tag: [*Insert your vendor ID*]</code> - this identifies which suppliers to include in the response<br/>
+- <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired, as they are still relevant to your requirement
+
+
+There are of course many other examples, but the ones listed above demonstrate how to approach using the <code>GetSuppliers</code> to request just the suppliers you need.
+
+Now you have your JSON list of suppliers, obtained using <code>GetSuppliers</code>, you can either locate an individual supplier or a group of suppliers by parsing the JSON returned by <code>GetSuppliers</code>.
+
+**Locating an individual supplier**
+
+<code>GetSuppliers</code> returns the following attributes for each supplier:
+
+<code>Supplier Id</code><br/>
+<code>Supplier Name</code><br/>
+<code>Last Modified</code><br/>
+
+To locate the SupplierId for your chosen supplier, search the JSON file using the supplier's name.
+
+```csharp
+    c# code snippet showing how to search for a supplier name within the JSON
+```
+
+Once you have the SupplierId, use the <code>GetSupplierInformation</code> method to retrieve all status and questionnaire data for that given supplier.
+
+**Using the GetSupplierInformation method**
+
+<code>GetSupplierInformation</code> accepts a single parameter, *SupplierId* and returns over 600 atrributes, covering the supplier's status information and questionnaire answers.
+
+In our example above, we want to retrieve data for a single supplier, so a single API call to <code>GetSupplierInformation</code> is all that is needed.
+
+Other scenarios may require you to retrieve data for multiple suppliers. Information on how to achieve this is given <a href="#GetInfoForMultiSuppliers">below</a>.

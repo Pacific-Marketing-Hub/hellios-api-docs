@@ -1,0 +1,40 @@
+<a name="GetSupplierDetailsMethod"></a>
+## GetSupplierDetails
+The <code>GetSupplierDetails</code> method can be used to retrieve the information (questionnaire answers, statuses, document links) Hellios hold for a particular supplier.
+
+It is designed to work in association with <code>GetSuppliers</code>, and uses the <code>externalId</code> value obtained through the <code>GetSuppliers</code> response to identify which supplier to return data for. 
+
+###Endpoint
+<code>GET /buyer/supplierdetails/v1_0/{supplierExternalId} </code>
+
+###Parameters
+The <code>GetSupplierDetails</code> method accepts the following parameters.
+
+<code>supplierExternalId</code>
+
+Use to specify which supplier you want to retrieve information for. <span style="background-color:#39FF14">The supplierExternalId value is a 16-digit, alphanumeric *guid* and will look similar to '1234-sdfsd-we34-QEW3'.</span>
+
+*Type:* String<br/>
+*Value(s):* externalId (obtained from <code>GetSuppliers</code> method)<br/>
+*Requirement:* Required
+
+###Response
+The <code>GetSupplierDetails</code> method returns all information held about the supplier requested. This includes core information, all statuses, questionnaire answers and document IDs. Please note: The response includes report labels, as they appear in the Hellios platform reporting tools UI. Report labels are similar, but not the same as the actual Questionnaire 'question' associated with each answer. To correlate an answer back to it's questionnaire questions, please use the <code>GetAllReportLabels</code> method to retrieve a full list of report labels and corresponding questionnaire question text.
+
+
+
+```csharp
+        Response code snippet to go here
+```
+
+
+Attribute | Type | Description
+--- | --- | ---
+SupplierName | *String* | NEED 
+SupplierId | *String* | NEED
+LastModified | *Date/Time (dd/mm/yyyy hh:mm:ss)* | NEED
+
+<span style="background-color:#39FF14">NEED RESPONSE CODE / LIST OF FIELDS</span>
+
+
+

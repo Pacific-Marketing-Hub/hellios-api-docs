@@ -1,0 +1,42 @@
+## Get questionnaire answers for my organisation's suppliers
+
+```csharp
+    c# code snippet showing how to use GetSuppliers with vendor id
+```
+
+The following use case provides an example of how to use the <code>GetSuppliers</code> and <code>GetSupplierInformation</code> methods to retrieve the questionnaire answers for <span style="background-color:#39FF14;">ALL or JUST COMPLETED?????</span> for suppliers tagged to your organisation.
+
+First use the <code>GetSuppliers</code> method to retrieve suppliers tagged to your organisation. As we are retrieving data for your organisation's suppliers, you will need to include your Vendor ID in the <code>GetSuppliers</code> request. Set the parameters as follows:
+
+<code>type: Tagged</code><br/>
+<code>tag: [Insert Your Vendor ID]</code><br/>
+<code>includeExpired: False</code>
+
+**Note:** By default, <code>GetSuppliers</code> will not return 'Expired' suppliers. If you want to include 'Expired' suppliers in the response, set <code>includeExpired: True</code>.
+
+The code examples opposite show how to post to the Hellios API using <code>GetSuppliers</code>.
+
+<code>GetSuppliers</code> will return a list of suppliers tagged to your organisation in JSON format. Each supplier listed will include their unique Hellios supplier identifier, 'SupplierId'. The 'SupplierId' value allows you to retrieve data for any given supplier by using the <code>GetSupplierInformation</code> method.
+
+```csharp
+    c# code snippet showing how to use GetSupplierInformation with 'SupplierId'
+```
+
+The code examples opposite show how to post to the Hellios API using <code>GetSupplierInformation</code> with the 'SupplierId' parameter.
+
+Loop through the JSON list of suppliers retrieved via <code>GetSuppliers</code>. On each iteration of the loop, use the <code>GetSupplierInformation</code> method, passing in the individual 'SupplierId' value to retrieve data for that supplier.
+
+
+```csharp
+    c# code snippet showing all API requests / looping and individual API requests required to retrieve 
+```
+
+The code examples opposite show how to loop through the JSON returned by <code>GetSuppliers</code>, then use <code>GetSupplierInformation</code> to retrieve individual supplier information.
+
+The JSON returned by <code>GetSupplierInformation</code> includes both supplier status data and questionnaire (answers) data, which provides the freedom to extract what you need. In this use case, we want to extract supplier questionnaire answers. To do this, you'll need to reference the questionnaire attributes that are returned within the <code>GetSupplierInformation</code> response. Due to the size of the questionnaire, it is not feasible to list all attributes returned here. <span style="background-color:#39FF14">Instead, questionnaire attributes can be recognised as those with a number prefix.</span>
+
+<span style="background-color:#39FF14">LIST QUESTIONNAIRE ATTRIBUTES / PREFIX STYLES HERE</span>
+
+**Note:** <code>GetSupplierInformation</code> includes Report Label values in the response. Report Labels will look similar to the actual questionnaire questions, but are not the same. To map the supplier's answers, obtained via <code>GetSupplierInformation</code>, you will need to use the Report Label in conjunction with a lookup against a list of Report Labels / questions texts, which is available via <code>GetAllReportLabels</code>. Details of how to use <code>GetAllReportLabels</code> are available <a href="#GetAllReportLabelsMethod">here</a>.
+
+
