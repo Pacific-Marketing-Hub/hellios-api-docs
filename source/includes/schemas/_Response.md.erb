@@ -1,0 +1,88 @@
+## Response
+
+> An example Response
+
+```json
+"response":{
+  "supplier": {
+    "helliosId": "string",
+    "name": "string",
+    "latestHScore": {
+      "date": "2022-11-28T10:59:14.694Z",
+      "score": 0
+    },
+    "riskLevel": "None",
+    "smeLevel": "None",
+    "ragwStatus": "None",
+    "questionnaireStatus": "None",
+    "documentStatus": "None",
+    "overallStatus": "None",
+    "primaryContact": {
+      "firstName": "string",
+      "lastName": "string",
+      "jobTitle": "string",
+      "emailAddress": "string",
+      "phoneWorkCode": "string",
+      "phoneWork": "string",
+      "phoneMobileCode": "string",
+      "phoneMobile": "string"
+    },
+    "completionDeadlineDate": "2022-11-28T10:59:14.694Z",
+    "renewalDeadlineDate": "2022-11-28T10:59:14.694Z"
+  },
+  "specificFields": [
+    {
+      "id": "string",
+      "name": "string",
+      "type": "Document",
+      "businessValue": "None",
+      "options": [
+        {
+          "id": "string",
+          "text": "string",
+          "order": 0
+        }
+      ],
+      "values": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "fieldId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "value": "string"
+        }
+      ],
+      "order": 0
+    }
+  ],
+  "questionnaire": [
+    {
+      "reportLabel": "string",
+      "response": {
+        "values": [
+          "string"
+        ],
+        "questionType": "None",
+        "repeatableGroupId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      },
+      "document": {
+        "documentId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "fileName": "string"
+      },
+      "taxonomy": [
+        {
+          "taxonomyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "description": "string",
+          "code": "string"
+        }
+      ]
+    }
+  ]
+}
+```
+
+The `Response` schema is returned by the [GetSupplierDetails](/#getsupplierdetails) method and contains the following properties:
+
+| Attribute      | Type                                           | Description                                                                  |
+| -------------- | ---------------------------------------------- | ---------------------------------------------------------------------------- |
+| supplier       | _<a href="#supplierdetails">SupplierDetails</a>_ | Information about the supplier <span style="background-color:#39FF14">???</span> |
+| specificFields | _<a href="#specificfield">SpecificField[]</a>_   | <span style="background-color:#39FF14">???</span>                                |
+| questionnaire  | _<a href="#question">Question[]</a>_             | An array of questions related to the supplier                                |

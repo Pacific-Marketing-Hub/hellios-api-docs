@@ -1,0 +1,38 @@
+## SearchResult
+
+> An Example SearchResult
+
+```json
+"searchResult": {
+  "records": [
+    {
+      "externalId": "string",
+      "companyName": "string",
+      "location": "string",
+      "vendorId": "string",
+      "lastPublished": "2022-11-28T11:15:08.105Z",
+      "questionnaireStatus": "None",
+      "questionnaireRagStatus": "None",
+      "tagged": true,
+      "helliosId": "string",
+      "riskLevel": "None",
+      "documentRagStatus": "None",
+      "companyRegistrationNumber": "string",
+      "renewalDeadlineDate": "2022-11-28T11:15:08.105Z",
+      "lastUpdate": "2022-11-28T11:15:08.105Z"
+    }
+  ],
+  "totalNumberOfRecords": 0,
+  "totalNumberOfPages": 0,
+  "totalNumberOfTagged": 0
+}
+```
+
+The `SearchResult` schema is returned by the [GetSuppliers](\#getsuppliers) method and contains the following properties:
+
+| Attribute            | Type                             | Description                                                     |
+| -------------------- | -------------------------------- | --------------------------------------------------------------- |
+| records              | _[SupplierInfo[]](/#supplierinfo)_ | An array of suppliers that match the search criteria.           |
+| totalNumberOfRecords | _Integer_                          | Number of supplier records returned in the results              |
+| totalNumberOfPages   | _Integer_                          | Number of pages of records returned                             |
+| totalNumberofTagged  | _Integer_                          | Number of supplier records that are tagged to your organisation |

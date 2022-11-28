@@ -1,40 +1,110 @@
 <a name="GetSupplierDetailsMethod"></a>
+
 ## GetSupplierDetails
+
 The <code>GetSupplierDetails</code> method can be used to retrieve the information (questionnaire answers, statuses, document links) Hellios hold for a particular supplier.
 
-It is designed to work in association with <code>GetSuppliers</code>, and uses the <code>externalId</code> value obtained through the <code>GetSuppliers</code> response to identify which supplier to return data for. 
+It is designed to work in association with <code>GetSuppliers</code>, and uses the <code>externalId</code> value obtained through the <code>GetSuppliers</code> response to identify which supplier to return data for.
 
-###Endpoint
+### Endpoint
+
 <code>GET /buyer/supplierdetails/v1_0/{supplierExternalId} </code>
 
-###Parameters
+### Parameters
+
 The <code>GetSupplierDetails</code> method accepts the following parameters.
 
 <code>supplierExternalId</code>
 
-Use to specify which supplier you want to retrieve information for. <span style="background-color:#39FF14">The supplierExternalId value is a 16-digit, alphanumeric *guid* and will look similar to '1234-sdfsd-we34-QEW3'.</span>
+Use to specify which supplier you want to retrieve information for. <span style="background-color:#39FF14">The supplierExternalId value is a 16-digit, alphanumeric _guid_ and will look similar to '1234-sdfsd-we34-QEW3'.</span>
 
-*Type:* String<br/>
-*Value(s):* externalId (obtained from <code>GetSuppliers</code> method)<br/>
-*Requirement:* Required
+_Type:_ String<br/>
+_Value(s):_ externalId (obtained from <code>GetSuppliers</code> method)<br/>
+_Requirement:_ Required
 
-###Response
-The <code>GetSupplierDetails</code> method returns all information held about the supplier requested. This includes core information, all statuses, questionnaire answers and document IDs. Please note: The response includes report labels, as they appear in the Hellios platform reporting tools UI. Report labels are similar, but not the same as the actual Questionnaire 'question' associated with each answer. To correlate an answer back to it's questionnaire questions, please use the <code>GetAllReportLabels</code> method to retrieve a full list of report labels and corresponding questionnaire question text.
+### GetSupplierDetails Response
 
+> Example JSON Response
 
-
-```csharp
-        Response code snippet to go here
+```json
+{
+  "supplier": {
+    "helliosId": "string",
+    "name": "string",
+    "latestHScore": {
+      "date": "2022-11-28T09:31:41.092Z",
+      "score": 0
+    },
+    "riskLevel": "None",
+    "smeLevel": "None",
+    "ragwStatus": "None",
+    "questionnaireStatus": "None",
+    "documentStatus": "None",
+    "overallStatus": "None",
+    "primaryContact": {
+      "firstName": "string",
+      "lastName": "string",
+      "jobTitle": "string",
+      "emailAddress": "string",
+      "phoneWorkCode": "string",
+      "phoneWork": "string",
+      "phoneMobileCode": "string",
+      "phoneMobile": "string"
+    },
+    "completionDeadlineDate": "2022-11-28T09:31:41.092Z",
+    "renewalDeadlineDate": "2022-11-28T09:31:41.092Z"
+  },
+  "specificFields": [
+    {
+      "id": "string",
+      "name": "string",
+      "type": "Document",
+      "businessValue": "None",
+      "options": [
+        {
+          "id": "string",
+          "text": "string",
+          "order": 0
+        }
+      ],
+      "values": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "fieldId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "value": "string"
+        }
+      ],
+      "order": 0
+    }
+  ],
+  "questionnaire": [
+    {
+      "reportLabel": "string",
+      "response": {
+        "values": ["string"],
+        "questionType": "None",
+        "repeatableGroupId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      },
+      "document": {
+        "documentId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "fileName": "string"
+      },
+      "taxonomy": [
+        {
+          "taxonomyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "description": "string",
+          "code": "string"
+        }
+      ]
+    }
+  ]
+}
 ```
 
+The <code>GetSupplierDetails</code> method returns all information held about the supplier requested. This includes core information, all statuses, questionnaire answers and document IDs. Please note: The response includes report labels, as they appear in the Hellios platform reporting tools UI. Report labels are similar, but not the same as the actual Questionnaire 'question' associated with each answer. To correlate an answer back to it's questionnaire questions, please use the <code>GetAllReportLabels</code> method to retrieve a full list of report labels and corresponding questionnaire question text.
 
-Attribute | Type | Description
---- | --- | ---
-SupplierName | *String* | NEED 
-SupplierId | *String* | NEED
-LastModified | *Date/Time (dd/mm/yyyy hh:mm:ss)* | NEED
-
-<span style="background-color:#39FF14">NEED RESPONSE CODE / LIST OF FIELDS</span>
-
-
-
+| Attribute      | Type                                            | Description                                                                      |
+| -------------- | ----------------------------------------------- | -------------------------------------------------------------------------------- |
+| supplier       | _<a href="/#supplierdetails">SupplierDetails</a>_ | Information about the supplier <span style="background-color:#39FF14">???</span> |
+| specificFields | _<a href="#specificfield">SpecificField[]</a>_    | <span style="background-color:#39FF14">???</span>                                |
+| questionnaire  | _<a href="#question">Question[]</a>_              | An array of questions related to the supplier                                    |

@@ -1,0 +1,41 @@
+## SupplierInfo
+
+> An example SupplierInfo
+
+```json
+"supplierInfo":{
+  "externalId": "string",
+  "companyName": "string",
+  "location": "string",
+  "vendorId": "string",
+  "lastPublished": "2022-11-28T11:15:08.105Z",
+  "questionnaireStatus": "None",
+  "questionnaireRagStatus": "None",
+  "tagged": true,
+  "helliosId": "string",
+  "riskLevel": "None",
+  "documentRagStatus": "None",
+  "companyRegistrationNumber": "string",
+  "renewalDeadlineDate": "2022-11-28T11:15:08.105Z",
+  "lastUpdate": "2022-11-28T11:15:08.105Z"
+}
+```
+
+The `SupplierInfo` schema is used in the [GetSuppliers](/#getsuppliers) method and contains the following properties:
+
+| Attribute                 | Type                                                                                                                                                                                        | Description                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| externalId                | _UUID_                                                                                                                                                                                        | Unique identifier for supplier (to be used with GetSupplierDetails method) |
+| name                      | _String_                                                                                                                                                                                      | Name of the supplier                                                       |
+| location                  | _String_                                                                                                                                                                                      | <span style="background-color:#39FF14">???</span>                             |
+| vendorId                  | _UUID_                                                                                                                                                                                        | Vendor ID value if supplier is tagged to your organisation                 |
+| lastPublished             | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                        | <span style="background-color:#39FF14">???</span>                             |
+| questionnaireStatus       | _["None", "Invited", "InProgress", "Invalidation", "UpdateInValidation", "Completed", "RenewalInvited", "RenewalInProgress", "RenewalInValidation", "Expired", "DocumentUpdateInValidation"]_ | <span style="background-color:#39FF14">???</span>                             |
+| questionnaireRagStatus    | _["None", "Red", "Amber", "Green", "White"]_                                                                                                                                                  | <span style="background-color:#39FF14">???</span>                             |
+| tagged                    | _Boolean_                                                                                                                                                                                     | <span style="background-color:#39FF14">???</span>                             |
+| helliosId                 | _UUID_                                                                                                                                                                                        | Unique Hellios ID issued to each supplier                                  |
+| riskLevel                 | _["None", "Low", "Medium", "High"]_                                                                                                                                                           | <span style="background-color:#39FF14">???</span>                             |
+| documentRagStatus         | _["None", "Red", "Amber", "Green", "White"]_                                                                                                                                                  | <span style="background-color:#39FF14">???</span>                             |
+| companyRegistrationNumber | _String_                                                                                                                                                                                      | <span style="background-color:#39FF14">???</span>                             |
+| renewalDeadlinedate       | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                        | <span style="background-color:#39FF14">???</span>                             |
+| lastUpdate                | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                        | Time of last update to the supplier                                        |
