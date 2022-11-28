@@ -11,7 +11,7 @@ module Rouge
 
         palette :black          => '#000000'
         palette :bright_green   => '#a6e22e'
-        palette :bright_pink    => '#f92672'
+        palette :bright_pink    => '#e5186b'
         palette :carmine        => '#960050'
         palette :dark           => '#49483e'
         palette :dark_grey      => '#888888'
@@ -28,13 +28,13 @@ module Rouge
         palette :orange         => '#f6aa11'
         palette :white          => '#ffffff'
 
-        style Generic::Heading,                 :fg => :grey
-        style Literal::String::Regex,           :fg => :orange
+        style Generic::Heading,                 :fg => :dark_grey
+        style Literal::String::Regex,           :fg => :dark_grey
         style Generic::Output,                  :fg => :dark_grey
-        style Generic::Prompt,                  :fg => :emperor
+        style Generic::Prompt,                  :fg => :dark_grey
         style Generic::Strong,                  :bold => false
         style Generic::Subheading,              :fg => :light_grey
-        style Name::Builtin,                    :fg => :orange
+        style Name::Builtin,                    :fg => :dark_grey
         style Comment::Multiline,
               Comment::Preproc,
               Comment::Single,
@@ -42,7 +42,7 @@ module Rouge
               Comment,                          :fg => :dimgrey
         style Error,
               Generic::Error,
-              Generic::Traceback,               :fg => :carmine
+              Generic::Traceback,               :fg => :dark_grey
         style Generic::Deleted,
               Generic::Inserted,
               Generic::Emph,                    :fg => :dark
@@ -50,7 +50,7 @@ module Rouge
               Keyword::Declaration,
               Keyword::Reserved,
               Name::Constant,
-              Keyword::Type,                    :fg => :soft_cyan
+              Keyword::Type,                    :fg => :dark_grey
         style Literal::Number::Float,
               Literal::Number::Hex,
               Literal::Number::Integer::Long,
@@ -59,7 +59,7 @@ module Rouge
               Literal::Number,
               Literal::String::Char,
               Literal::String::Escape,
-              Literal::String::Symbol,          :fg => :light_violet
+              Literal::String::Symbol,          :fg => :dark_grey
         style Literal::String::Doc,
               Literal::String::Double,
               Literal::String::Backtick,
@@ -67,12 +67,12 @@ module Rouge
               Literal::String::Interpol,
               Literal::String::Other,
               Literal::String::Single,
-              Literal::String,                  :fg => :soft_yellow
+              Literal::String,                  :fg => :dark_grey
         style Name::Attribute,
               Name::Class,
               Name::Decorator,
               Name::Exception,
-              Name::Function,                   :fg => :bright_green
+              Name::Function,                   :fg => :dark_grey
         style Name::Variable::Class,
               Name::Namespace,
               Name::Entity,

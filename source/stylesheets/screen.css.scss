@@ -537,6 +537,11 @@ body {
     border: 1px solid #f7e633;
     background: linear-gradient(to top left, #f7e633 0%, #f1d32f 100%);
   }
+
+a:link{color:#e5186b;text-decoration:none;}
+a:active{color:#e5186b;text-decoration:none;}
+a:hover{color:#e5186b;text-decoration:underline;}
+a:visited{color:#e5186b;text-decoration:none;}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -590,6 +595,21 @@ body {
     }
   }
 }
+
+// Set syntax scaffold colour
+.p {color: $syntax-scaffold; }
+
+// Set Syntax Key colour
+.nl {color: $syntax-key; }
+
+// Set Syntax String colour
+.s2 {color: $syntax-string; }
+
+// Set Syntax Boolean colour
+.kc {color: $syntax-boolean; }
+
+// Set Syntax Integer colour
+.mi {color: $syntax-integer; }
 
 ////////////////////////////////////////////////////////////////////////////////
 // RESPONSIVE DESIGN
