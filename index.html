@@ -286,7 +286,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-fe839edd.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-c87104e6.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-b12a2749.js"></script>
 
@@ -311,9 +311,40 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction-hellios-api" class="toc-h1 toc-link" data-title="Introduction: Hellios API">Introduction: Hellios API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#example-use-cases" class="toc-h2 toc-link" data-title="Example Use Cases">Example Use Cases</a>
+                  </li>
+                  <li>
+                    <a href="#principles" class="toc-h2 toc-link" data-title="Principles">Principles</a>
+                  </li>
+                  <li>
+                    <a href="#data-format" class="toc-h2 toc-link" data-title="Data format">Data format</a>
+                  </li>
+                  <li>
+                    <a href="#direction" class="toc-h2 toc-link" data-title="Direction">Direction</a>
+                  </li>
+                  <li>
+                    <a href="#throttling-amp-limits" class="toc-h2 toc-link" data-title="Throttling &amp; Limits">Throttling &amp; Limits</a>
+                  </li>
+                  <li>
+                    <a href="#environments" class="toc-h2 toc-link" data-title="Environments">Environments</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#credentials" class="toc-h2 toc-link" data-title="Credentials">Credentials</a>
+                  </li>
+                  <li>
+                    <a href="#authentication-process" class="toc-h2 toc-link" data-title="Authentication process">Authentication process</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#methods" class="toc-h1 toc-link" data-title="Methods">Methods</a>
@@ -333,69 +364,228 @@
               </ul>
           </li>
           <li>
-            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            <a href="#how-to-use-the-hellios-api" class="toc-h1 toc-link" data-title="How to use the Hellios API">How to use the Hellios API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#answer" class="toc-h2 toc-link" data-title="Answer">Answer</a>
+                    <a href="#example-scenario-1-bulk-update-supplier-information" class="toc-h2 toc-link" data-title="Example scenario 1: Bulk update supplier information">Example scenario 1: Bulk update supplier information</a>
                   </li>
                   <li>
-                    <a href="#contact" class="toc-h2 toc-link" data-title="Contact">Contact</a>
+                    <a href="#example-scenario-2-find-information-for-a-supplier" class="toc-h2 toc-link" data-title="Example scenario 2: Find information for a supplier">Example scenario 2: Find information for a supplier</a>
                   </li>
                   <li>
-                    <a href="#document" class="toc-h2 toc-link" data-title="Document">Document</a>
+                    <a href="#example-scenario-3-find-suppliers-with-particular-status-and-or-renewal-date" class="toc-h2 toc-link" data-title="Example scenario 3: Find suppliers with particular status and/or renewal date">Example scenario 3: Find suppliers with particular status and/or renewal date</a>
                   </li>
                   <li>
-                    <a href="#file" class="toc-h2 toc-link" data-title="File">File</a>
+                    <a href="#example-scenario-4-source-group-of-suppliers-based-on-answers-given" class="toc-h2 toc-link" data-title="Example scenario 4: Source group of suppliers based on answers given">Example scenario 4: Source group of suppliers based on answers given</a>
                   </li>
                   <li>
-                    <a href="#hscore" class="toc-h2 toc-link" data-title="HScore">HScore</a>
+                    <a href="#example-scenario-5-find-suppliers-whose-documents-have-expired" class="toc-h2 toc-link" data-title="Example scenario 5: Find suppliers whose documents have expired">Example scenario 5: Find suppliers whose documents have expired</a>
                   </li>
                   <li>
-                    <a href="#question" class="toc-h2 toc-link" data-title="Question">Question</a>
+                    <a href="#locating-an-individual-supplier" class="toc-h2 toc-link" data-title="Locating an individual supplier">Locating an individual supplier</a>
                   </li>
                   <li>
-                    <a href="#specificfield" class="toc-h2 toc-link" data-title="SpecificField">SpecificField</a>
+                    <a href="#looping-through-getsuppliers-response-data" class="toc-h2 toc-link" data-title="Looping through GetSuppliers response data">Looping through GetSuppliers response data</a>
                   </li>
                   <li>
-                    <a href="#specificfieldoption" class="toc-h2 toc-link" data-title="SpecificFieldOption">SpecificFieldOption</a>
+                    <a href="#finding-answers-to-specific-questions" class="toc-h2 toc-link" data-title="Finding answers to specific questions">Finding answers to specific questions</a>
                   </li>
                   <li>
-                    <a href="#specificfieldvalue" class="toc-h2 toc-link" data-title="SpecificFieldValue">SpecificFieldValue</a>
-                  </li>
-                  <li>
-                    <a href="#supplierdetails" class="toc-h2 toc-link" data-title="SupplierDetails">SupplierDetails</a>
-                  </li>
-                  <li>
-                    <a href="#supplierinfo" class="toc-h2 toc-link" data-title="SupplierInfo">SupplierInfo</a>
-                  </li>
-                  <li>
-                    <a href="#taxonomy" class="toc-h2 toc-link" data-title="Taxonomy">Taxonomy</a>
+                    <a href="#retrieving-supplier-documents" class="toc-h2 toc-link" data-title="Retrieving supplier documents">Retrieving supplier documents</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#putting-it-all-together" class="toc-h1 toc-link" data-title="Putting it all together">Putting it all together</a>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#companywatch-hscore" class="toc-h2 toc-link" data-title="CompanyWatch.HScore"><span style="background-color:#39FF14">CompanyWatch<span>.HScore</span></span></a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-answer" class="toc-h2 toc-link" data-title="GetSupplierDetails.Answer">GetSupplierDetails.Answer</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-contact" class="toc-h2 toc-link" data-title="GetSupplierDetails.Contact">GetSupplierDetails.Contact</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-document" class="toc-h2 toc-link" data-title="GetSupplierDetails.Document">GetSupplierDetails.Document</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-question" class="toc-h2 toc-link" data-title="GetSupplierDetails.Question">GetSupplierDetails.Question</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-specificfield" class="toc-h2 toc-link" data-title="GetSupplierDetails.SpecificField">GetSupplierDetails.SpecificField</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-specificfieldoption" class="toc-h2 toc-link" data-title="GetSupplierDetails.SpecificFieldOption">GetSupplierDetails.SpecificFieldOption</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-specificfieldvalue" class="toc-h2 toc-link" data-title="GetSupplierDetails.SpecificFieldValue">GetSupplierDetails.SpecificFieldValue</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-supplierdetails" class="toc-h2 toc-link" data-title="GetSupplierDetails.SupplierDetails">GetSupplierDetails.SupplierDetails</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-taxonomy" class="toc-h2 toc-link" data-title="GetSupplierDetails.Taxonomy">GetSupplierDetails.Taxonomy</a>
+                  </li>
+                  <li>
+                    <a href="#searchsuppliers-supplierinfo" class="toc-h2 toc-link" data-title="SearchSuppliers.SupplierInfo">SearchSuppliers.SupplierInfo</a>
+                  </li>
+                  <li>
+                    <a href="#gettemplatedetails-question" class="toc-h2 toc-link" data-title="GetTemplateDetails.Question"><span style="background-color:#39FF14">GetTemplateDetails.Question</span></a>
+                  </li>
+                  <li>
+                    <a href="#gettemplatedetails-answeroption" class="toc-h2 toc-link" data-title="GetTemplateDetails.AnswerOption"><span style="background-color:#39FF14">GetTemplateDetails.AnswerOption<span></span></span></a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#response-amp-error-codes" class="toc-h1 toc-link" data-title="Response &amp; Error Codes">Response &amp; Error Codes</a>
           </li>
       </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction-hellios-api'>Introduction: Hellios API</h1>
+        <h1 id='introduction-hellios-api'>Introduction: Hellios API</h1><h2 id='overview'>Overview</h2>
 <p>Welcome to the Hellios API documentation.</p>
 
 <p>The Hellios API has been built to allow Hellios&#39; customers to access their supplier questionnaire information programmatically without needing to sign into the Hellios portal. </p>
 
-<p>The API adheres to the principles of <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. <span style="background-color:#39FF14">It uses resource-oriented URLs, accepts <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms" target="blank">form-encoded</a> request bodies and returns <a href="https://www.json.org/json-en.html" target="_blank">JSON</a>-encoded responses. It uses standard HTTP response codes, authentication, and verbs.</span></p>
+<p>The Hellios API provides access to validated and published supplier information, including:</p>
 
+<ul>
+<li>Questionnaire and document statuses</li>
+<li>Contact information</li>
+<li>Risk Level</li>
+<li>HScore &amp; Financial information</li>
+<li>Renewal date</li>
+<li>All answers to validated and published questionnaire questions</li>
+<li>All validated and published documents uploaded by the supplier</li>
+</ul>
+
+<p>The API is built around four core methods that enable the customer to access:</p>
+
+<ul>
+<li>A list of all suppliers, both those tagged to their organisation and the wider pool within the community</li>
+<li>All information validated and published by Hellios for an individual supplier, including answers to specific questions</li>
+<li>All validated and published documents uploaded by each supplier</li>
+<li>A list of report labels</li>
+</ul>
+
+<p>We envisage customers using the API to in one of two ways:</p>
+
+<ul>
+<li>To access validated and published supplier information on demand</li>
+<li>To download and locally cache validated and published supplier information in bulk</li>
+</ul>
+
+<p>In both scenarios, the primary objective is to allow customers to integrate supplier information validated and published on the Hellios platform into their own systems. </p>
+<h2 id='example-use-cases'>Example Use Cases</h2>
+<p>The examples below show just some of the way the Hellios API could be used. </p>
+
+<p>In each case, the information could be for all suppliers on the Hellios platform or just those suppliers tagged to your organisation</p>
+
+<ul>
+<li>Get status information for  suppliers</li>
+<li>Get validated and published questionnaire answers for suppliers </li>
+<li>Find suppliers whose information has recently changed</li>
+<li>Get an individual supplier&#39;s status information</li>
+<li>Get an individual supplier validated and published questionnaire answers</li>
+<li>Identify groups and volume of your suppliers based on common status (eg. Completed, Expired etc)</li>
+<li>Source a group of suppliers based on particular answers given / information provided</li>
+<li>Shortlist suppliers based on product/service code(s)</li>
+<li>Download documents for a specific supplier or for groups of suppliers (eg. insurance certificates, policy documents etc)</li>
+</ul>
+<h2 id='principles'>Principles</h2>
+<p>The API adheres to the principles of <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. It uses resource-oriented URLs, accepts <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms" target="blank">form-encoded</a> request bodies and returns <a href="https://www.json.org/json-en.html" target="_blank">JSON</a>-encoded and <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a>-encoded responses. It uses standard HTTP response codes, authentication, and verbs, although please note that the Hellios API is read-only so only the GET HTTP verb is applicable.</p>
+<h2 id='data-format'>Data format</h2>
+<p>Data can be returned from the Hellios API in either <a href="https://www.json.org/json-en.html" target="_blank">JSON</a> or <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a> format to enable the widest possibility of integrations.</p>
+<h2 id='direction'>Direction</h2>
 <p>The Hellios API is READ-ONLY. Data can only be consumed, no changes or updates can be made via the API.</p>
-<h1 id='authentication'>Authentication</h1>
-<p>The Hellios API uses API Keys for authentication.</p>
+<h2 id='throttling-amp-limits'>Throttling &amp; Limits</h2>
+<p>The Hellios API enforces the following limits per customer:</p>
 
-<p><span style="background-color:#39FF14">Need Authentication content to go here</span></p>
+<p>Rate/hr -&gt; 3600<br/>
+- This is the max number of api calls within 1 hour and equals a steady state rate of 1 request per second.</p>
+
+<p>Burst -&gt; 5<br/>
+- This is the max number of concurrent requests and equals a maximum of 5 requests per second.</p>
+<h2 id='environments'>Environments</h2>
+<p>The Hellios API is available for both Staging and Production environments. Separate <a href="#authcreds">authentication credentials</a> will be required for each environment.</p>
+
+<p>By providing access to the Hellios Staging environment, customers are able to post test data when developing their integration.</p>
+<h1 id='authentication'>Authentication</h1><h2 id='credentials'>Credentials</h2>
+<p><a name="authcreds"></a>
+To access the Hellios API, you will need the following five credentials:</p>
+
+<ul>
+<li>Authentication URL</li>
+<li>External API Base URL</li>
+<li>Client ID</li>
+<li>Client Secret</li>
+<li>API Key</li>
+</ul>
+
+<p>These credentials will be issued to you by Hellios.</p>
+<h2 id='authentication-process'>Authentication process</h2>
+<p>Regardless of whether you are connecting to the Staging or Production environment, the method for authentication is the same, but please note that Staging and Production environments each require their own set of credentials.</p>
+
+<p>The authentication process flow is summarised in the following diagram:</p>
+
+<p><img src="images/authentication_flow-fb5c5fd7.png"></p>
+<h3 id='step-1-authenticate'>Step 1: Authenticate</h3>
+<p><a name="authstep1"></a></p>
+
+<p>Authentication is through the Hellios authentication server and requires the following credentials to be provided:</p>
+
+<ul>
+<li>Client ID</li>
+<li>Client Secret</li>
+</ul>
+
+<p>The API call configuration is as follows:</p>
+
+<p><span style="font-family:Courier;">
+URL: xxxxxxxx<br/>
+Method: POST<br/>
+Headers:<br/>
+Content-Type application/x-www-form-urlencoded<br/>
+Body:<br/>
+grant_type=client_credentials&amp;client_id={CLIENT ID HERE}&amp;client_secret=
+{CLIENT SECRET HERE}
+</span></p>
+<h3 id='step-2-authentication-token'>Step 2: Authentication Token</h3>
+<p>If the request is successful you will receive an authentication token which you can use to get data from the Hellios API.</p>
+<h3 id='step-3-making-an-authenticated-call-to-get-data-from-the-hellios-api'>Step 3: Making an authenticated call to get data from the Hellios API</h3>
+<p>To make a call you will require the following:</p>
+
+<ul>
+<li>The token generated in <a href="#authstep1">step 1</a></li>
+<li>An API key which will be supplied by Hellios</li>
+</ul>
+
+<p>The following sample code shows how the GetSuppliers method would be called for example. Note the &#39;Accept&#39; header being used to specify whether the response is returned as XML or JSON.</p>
+
+<p><span style="font-family:Courier;">
+URL: /v1_0/buyer/supplier?pageIndex=1&amp;pageSize=10<br/>
+Method: GET<br/>
+Headers:<br/>
+Authorization Bearer {Token generated on step 1}<br/>
+x-api-key {Supplied by Hellios}<br/>
+Accept application/xml OR application/json<br/>
+Body:<br/>
+</span></p>
+<h3 id='step-4-api-response'>Step 4: API response</h3>
+<p>The response will be received in the format requested in the Accept header (either XML or JSON.)</p>
+<h3 id='expired-authentication'>Expired authentication</h3>
+<p>If the response status is 401 unauthorized a new authentication request must be made using step 1 and step 2.</p>
+<h3 id='troubleshooting-other-401-response-statuses'>Troubleshooting other 401 response statuses</h3>
+<p>401 - Unauthorized<br/>
+Check client secret and client id.</p>
+
+<p>401 - Forbidden<br/>
+Check api key is correct</p>
 <h1 id='methods'>Methods</h1>
 <p>The Hellios API includes four read-only methods, as follows:</p>
 
@@ -410,7 +600,9 @@
 
 <h2 id='getsuppliers'>GetSuppliers</h2>
 
-<p>The <code>GetSuppliers</code> method can be used to retrieve a list of suppliers from the Hellios Odyssey platform via the external API. The method accepts various parameters to allow you to:</p>
+<p>The <code>GetSuppliers</code> method can be used to retrieve a list of suppliers from the Hellios platform via the external API. </p>
+
+<p>The method accepts various parameters to allow you to:</p>
 
 <ul>
 <li>Search for a specific group of suppliers</li>
@@ -422,7 +614,7 @@
 
 <h3 id='endpoint'>Endpoint</h3>
 
-<p><code>GET /buyer/supplier/v1_0</code></p>
+<p><code>GET /v1_0/buyer/supplier</code></p>
 
 <h3 id='parameters'>Parameters</h3>
 
@@ -430,10 +622,21 @@
 
 <p><strong><code>searchTerm</code></strong></p>
 
-<p>Can be used to search for a specific group of suppliers or an individual supplier. The <code>searchTerm</code> parameter accepts alphanumeric characters to search for supplier name(s), Vendor ID to search for suppliers tagged to your organisation, or Hellios ID to search for an individual supplier. <span style="background-color:#39FF14">When searching against supplier name(s), the search will look for an exact match to the characters specified in the search term, within any part of the supplier name.</span></p>
+<p>Can be used to search for a specific group of suppliers or an individual supplier. The <code>searchTerm</code> parameter accepts alphanumeric characters to search for</p>
+
+<ul>
+<li>Supplier name</li>
+<li>Location</li>
+<li>Company registration number</li>
+<li>Trading name, trading name2 or trading name 3</li>
+<li>Vendor ID to search for suppliers tagged to your organisation</li>
+<li>Hellios ID to search for an individual supplier. </li>
+</ul>
+
+<p>When searching against supplier name(s), the search will look for a contained match to the characters specified in the search term, within any part of the supplier name. Please note: the search does not accept wildcard characters.</p>
 
 <p><em>Type</em>: String<br/>
-<em>Value(s):</em> Alphanumeric characters <span style="background-color:#39FF14">(min 3 alphanumeric characters)</span>, Vendor ID or Hellios ID<br/>
+<em>Value(s):</em> Alphanumeric characters (min 3 alphanumeric characters), Vendor ID or Hellios ID<br/>
 <em>Requirement:</em> Optional</p>
 
 <p><strong><code>onlyTagged</code></strong></p>
@@ -455,19 +658,19 @@
 <p><a name="GetSuppliersPageSize"></a>
 <strong><code>pageSize</code></strong></p>
 
-<p>We recommend specifying a page size to limit the total number of results returned via each API call. Use this parameter to set the number of records to be returned per page. <span style="background-color:#39FF14">All results returned will include the number of pages of results available.</span></p>
+<p>We recommend specifying a page size to limit the total number of results returned via each API call. Use this parameter to set the number of records to be returned per page. All responses will include the number of pages of results available. Please note: <code>pageSize</code> is a mandatory field.</p>
 
 <p><em>Type</em>: Integer ($int32)<br/>
-<em>Value(s):</em> Numeric Integer <span style="background-color:#39FF14">(defaults to 100??????)</span><br>
-<em>Requirement:</em> Optional</p>
+<em>Value(s):</em> Numeric Integer (min. 1 / no max.)<br>
+<em>Requirement:</em> Required</p>
 
 <p><strong><code>pageIndex</code></strong></p>
 
-<p>Used in conjunction with the <code>pageSize</code> parameter, <code>pageIndex</code> allows a specific page of results to be returned. <span style="background-color:#39FF14">All results returned will include the number of pages of results available.</span></p>
+<p>Used in conjunction with the <code>pageSize</code> parameter, <code>pageIndex</code> allows a specific page of results to be returned. All responses will include the number of pages of results available. Please note: <code>pageIndex</code> is a mandatory field.</p>
 
 <p><em>Type</em>: Integer ($int32)<br/>
-<em>Value(s):</em> Numeric Integer<br>
-<em>Requirement:</em> Optional</p>
+<em>Value(s):</em> Numeric Integer (min. 1 / no max.)<br>
+<em>Requirement:</em> Required</p>
 
 <h3 id='getsuppliers-response'>GetSuppliers Response</h3>
 
@@ -490,7 +693,6 @@
       </span><span class="nl">"riskLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"documentRagStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"companyRegistrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"renewalDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T09:15:48.056Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"lastUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T09:15:48.056Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -512,7 +714,7 @@
 </thead><tbody>
 <tr>
 <td>records</td>
-<td><em><a href="#supplierinfo">SupplierInfo[]</a></em></td>
+<td><em><a href="#searchsuppliers-supplierinfo">SearchSuppliers.SupplierInfo[]</a></em></td>
 <td>An array of suppliers that match the search criteria.</td>
 </tr>
 <tr>
@@ -542,7 +744,7 @@
 
 <h3 id='endpoint'>Endpoint</h3>
 
-<p><code>GET /buyer/supplierdetails/v1_0/{supplierExternalId} </code></p>
+<p><code>GET /v1_0/buyer/supplierdetails/{supplierExternalId} </code></p>
 
 <h3 id='parameters'>Parameters</h3>
 
@@ -550,7 +752,7 @@
 
 <p><code>supplierExternalId</code></p>
 
-<p>Use to specify which supplier you want to retrieve information for. <span style="background-color:#39FF14">The supplierExternalId value is a 16-digit, alphanumeric <em>guid</em> and will look similar to &#39;1234-sdfsd-we34-QEW3&#39;.</span></p>
+<p>Use <code>supplierExternalId</code> to specify which supplier you want to retrieve information for.</p>
 
 <p><em>Type:</em> String<br/>
 <em>Value(s):</em> externalId (obtained from <code>GetSuppliers</code> method)<br/>
@@ -581,9 +783,7 @@
       </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"jobTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"phoneWorkCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"phoneWork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"phoneMobileCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"phoneMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"completionDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T09:31:41.092Z"</span><span class="p">,</span><span class="w">
@@ -619,19 +819,20 @@
         </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">],</span><span class="w">
         </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"repeatableGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
+        </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"repeatableGroupId"</span><span class="err">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -647,30 +848,224 @@
 </thead><tbody>
 <tr>
 <td>supplier</td>
-<td><em><a href="#supplierdetails">SupplierDetails</a></em></td>
-<td>Information about the supplier <span style="background-color:#39FF14">???</span></td>
+<td><em><a href="#getsupplierdetails-supplierdetails">GetSupplierDetails.SupplierDetails</a></em></td>
+<td>Identification for the supplier, contact information and statuses</td>
 </tr>
 <tr>
 <td>specificFields</td>
-<td><em><a href="#specificfield">SpecificField[]</a></em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em><a href="#getsupplierdetails-specificfield">GetSupplierDetails.SpecificField[]</a></em></td>
+<td>Fields/data that are defined by and specific to your organisation only (eg. Business units, comments.) These fields can be viewed in the Hellios platform via the &#39;Your information&#39; screen.</td>
 </tr>
 <tr>
 <td>questionnaire</td>
-<td><em><a href="#question">Question[]</a></em></td>
-<td>An array of questions related to the supplier</td>
+<td><em><a href="#getsupplierdetails-question">GetSupplierDetails.Question[]</a></em></td>
+<td>An array of answers provided by the supplier when completing their questionnaire</td>
 </tr>
 </tbody></table>
+
+<p>Please note: <code>GetSupplierDetails</code> will only return validated and published data for suppliers.</p>
+
+<p>Each response includes an element called &quot;questionnaire&quot; which contains the reportLabel (used to identify the question) and an answer. Each answer can be one of the following eight types:</p>
+
+<ul>
+<li>Free text</li>
+<li>Number</li>
+<li>Single select</li>
+<li>Date</li>
+<li>Multiple select (comma separated)</li>
+<li>True/False</li>
+<li>Document</li>
+<li>Taxonomy</li>
+</ul>
+
+<p>The first six types are answers to a question given by the supplier when completing their questionnaire.</p>
+
+<p>The Document type contains a unique identifier for an individual document associated to the supplier</p>
+
+<p>The taxonomy type contains product/service codes selected by the supplier when completing their questionnaire</p>
+
+<p><strong>Examples</strong><br>
+In the examples below, we have highlighted the answer values. For the first the six types, the answer is included within the &quot;values&quot; element. For documents, the answer is included in the &quot;document&quot; element and for taxonomy, the answer is included in the &quot;taxonomy&quot; element.</p>
+
+<p><strong>Free Text</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;1.1.3.1_Address1&quot;,
+&quot;response&quot;: {
+&quot;questionType&quot;: 1,
+&quot;repeatableGroupId&quot;: null,
+<strong>&quot;values&quot;: [
+&quot;Across the street, no 7&quot;
+]</strong>,
+&quot;document&quot;: null,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Number</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;1.3.6_CompAnnualRevenue&quot;,
+&quot;response&quot;: {
+&quot;questionType&quot;: 2,
+&quot;repeatableGroupId&quot;: null,
+<strong>&quot;values&quot;: [
+&quot;10000000&quot;
+]</strong>,
+&quot;document&quot;: null,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Single Select</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;1.1.3.6_Country&quot;,
+&quot;response&quot;: {
+&quot;questionType&quot;: 3,
+&quot;repeatableGroupId&quot;: null,
+<strong>&quot;values&quot;: [
+&quot;United Kingdom&quot;
+]</strong>,
+&quot;document&quot;: null,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Date</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;2.11.2.7_CEPlusExpiryDate&quot;,
+&quot;response&quot;:
+{
+&quot;questionType&quot;: 4,
+&quot;repeatableGroupId&quot;: null,
+<strong>&quot;values&quot;: [
+&quot;2023-02-24T00:00:00.000+02:00&quot;
+]</strong>,
+&quot;document&quot;: null,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Multiple Select</strong>
+{
+&quot;reportLabel&quot;: &quot;1.4.2_SelectProviderTypes&quot;,
+&quot;response&quot;: {
+&quot;questionType&quot;: 5,
+&quot;repeatableGroupId&quot;: null,
+<strong>&quot;values&quot;: [
+&quot;Manufacturer&quot;,
+&quot;Agent&quot;
+]</strong>,
+&quot;document&quot;: null,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>True/False</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;2.11.2_AnnualIdentifyCritInfo&quot;,
+&quot;response&quot;:
+{
+&quot;questionType&quot;: 6,
+&quot;repeatableGroupId&quot;: null,
+<strong>&quot;values&quot;: [
+&quot;false&quot;
+]</strong>,
+&quot;document&quot;: null,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Document</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;2.11.2.6_CEPlusCertUpload&quot;,
+&quot;response&quot;:
+{
+&quot;questionType&quot;: 7,
+&quot;repeatableGroupId&quot;: null,
+&quot;values&quot;: null,
+<strong>&quot;document&quot;:
+{
+&quot;documentId&quot;: &quot;8505ef76-c265-4769-809b-cbc45e44bb6e&quot;,
+&quot;fileName&quot;: &quot;pdf-test3.pdf&quot;
+}</strong>,
+&quot;taxonomy&quot;: null
+},
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Taxonomy</strong><br/>
+{
+&quot;reportLabel&quot;: &quot;1.4.1_SelectProductsServices&quot;,
+&quot;response&quot;:
+{
+&quot;questionType&quot;: 8,
+&quot;repeatableGroupId&quot;: null,
+&quot;values&quot;: null,
+&quot;document&quot;: null,
+<strong>&quot;taxonomy&quot;: [
+{
+&quot;taxonomyId&quot;: &quot;98841548-93bb-47f6-b7c7-856e7a05e017&quot;,
+&quot;description&quot;: &quot;Office Communications Equipment&quot;,
+&quot;code&quot;: &quot;2.1.1&quot;
+}
+]
+}</strong>,
+&quot;repeatableGroupId&quot;: null
+}</p>
+
+<p><strong>Repeatable Groups</strong><br/>
+Some questions will include &#39;repeatable&#39; answers, for example, financial information provided for the past three years would include the fields such as &#39;Revenue&#39; and &#39;Gross Profit&#39; for each financial year.</p>
+
+<p>For this type of question, the answer will include a &quot;repeatableGroupId&quot; value as shown in the example below. Each group (in this case financial year) can be identified by a common &quot;repeatableGroupId&quot; value. In our example below, the 2022 &#39;Financial Year&#39;, &#39;Revenue&#39; and &#39;Profit/Loss&#39; all contain the &quot;repeatableGroupId&quot; value &#39;88b7a47b-af71-422a-872c-ffe5421f8efe&#39;. Similarly, for the 2021 financial year values, the &quot;repeatableGroupId&quot; value is &#39;f822c705-4106-4839-b8a6-70b3d8d84287&#39;.</p>
+
+<p><span style="font-family:Courier;">
+{<br/>
+  &quot;reportLabel&quot;: &quot;2.3.1.1_FinancialYear&quot;,<br/>
+  &quot;response&quot;: { &quot;values&quot;: [ &quot;2022&quot; ], },<br/>
+  <strong>&quot;repeatableGroupId&quot;: &quot;88b7a47b-af71-422a-872c-ffe5421f8efe&quot;</strong><br/>
+},<br/>
+{<br/>
+  &quot;reportLabel&quot;: &quot;2.3.1.2_Revenue&quot;,<br/>
+  &quot;response&quot;: { &quot;values&quot;: [ &quot;101&quot; ] },<br/>
+  <strong>&quot;repeatableGroupId&quot;: &quot;88b7a47b-af71-422a-872c-ffe5421f8efe&quot;</strong><br/>
+},<br/>
+{<br/>
+  &quot;reportLabel&quot;: &quot;2.3.1.3_Profit/Loss&quot;,<br/>
+  &quot;response&quot;: { &quot;values&quot;: [ &quot;10&quot; ] },<br/>
+  <strong>&quot;repeatableGroupId&quot;: &quot;88b7a47b-af71-422a-872c-ffe5421f8efe&quot;</strong><br/>
+}<br/>
+{<br/>
+  &quot;reportLabel&quot;: &quot;2.3.1.1_FinancialYear&quot;,<br/>
+  &quot;response&quot;: { &quot;values&quot;: [ &quot;2021&quot; ], },<br/>
+  &quot;repeatableGroupId&quot;: &quot;f822c705-4106-4839-b8a6-70b3d8d84287&quot;<br/>
+},<br/>
+{<br/>
+  &quot;reportLabel&quot;: &quot;2.3.1.2_Revenue&quot;,<br/>
+  &quot;response&quot;: { &quot;values&quot;: [ &quot;202&quot; ] },<br/>
+  &quot;repeatableGroupId&quot;: &quot;f822c705-4106-4839-b8a6-70b3d8d84287&quot;<br/>
+},<br/>
+{<br/>
+  &quot;reportLabel&quot;: &quot;2.3.1.3_Profit/Loss&quot;,<br/>
+  &quot;response&quot;: { &quot;values&quot;: [ &quot;20&quot; ] },<br/>
+  &quot;repeatableGroupId&quot;: &quot;f822c705-4106-4839-b8a6-70b3d8d84287&quot;<br/>
+}<br/></p>
+
+<p></span></p>
 
 <p><a name="GetDocumentMethod"></a></p>
 
 <h2 id='getdocument'>GetDocument</h2>
 
-<p>The <code>GetDocument</code> method can be used to retrieve a specifc document related to a supplier (for example a supplier&#39;s Public Liability Insurance Certificate.) This method requires a document indetifier to be provided, to identify the document required. Document IDs can be obtained using the <code>GetSupplierDetails</code> method, detailed above.</p>
+<p>The <code>GetDocument</code> method can be used to retrieve a specifc document related to a supplier (for example a supplier&#39;s Public Liability Insurance Certificate.) This method requires a document identifier to be provided, to identify the document required. Document IDs can be obtained using the <code>GetSupplierDetails</code> method, detailed above.</p>
 
 <h3 id='endpoint'>Endpoint</h3>
 
-<p><code>GET /buyer/supplier/document/v1_0/{documentIdentifier}</code></p>
+<p><code>GET /v1_0/buyer/supplier/document/{documentIdentifier}</code></p>
 
 <h3 id='parameters'>Parameters</h3>
 
@@ -678,7 +1073,7 @@
 
 <p><code>documentIdentifier</code></p>
 
-<p>Use to specify which document you want to retrieve. <span style="background-color:#39FF14">The documentId value is a 16-digit, alphanumeric <em>guid</em> and will look similar to &#39;1234-sdfsd-we34-QEW3&#39;.</span></p>
+<p>Use to specify which document you want to retrieve. The documentId value is a 16-digit, alphanumeric <em>guid</em> and will look similar to &#39;1234-sdfsd-we34-QEW3&#39;.</p>
 
 <p><em>Type:</em> String
 <em>Value(s):</em> documentIdentifier (obtained from <code>GetSupplierInformation</code> method)<br/>
@@ -686,31 +1081,50 @@
 
 <h3 id='getdocument-response'>GetDocument Response</h3>
 
-<p>The <code>GetSuppliers</code> method returns the PDF file of the document requested</p>
+<p>The <code>GetSuppliers</code> method returns the PDF file of the document requested.</p>
 
-<p>Example response:</p>
+<p><strong>Buyer Specific Fields</strong></p>
 
-<p><span style="background-color:#39FF14">NEED MORE INFO ON THE PDF - HOW IS IT DELIVERED? ACTUAL FILE? URL OF FILE?</span></p>
+<p>Please note that buyer specific fields can also be documents. In this instance, please use the <code>GetDocument</code> method as per these instructions.</p>
 
 <p><a name="GetReportLabelsMethod"></a></p>
 
 <h2 id='getreportlabels'>GetReportLabels</h2>
 
-<p>The <code>GetReportLabels</code> method can be used to retrieve the actual question text that the supplier was presented with when providing their answers and information. </p>
+<p>The <code>GetReportLabels</code> method can be used to retrieve the actual question text that the supplier was presented with when providing their answers and information.</p>
 
-<p>We recommend only using this method perodically as the data returned is large (all text for all questions is returned) and is purely for reference (lookup) purposes. </p>
+<p>We recommend only using this method perodically as the data returned is large (all text for all questions is returned) and is purely for reference (lookup) purposes.</p>
 
-<p>Typically this method would only be used when first building an integration with the Hellios API or when a new questionnaire is published, which currently happens <span style="background-color:#39FF14">annually??????????</span></p>
+<p>Typically this method would only be used when first building an integration with the Hellios API or when a new questionnaire is published, which currently happens perodically.</p>
 
 <h3 id='endpoint'>Endpoint</h3>
 
-<p><code>GET /buyer/reportlabels/v1_0</code></p>
+<p><code>GET /v1_0/buyer/reportLabel</code></p>
 
 <h3 id='parameters'>Parameters</h3>
 
 <p>The <code>GetReportLabels</code> method does not require any parameters.</p>
 
 <h3 id='getreportlabels-response'>GetReportLabels Response</h3>
+
+<blockquote>
+<p>Example JSON Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"shortId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"expiryDateForDocumentQuestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"reportLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 
 <p>The <code>GetReportLabels</code> method returns the following attributes.</p>
 
@@ -722,206 +1136,117 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>Question Text</td>
-<td><em>String</em></td>
-<td>Questionnaire, question text as presented to supplier via UI</td>
-</tr>
-<tr>
-<td>Report Label</td>
-<td><em>String</em></td>
-<td>Report label as visible via reporting module UI</td>
+<td>questions</td>
+<td><em><a href="#gettemplatedetails-question">GetTemplateDetails.Question[]</a></em></td>
+<td>An array containing every question for the supplier</td>
 </tr>
 </tbody></table>
+<h1 id='how-to-use-the-hellios-api'>How to use the Hellios API</h1>
+<p>In this section we&#39;ll walk through how to use the Hellios API in practice.</p>
 
-<p>Example response:</p>
+<p>In most instances, the starting point will be to retrieve a list of suppliers using the <code>GetSuppliers</code> method.</p>
 
-<p><span style="font-family:'Courier New';">
-{<br/>
-    questionText: &quot;What ...&quot;<br/>
-    reportLabel: &quot;What ...&quot;<br/>
-},<br/>
-{<br/>
-    questionText: &quot;What ...&quot;<br/>
-    reportLabel: &quot;What ...&quot;<br/>
-}
-</span></p>
+<p>Aside from the pagination parameters, the <code>GetSuppliers</code> method takes three other parameters that allow you to retrieve all suppliers, just the suppliers tagged to your organisation and even suppliers that have &#39;Expired&#39;.</p>
 
-<p><span style="background-color:#39FF14">Need some example code to include on the right</span></p>
-<h1 id='schemas'>Schemas</h1>
-<p>The Hellios API includes 14 response schemas, as follows:</p>
+<p><code>GetSuppliers</code> includes the following three parameters that you can set - <code>searchTerm</code>, <code>onlyTagged</code> and <code>includeExpired</code></p>
+
+<p>Here are some example scenarios to consider:</p>
+<h3 id='example-scenario-1-bulk-update-supplier-information'>Example scenario 1: Bulk update supplier information</h3>
+<p>You want to update your systems with the latest supplier information from Hellios, but only for suppliers associated with your organisation.</p>
 
 <ul>
-<li><code>Answer</code><br/></li>
-<li><code>Contact</code><br/></li>
-<li><code>Document</code><br/></li>
-<li><code>File</code><br/></li>
-<li><code>HScore</code><br/></li>
-<li><code>Question</code><br/></li>
-<li><code>SpecificField</code><br/></li>
-<li><code>SpecificFieldOption</code><br/></li>
-<li><code>SpecificFieldValue</code><br/></li>
-<li><code>SupplierDetails</code><br/></li>
-<li><code>SupplierInfo</code><br/></li>
-<li><code>Taxonomy</code></li>
+<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
+<li><code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
 </ul>
 
-<h2 id='answer'>Answer</h2>
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers</p>
+<h3 id='example-scenario-2-find-information-for-a-supplier'>Example scenario 2: Find information for a supplier</h3>
+<p>You want to find information for an individual supplier.</p>
 
-<blockquote>
-<p>Answer Example</p>
-</blockquote>
+<ul>
+<li><code>searchTerm: [Enter name of supplier]]</code> - use searchTerm to locate the supplier you want data for<br/></li>
+<li><code>onlyTagged: False</code> - this is not relevant as you are searching for a specific supplier<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all suppliers, including those that have expired, in case the individual supplier you are looking for has expired</li>
+</ul>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"repeatableGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for the specific supplier</p>
+<h3 id='example-scenario-3-find-suppliers-with-particular-status-and-or-renewal-date'>Example scenario 3: Find suppliers with particular status and/or renewal date</h3>
+<p>You want to locate your organisation&#39;s suppliers with a particular status and/or renewal date.</p>
 
-<p>The <code>Answer</code> schema is used in the <a href="#question">Question</a> schema and contains the following properties:</p>
+<ul>
+<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
+<li><code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
+</ul>
 
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>values</td>
-<td><em>String[]</em></td>
-<td>The possible options to the question.</td>
-</tr>
-<tr>
-<td>questionType</td>
-<td><em>[&quot;None&quot;, &quot;FreeText&quot;, &quot;Number&quot;, &quot;SingleSelect&quot;, &quot;Date&quot;, &quot;MultipleSelect&quot;, &quot;YesNo&quot;, &quot;Document&quot;, &quot;Taxonomy&quot;]</em></td>
-<td>The input types of the questions.</td>
-</tr>
-<tr>
-<td>repeatableGroupId</td>
-<td><em>UUID</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-</tbody></table>
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers which you can then loop through to find those suppliers with a particular status and/or renewal date</p>
+<h3 id='example-scenario-4-source-group-of-suppliers-based-on-answers-given'>Example scenario 4: Source group of suppliers based on answers given</h3>
+<p>You want to source a group of suppliers based on specific questions.</p>
 
-<h2 id='contact'>Contact</h2>
+<ul>
+<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
+<li><code>onlyTagged: False</code> - set to false because you want all suppliers, not just those tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
+</ul>
 
-<blockquote>
-<p>Contact Example</p>
-</blockquote>
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. </p>
+<h3 id='example-scenario-5-find-suppliers-whose-documents-have-expired'>Example scenario 5: Find suppliers whose documents have expired</h3>
+<p>You want to find all of your organisation&#39;s suppliers whose insurance documents have expired.</p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"jobTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEO"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@hellios.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phoneWorkCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"???"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phoneWork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phonenumber"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phoneMobileCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"???"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phoneMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobilenumber"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+<ul>
+<li><code>searchTerm: N/A</code> - no need to limit your search, you want to find all suppliers<br/></li>
+<li><code>onlyTagged: True</code> - this limits the reponse to include only suppliers tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired, as they are still relevant to your requirement</li>
+</ul>
 
-<p>The <code>Contact</code> schema is used in the <a href="#supplierdetails">SupplierDetails</a> schema and contains the following properties:</p>
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. </p>
 
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>firstName</td>
-<td><em>String</em></td>
-<td>The first name of the contact.</td>
-</tr>
-<tr>
-<td>lastName</td>
-<td><em>String</em></td>
-<td>The last name of the contact.</td>
-</tr>
-<tr>
-<td>jobTitle</td>
-<td><em>String</em></td>
-<td>The job title of the contact.</td>
-</tr>
-<tr>
-<td>emailAddress</td>
-<td><em>String</em></td>
-<td>The email address of the contact.</td>
-</tr>
-<tr>
-<td>phoneWorkCode</td>
-<td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-<tr>
-<td>phoneWork</td>
-<td><em>String</em></td>
-<td>The work phone number of the contact.</td>
-</tr>
-<tr>
-<td>phoneMobileCode</td>
-<td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-<tr>
-<td>phoneMobile</td>
-<td><em>String</em></td>
-<td>The mobile phone number of the contact.</td>
-</tr>
-</tbody></table>
+<p>There are of course many other examples, but the ones listed above demonstrate how to approach using the <code>GetSuppliers</code> to request just the suppliers you need.</p>
 
-<h2 id='document'>Document</h2>
+<p>Now you have your JSON list of suppliers, obtained using <code>GetSuppliers</code>, you can either locate an individual supplier or a group of suppliers by parsing the JSON returned by <code>GetSuppliers</code>.</p>
+<h3 id='locating-an-individual-supplier'>Locating an individual supplier</h3>
+<p><code>GetSuppliers</code> returns an array of suppliers. If you didn&#39;t specify a <code>searchTerm</code> within your <code>GetSuppliers</code> request to limit your response, you will potentially have a large number of suppliers in your array. Parsing (looping through) the JSON returned by <code>GetSuppliers</code>, will enable you to locate a specific supplier by querying the &#39;companyName&#39; attribute.</p>
 
-<blockquote>
-<p>Document Example</p>
-</blockquote>
+<p>Once you have located the supplier record, make note of the &#39;externalId&#39; attribute. Pass this value into the <code>GetSupplierDetails</code> method to pull all data for a specific individual supplier.</p>
+<h3 id='looping-through-getsuppliers-response-data'>Looping through GetSuppliers response data</h3>
+<p>Unless you are limiting the response from <code>GetSuppliers</code> by using &#39;searchTerm&#39; to pinpoint specific suppliers (or an individual supplier), the volume of the data typically returned by <code<GetSuppliers</code> will be substantial. <code>GetSuppliers</code> essentially returns an array of suppliers.</p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filename.pdf"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+<p>In many cases, it will be necessary to loop through the array of suppliers returned by <code>GetSuppliers</code>. Core data such as the supplier&#39;s questionnaire status, risk level, renewal date etc is returned through <code>GetSuppliers</code> so if you are looking to find suppliers based on this level of information, you simply need to filter the JSON data returned by <code>GetSuppliers</code>.</p>
 
-<p>The <code>Document</code> schema contains the following properties:</p>
+<p>However, often you will want to find suppliers based on data such as answers to specific questions, document validity or H score etc. In such cases, it is necessary to request a full dataset for each supplier using <code>GetSupplierDetails</code>On each cycle of the loop, you will need to pass the &#39;externalId&#39; value from <code>GetSuppliers</code> into <code>GetSupplierDetails</code> to get the full dataset of information for each supplier.</p>
 
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>documentId</td>
-<td><em>UUID</em></td>
-<td>The document&#39;s unique identifier.</td>
-</tr>
-<tr>
-<td>fileName</td>
-<td><em>String</em></td>
-<td>The document&#39;s file name.</td>
-</tr>
-</tbody></table>
+<p>The code opposite shows how to loop through the JSON returned by <code>GetSuppliers</code> and query <code>GetSupplierDetails</code> on each loop.</p>
+<h3 id='finding-answers-to-specific-questions'>Finding answers to specific questions</h3>
+<p>At this point, you will have successfully pulled a list of relevant suppliers using <code>GetSuppliers</code>, looped through this list and pulled the full dataset for each supplier. The data returned includes report labels as the reference point for questionnaire questions. These the same report labels that are used in the Hellios UI reporting and dashboard tools.</p>
 
-<h2 id='file'>File</h2>
+<p>To help you match report labels with questionnaire questions, use the <code>GetReportLabels</code> method to retrieve a full list of all current active report labels. Use this information as a &#39;lookup&#39; reference to find the report label(s) for question(s) you are interested in.</p>
 
-<blockquote>
-<p>File Example</p>
-</blockquote>
+<p>To locate suppliers who have answered specific questions in a certain way, filter the data returned using the answers given per report label this data to locate the information you require.</p>
+<h3 id='retrieving-supplier-documents'>Retrieving supplier documents</h3>
+<p>Also included within the data returned (per supplier) via <code>GetSupplierDetails</code> are the unique identifiers and expiry dates of all documents relevant to that supplier. The data information can be used to find suppliers whose documents have expired for example. to obtain a copy of the actual document, pass the unique document identifier (documentId) from <code>GetSupplierDetails</code< into <code>GetDocument</code> as &#39;documentIdentifier&#39; - the PDF file to be returned.</p>
+<h1 id='schemas'>Schemas</h1>
+<p>The Hellios API includes 13 response schemas, as follows:</p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span></code></pre></div>
+<ul>
+<li><code>CompanyWatch.HScore</code><br/></li>
+<li><code>GetSupplierDetails.Answer</code><br/></li>
+<li><code>GetSupplierDetails.Contact</code><br/></li>
+<li><code>GetSupplierDetails.Document</code><br/></li>
+<li><code>GetSupplierDetails.Question</code><br/></li>
+<li><code>GetSupplierDetails.SpecificField</code><br/></li>
+<li><code>GetSupplierDetails.SpecificFieldOption</code><br/></li>
+<li><code>GetSupplierDetails.SpecificFieldValue</code><br/></li>
+<li><code>GetSupplierDetails.SupplierDetails</code><br/></li>
+<li><code>GetSupplierDetails.Taxonomy</code><br/></li>
+<li><code>SearchSuppliers.SupplierInfo</code><br/></li>
+<li><code>GetTemplateDetails.Question</code><br/></li>
+<li><code>GetTemplateDetails.AnswerOption</code></li>
+</ul>
 
-<p>The <code>File</code> schema contains the following properties:</p>
+<h2 id='companywatch-hscore'><span style="background-color:#39FF14">CompanyWatch<span>.HScore</h2>
 
-<p><span style="background-color:#39FF14">Totally empty on swagger</span></p>
-
-<h2 id='hscore'>HScore</h2>
+<p><span style="background-color:#39FF14">What is CompanyWatch</span> </p>
 
 <blockquote>
 <p>HScore Example</p>
@@ -954,7 +1279,157 @@
 </tr>
 </tbody></table>
 
-<h2 id='question'>Question</h2>
+<h2 id='getsupplierdetails-answer'>GetSupplierDetails.Answer</h2>
+
+<blockquote>
+<p>Answer Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"repeatableGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"document"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filename.pdf"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>Answer</code> schema is used in the <a href="#getsupplierdetails-question">GetSupplierDetails.Question</a> schema and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>values</td>
+<td><em>String[]</em></td>
+<td>The possible options to the question.</td>
+</tr>
+<tr>
+<td>questionType</td>
+<td><em>Enum[&quot;None&quot;, &quot;FreeText&quot;, &quot;Number&quot;, &quot;SingleSelect&quot;, &quot;Date&quot;, &quot;MultipleSelect&quot;, &quot;YesNo&quot;, &quot;Document&quot;, &quot;Taxonomy&quot;]</em></td>
+<td>The input types of the questions.</td>
+</tr>
+<tr>
+<td>repeatableGroupId</td>
+<td><em>UUID</em></td>
+<td>The ID of the repeatableGroup this answer belongs to.</td>
+</tr>
+<tr>
+<td>document</td>
+<td><em><a href="#getsupplierdetails-document">GetSupplierDetails.Document</a></em></td>
+<td>Document identifier and filename</td>
+</tr>
+<tr>
+<td>taxonomy</td>
+<td><em><a href="#getsupplierdetails-taxonomy">GetSupplierDetails.Taxonomy[]</a></em></td>
+<td>The taxonomy type contains product/service codes selected by the supplier when completing their questionnaire</td>
+</tr>
+</tbody></table>
+
+<h2 id='getsupplierdetails-contact'>GetSupplierDetails.Contact</h2>
+
+<blockquote>
+<p>Contact Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"jobTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@hellios.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phoneWork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phonenumber"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phoneMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobilenumber"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>Contact</code> schema is used in the <a href="#getsupplierdetails-supplierdetails">GetSupplierDetails.SupplierDetails</a> schema and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>firstName</td>
+<td><em>String</em></td>
+<td>The first name of the contact.</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td><em>String</em></td>
+<td>The last name of the contact.</td>
+</tr>
+<tr>
+<td>jobTitle</td>
+<td><em>String</em></td>
+<td>The job title of the contact.</td>
+</tr>
+<tr>
+<td>emailAddress</td>
+<td><em>String</em></td>
+<td>The email address of the contact.</td>
+</tr>
+<tr>
+<td>phoneWork</td>
+<td><em>String</em></td>
+<td>The work phone number of the contact.</td>
+</tr>
+<tr>
+<td>phoneMobile</td>
+<td><em>String</em></td>
+<td>The mobile phone number of the contact.</td>
+</tr>
+</tbody></table>
+
+<h2 id='getsupplierdetails-document'>GetSupplierDetails.Document</h2>
+
+<blockquote>
+<p>Document Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filename.pdf"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>Document</code> schema contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>documentId</td>
+<td><em>UUID</em></td>
+<td>The document&#39;s unique identifier.</td>
+</tr>
+<tr>
+<td>fileName</td>
+<td><em>String</em></td>
+<td>The document&#39;s file name.</td>
+</tr>
+</tbody></table>
+
+<h2 id='getsupplierdetails-question'>GetSupplierDetails.Question</h2>
 
 <blockquote>
 <p>Question Example</p>
@@ -968,18 +1443,19 @@
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"repeatableGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
+    </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"documentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
@@ -999,22 +1475,17 @@
 </tr>
 <tr>
 <td>response</td>
-<td><em><a href="#answer">Answer</a></em></td>
-<td>The type and answers to the question <span style="background-color:#39FF14">???</span></td>
+<td><em><a href="#getsupplierdetails-answer">GetSupplierDetails.Answer</a></em></td>
+<td>The type of question and the answers</td>
 </tr>
 <tr>
-<td>document</td>
-<td><em><a href="#document">Document</a></em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-<tr>
-<td>taxonomy</td>
-<td><em><a href="#taxonomy">Taxonomy[]</a></em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>repeatableGroupId</td>
+<td><em>UUID</em></td>
+<td>The ID of the repeatableGroup this answer belongs to.</td>
 </tr>
 </tbody></table>
 
-<h2 id='specificfield'>SpecificField</h2>
+<h2 id='getsupplierdetails-specificfield'>GetSupplierDetails.SpecificField</h2>
 
 <blockquote>
 <p>SpecificField Example</p>
@@ -1060,27 +1531,27 @@
 <tr>
 <td>name</td>
 <td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>The name of the specific field</td>
 </tr>
 <tr>
 <td>type</td>
-<td><em>[&quot;Document&quot;, &quot;Text&quot;, &quot;MultilineText&quot;, &quot;Select&quot;, &quot;MultiSelect&quot;, &quot;Toggle&quot;]</em></td>
+<td><em>Enum[&quot;Document&quot;, &quot;Text&quot;, &quot;MultilineText&quot;, &quot;Select&quot;, &quot;MultiSelect&quot;, &quot;Toggle&quot;]</em></td>
 <td>The input type of the options</td>
 </tr>
 <tr>
 <td>businessValue</td>
-<td><em>[&quot;None&quot;, &quot;VendorStatus&quot;, &quot;SupplierInactive&quot;, &quot;BusinessUnits&quot;]</em></td>
+<td><em>Enum[&quot;None&quot;, &quot;VendorStatus&quot;, &quot;SupplierInactive&quot;, &quot;BusinessUnits&quot;]</em></td>
 <td><span style="background-color:#39FF14">???</span></td>
 </tr>
 <tr>
 <td>options</td>
-<td><em><a href="#specificfieldoption">SpecificFieldOption[]</a></em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em><a href="#getsupplierdetails-specificfieldoption">GetSupplierDetails.SpecificFieldOption[]</a></em></td>
+<td>An array of the possible options for the specific field</td>
 </tr>
 <tr>
 <td>values</td>
-<td><em><a href="#specificfieldvalue">SpecificFieldValue[]</a></em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em><a href="#getsupplierdetails-specificfieldvalue">GetSupplierDetails.SpecificFieldValue[]</a></em></td>
+<td>An array of current values of this field</td>
 </tr>
 <tr>
 <td>order</td>
@@ -1089,20 +1560,20 @@
 </tr>
 </tbody></table>
 
-<h2 id='specificfieldoption'>SpecificFieldOption</h2>
+<h2 id='getsupplierdetails-specificfieldoption'>GetSupplierDetails.SpecificFieldOption</h2>
 
 <blockquote>
 <p>SpecificFieldOption Example</p>
 </blockquote>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"specificFieldOption"</span><span class="p">:{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<p>The <code>SpecificFieldOption</code> schema is used in the <a href="#specificfield">SpecificField</a> schema and contains the following properties:</p>
+<p>The <code>SpecificFieldOption</code> schema is used in the <a href="#getsupplierdetails-specificfield">GetSupplierDetails.SpecificField</a> schema and contains the following properties:</p>
 
 <table><thead>
 <tr>
@@ -1128,7 +1599,7 @@
 </tr>
 </tbody></table>
 
-<h2 id='specificfieldvalue'>SpecificFieldValue</h2>
+<h2 id='getsupplierdetails-specificfieldvalue'>GetSupplierDetails.SpecificFieldValue</h2>
 
 <blockquote>
 <p>SpecificFieldValue Example</p>
@@ -1141,7 +1612,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<p>The <code>SpecificFieldValue</code> schema is used in the <a href="#specificfield">SpecificField</a> schema and contains the following properties:</p>
+<p>The <code>SpecificFieldValue</code> schema is used in the <a href="#getsupplierdetails-specificfield">GetSupplierDetails.SpecificField</a> schema and contains the following properties:</p>
 
 <table><thead>
 <tr>
@@ -1163,11 +1634,11 @@
 <tr>
 <td>value</td>
 <td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>The current value of the specific field</td>
 </tr>
 </tbody></table>
 
-<h2 id='supplierdetails'>SupplierDetails</h2>
+<h2 id='getsupplierdetails-supplierdetails'>GetSupplierDetails.SupplierDetails</h2>
 
 <blockquote>
 <p>SupplierDetails Example</p>
@@ -1191,9 +1662,7 @@
     </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"jobTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phoneWorkCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"phoneWork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phoneMobileCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"phoneMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"completionDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T10:59:14.694Z"</span><span class="p">,</span><span class="w">
@@ -1222,57 +1691,96 @@
 </tr>
 <tr>
 <td>latestHScore</td>
-<td><em><a href="#hscore">HScore</a></em></td>
-<td>Latest HScore for the supplier <span style="background-color:#39FF14">???</span></td>
+<td><em><a href="#companywatch-hscore">CompanyWatch.HScore</a></em></td>
+<td>Latest HScore for the supplier</td>
 </tr>
 <tr>
 <td>riskLevel</td>
-<td><em>[&quot;None&quot;, &quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;]</em></td>
+<td>The risk level of the supplier</td>
 </tr>
 <tr>
 <td>smeLevel</td>
-<td><em>[&quot;None&quot;, &quot;Micro&quot;, &quot;Small&quot;, &quot;Medium&quot;, &quot;Large&quot;, &quot;Undetermined&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Micro&quot;, &quot;Small&quot;, &quot;Medium&quot;, &quot;Large&quot;, &quot;Undetermined&quot;]</em></td>
+<td>The size of the supplier</td>
 </tr>
 <tr>
 <td>ragwStatus</td>
-<td><em>[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
+<td>The RAG status of the supplier&#39;s questionnaire</td>
 </tr>
 <tr>
 <td>questionnaireStatus</td>
-<td><em>[&quot;None&quot;, &quot;Invited&quot;, &quot;InProgress&quot;, &quot;Invalidation&quot;, &quot;UpdateInValidation&quot;, &quot;Completed&quot;, &quot;RenewalInvited&quot;, &quot;RenewalInProgress&quot;, &quot;RenewalInValidation&quot;, &quot;Expired&quot;, &quot;DocumentUpdateInValidation&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Invited&quot;, &quot;InProgress&quot;, &quot;Invalidation&quot;, &quot;UpdateInValidation&quot;, &quot;Completed&quot;, &quot;RenewalInvited&quot;, &quot;RenewalInProgress&quot;, &quot;RenewalInValidation&quot;, &quot;Expired&quot;, &quot;DocumentUpdateInValidation&quot;]</em></td>
+<td>The status of the supplier&#39;s questionnaire</td>
 </tr>
 <tr>
 <td>documentStatus</td>
-<td><em>[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
+<td>The RAG status of the supplier&#39;s uploaded documents</td>
 </tr>
 <tr>
 <td>overallStatus</td>
-<td><em>[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;InValidation&quot;, &quot;UpdateInValidation&quot;, &quot;RenewalInValidation&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;InValidation&quot;, &quot;UpdateInValidation&quot;, &quot;RenewalInValidation&quot;]</em></td>
+<td>The overall RAG status of the supplier (questionnaire and document RAG statuses combined)</td>
 </tr>
 <tr>
 <td>primaryContact</td>
-<td><em><a href="#contact">Contact</a></em></td>
+<td><em><a href="#getsupplierdetails-lancontact">GetSupplierDetails.Contact</a></em></td>
 <td>Primary contact for the supplier</td>
 </tr>
 <tr>
 <td>completionDeadlineDate</td>
 <td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>The deadline date for the supplier to complete and submit their questionnaire</td>
 </tr>
 <tr>
 <td>renewalDeadlineDate</td>
 <td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>The date by which the supplier is required to renew their information</td>
 </tr>
 </tbody></table>
 
-<h2 id='supplierinfo'>SupplierInfo</h2>
+<h2 id='getsupplierdetails-taxonomy'>GetSupplierDetails.Taxonomy</h2>
+
+<blockquote>
+<p>Taxonomy Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>Taxonomy</code> schema is used in the <a href="#getsupplierdetails-question">GetSupplierDetails.Question</a> schema and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>taxonomyId</td>
+<td><em>UUID</em></td>
+<td>The unique identifier of the taxonomy</td>
+</tr>
+<tr>
+<td>description</td>
+<td><em>String</em></td>
+<td>The description of the taxonomy</td>
+</tr>
+<tr>
+<td>code</td>
+<td><em>String</em></td>
+<td>The taxonomy product/service code</td>
+</tr>
+</tbody></table>
+
+<h2 id='searchsuppliers-supplierinfo'>SearchSuppliers.SupplierInfo</h2>
 
 <blockquote>
 <p>SupplierInfo Example</p>
@@ -1291,7 +1799,6 @@
   </span><span class="nl">"riskLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"documentRagStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"companyRegistrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"renewalDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T11:15:08.105Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lastUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T11:15:08.105Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1318,7 +1825,7 @@
 <tr>
 <td>location</td>
 <td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>The location of the supplier (<span style="background-color:#39FF14">Full Address? Country? City?</span>)</td>
 </tr>
 <tr>
 <td>vendorId</td>
@@ -1328,22 +1835,22 @@
 <tr>
 <td>lastPublished</td>
 <td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>Date when the supplier&#39;s information was last published</td>
 </tr>
 <tr>
 <td>questionnaireStatus</td>
-<td><em>[&quot;None&quot;, &quot;Invited&quot;, &quot;InProgress&quot;, &quot;Invalidation&quot;, &quot;UpdateInValidation&quot;, &quot;Completed&quot;, &quot;RenewalInvited&quot;, &quot;RenewalInProgress&quot;, &quot;RenewalInValidation&quot;, &quot;Expired&quot;, &quot;DocumentUpdateInValidation&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Invited&quot;, &quot;InProgress&quot;, &quot;Invalidation&quot;, &quot;UpdateInValidation&quot;, &quot;Completed&quot;, &quot;RenewalInvited&quot;, &quot;RenewalInProgress&quot;, &quot;RenewalInValidation&quot;, &quot;Expired&quot;, &quot;DocumentUpdateInValidation&quot;]</em></td>
+<td>The status of the supplier&#39;s questionnaire</td>
 </tr>
 <tr>
 <td>questionnaireRagStatus</td>
-<td><em>[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
+<td>The RAG status of the supplier&#39;s questionnaire</td>
 </tr>
 <tr>
 <td>tagged</td>
 <td><em>Boolean</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>Denotes if the supplier is tagged to your organisation</td>
 </tr>
 <tr>
 <td>helliosId</td>
@@ -1352,23 +1859,18 @@
 </tr>
 <tr>
 <td>riskLevel</td>
-<td><em>[&quot;None&quot;, &quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;]</em></td>
+<td>The risk level of the supplier</td>
 </tr>
 <tr>
 <td>documentRagStatus</td>
-<td><em>[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td><em>Enum[&quot;None&quot;, &quot;Red&quot;, &quot;Amber&quot;, &quot;Green&quot;, &quot;White&quot;]</em></td>
+<td>The RAG status of the supplier&#39;s uploaded documents</td>
 </tr>
 <tr>
 <td>companyRegistrationNumber</td>
 <td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-<tr>
-<td>renewalDeadlinedate</td>
-<td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>Legal registration number of the company</td>
 </tr>
 <tr>
 <td>lastUpdate</td>
@@ -1377,20 +1879,29 @@
 </tr>
 </tbody></table>
 
-<h2 id='taxonomy'>Taxonomy</h2>
+<h2 id='gettemplatedetails-question'><span style="background-color:#39FF14">GetTemplateDetails.Question</span></h2>
+
+<p><span style="background-color:#39FF14">Should this be called GetReportLabels.Question</span></p>
 
 <blockquote>
 <p>Taxonomy Example</p>
 </blockquote>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"question"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"shortId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiryDateForDocumentQuestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"answerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"reportLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<p>The <code>Taxonomy</code> schema is used in the <a href="#question">Question</a> schema and contains the following properties:</p>
+<p>The <code>Question</code> schema is used in the <a href="#getreportlabels">GetReportLabels</a> method and contains the following properties:</p>
 
 <table><thead>
 <tr>
@@ -1400,124 +1911,69 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>taxonomyId</td>
+<td>shortId</td>
+<td><em>String</em></td>
+<td>A unique indentifer for the question</td>
+</tr>
+<tr>
+<td>content</td>
+<td><em>String</em></td>
+<td>The question text</td>
+</tr>
+<tr>
+<td>expiryDateForDocumentQuestion</td>
 <td><em>UUID</em></td>
-<td>The unique identifier of the taxonomy</td>
-</tr>
-<tr>
-<td>description</td>
-<td><em>String</em></td>
-<td>The description of the taxonomy</td>
-</tr>
-<tr>
-<td>code</td>
-<td><em>String</em></td>
 <td><span style="background-color:#39FF14">???</span></td>
 </tr>
+<tr>
+<td>answerType</td>
+<td><em>Enum[&quot;None&quot;, &quot;FreeText&quot;, &quot;Number&quot;, &quot;SingleSelect&quot;, &quot;Date&quot;, &quot;MultipleSelect&quot;, &quot;YesNo&quot;, &quot;Document&quot;, &quot;Taxonomy&quot;]</em></td>
+<td>The input type of the question</td>
+</tr>
+<tr>
+<td>answerOptions</td>
+<td><em><a href="#gettemplatedetails-answeroption">GetTemplateDetails.AnswerOption[]</a></em></td>
+<td>An array of the possible options</td>
+</tr>
+<tr>
+<td>reportLabel</td>
+<td><em>String</em></td>
+<td>Report label as visible via reporting module UI</td>
+</tr>
 </tbody></table>
-<h1 id='putting-it-all-together'>Putting it all together</h1>
-<p>In this section we&#39;ll walk through how to use the Hellios API in practice.</p>
 
-<p>In most instances, the starting point will be to retrieve a list of suppliers using the <code>GetSuppliers</code> method.</p>
+<h2 id='gettemplatedetails-answeroption'><span style="background-color:#39FF14">GetTemplateDetails.AnswerOption<span></h2>
 
-<p>Aside from the pagination parameters, the <code>GetSuppliers</code> method takes three other parameters that allow you to retrieve all suppliers, just the suppliers tagged to your organisation and even suppliers that have &#39;Expired&#39;.</p>
+<p><span style="background-color:#39FF14">Should this be called GetReportLabels.AnswerOption</span></p>
 
-<p><code>GetSuppliers</code> includes the following three parameters that you can set - <code>searchTerm</code>, <code>onlyTagged</code> and <code>includeExpired</code></p>
+<blockquote>
+<p>Taxonomy Example</p>
+</blockquote>
 
-<p>Here are some example scenarios to consider:</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"answerOption"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 
-<p><strong>Example scenario 1</strong></p>
+<p>The <code>AnswerOption</code> schema is used in the <a href="#gettemplatedetails-question">GetTemplateDetails.Question</a> schema and contains the following properties:</p>
 
-<p>You want to update your systems with the latest supplier information from Hellios, but only for suppliers associated with your organisation.</p>
-
-<ul>
-<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
-<li><code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/></li>
-<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
-</ul>
-
-<p>Next: Use <code>GetSupplierDetails</code> to return data for suppliers</p>
-
-<p><strong>Example scenario 2</strong></p>
-
-<p>You want to find information for an individual supplier.</p>
-
-<ul>
-<li><code>searchTerm: [Enter name of supplier]]</code> - use searchTerm to locate the supplier you want data for<br/></li>
-<li><code>onlyTagged: False</code> - this is not relevant as you are searching for a specific supplier<br/></li>
-<li><code>includeExpired: True</code> - setting this to True ensures you bring back all suppliers, including those that have expired, in case the individual supplier you are looking for has expired</li>
-</ul>
-
-<p>Next: Use <code>GetSupplierDetails</code> to return data for the specific supplier</p>
-
-<p><strong>Example scenario 3</strong></p>
-
-<p>You want to locate your organisation&#39;s suppliers with a particular status and/or renewal date.</p>
-
-<ul>
-<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
-<li><code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/></li>
-<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
-</ul>
-
-<p>Next: Use <code>GetSupplierDetails</code> to return data for suppliers which you can then loop through to find those suppliers with a particular status and/or renewal date</p>
-
-<p><strong>Example scenario 4</strong></p>
-
-<p>You want to source a group of suppliers based on specific questions.</p>
-
-<ul>
-<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
-<li><code>onlyTagged: False</code> - set to false because you want all suppliers, not just those tagged to your organisation<br/></li>
-<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
-</ul>
-
-<p>Next: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. </p>
-
-<p><strong>Example scenario 5</strong></p>
-
-<p>You want to find all of your organisation&#39;s suppliers whose insurance documents have expired.</p>
-
-<ul>
-<li><code>searchTerm: N/A</code> - no need to limit your search, you want to find all suppliers<br/></li>
-<li><code>onlyTagged: True</code> - this limits the reponse to include only suppliers tagged to your organisation<br/></li>
-<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired, as they are still relevant to your requirement</li>
-</ul>
-
-<p>Next: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. </p>
-
-<p>There are of course many other examples, but the ones listed above demonstrate how to approach using the <code>GetSuppliers</code> to request just the suppliers you need.</p>
-
-<p>Now you have your JSON list of suppliers, obtained using <code>GetSuppliers</code>, you can either locate an individual supplier or a group of suppliers by parsing the JSON returned by <code>GetSuppliers</code>.</p>
-
-<p><strong>Locating an individual supplier</strong></p>
-
-<p><code>GetSuppliers</code> returns an array of suppliers. If you didn&#39;t specify a <code>searchTerm</code> within your <code>GetSuppliers</code> request to limit your response, you will potentially have a large number of suppliers in your array. Parsing (looping through) the JSON returned by <code>GetSuppliers</code>, will enable you to locate a specific supplier by querying the &#39;companyName&#39; attribute.</p>
-
-<p>Once you have located the supplier record, make note of the &#39;externalId&#39; attribute. Pass this value into the <code>GetSupplierDetails</code> method to pull all data for a specific individual supplier.</p>
-
-<p><strong>Looping through GetSuppliers response data</strong></p>
-
-<p>Unless you are limiting the response from <code>GetSuppliers</code> by using &#39;searchTerm&#39; to pinpoint specific suppliers (or an individual supplier), the volume of the data typically returned by <code<GetSuppliers</code> will be substantial. <code>GetSuppliers</code> essentially returns an array of suppliers.</p>
-
-<p>In many cases, it will be necessary to loop through the array of suppliers returned by <code>GetSuppliers</code>. Core data such as the supplier&#39;s questionnaire status, risk level, renewal date etc is returned through <code>GetSuppliers</code> so if you are looking to find suppliers based on this level of information, you simply need to filter the JSON data returned by <code>GetSuppliers</code>.</p>
-
-<p>However, often you will want to find suppliers based on data such as answers to specific questions, document validity or H score etc. In such cases, it is necessary to request a full dataset for each supplier using <code>GetSupplierDetails</code>On each cycle of the loop, you will need to pass the &#39;externalId&#39; value from <code>GetSuppliers</code> into <code>GetSupplierDetails</code> to get the full dataset of information for each supplier.</p>
-
-<p>The code opposite shows how to loop through the JSON returned by <code>GetSuppliers</code> and query <code>GetSupplierDetails</code> on each loop.
-<span style="background-color:#39FF14">EXAMPLE CODE OF HOW TO LOOP THROUGH JSON REQUIRED????</span></p>
-
-<p><strong>Finding answers to specific questions</strong>
-At this point, you will have successfully pulled a list of relevant suppliers using <code>GetSuppliers</code>, looped through this list and pulled the full dataset for each supplier. The data returned includes report labels as the reference point for questionnaire questions. These the same report labels that are used in the Hellios UI reporting and dashboard tools.</p>
-
-<p>To help you match report labels with questionnaire questions, use the <code>GetReportLabels</code> method to retrieve a full list of all current active report labels. Use this information as a &#39;lookup&#39; reference to find the report label(s) for question(s) you are interested in.</p>
-
-<p>To locate suppliers who have answered specific questions in a certain way, filter the data returned using the answers given per report label this data to locate the information you require.</p>
-
-<p><strong>Retrieving supplier documents</strong>
-Also included within the data returned (per supplier) via <code>GetSupplierDetails</code> are the unique identifiers and expiry dates of all documents relevant to that supplier. The data information can be used to find suppliers whose documents have expired for example. to obtain a copy of the actual document, pass the unique document identifier (documentId) from <code>GetSupplierDetails</code< into <code>GetDocument</code> as &#39;documentIdentifier&#39; - the PDF file to be returned.</p>
-<h1 id='errors'>Errors</h1>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td><em>String</em></td>
+<td>A possible answer to the question</td>
+</tr>
+</tbody></table>
+<h1 id='response-amp-error-codes'>Response &amp; Error Codes</h1>
 <p>Hellios uses standard response codes to show the result of a request. The following table shows the possible response codes and their meaning.</p>
+
+<p><span style="background-color:#39FF14">Val - please check/confirm how many of these error codes are being used. For example is Forbidden, 401 or 403</span></p>
 
 <table><thead>
 <tr>
@@ -1535,7 +1991,11 @@ Also included within the data returned (per supplier) via <code>GetSupplierDetai
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized - Your API key is missing or wrong.</td>
+<td>Unauthorized - Your Client ID and/or Client Secret is missing or wrong.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Forbidden - Your API key is missing or wrong.</td>
 </tr>
 <tr>
 <td>403</td>

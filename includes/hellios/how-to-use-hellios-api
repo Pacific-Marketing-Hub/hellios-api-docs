@@ -1,0 +1,84 @@
+<h1 id='how-to-use-the-hellios-api'>How to use the Hellios API</h1>
+<p>In this section we&#39;ll walk through how to use the Hellios API in practice.</p>
+
+<p>In most instances, the starting point will be to retrieve a list of suppliers using the <code>GetSuppliers</code> method.</p>
+
+<p>Aside from the pagination parameters, the <code>GetSuppliers</code> method takes three other parameters that allow you to retrieve all suppliers, just the suppliers tagged to your organisation and even suppliers that have &#39;Expired&#39;.</p>
+
+<p><code>GetSuppliers</code> includes the following three parameters that you can set - <code>searchTerm</code>, <code>onlyTagged</code> and <code>includeExpired</code></p>
+
+<p>Here are some example scenarios to consider:</p>
+<h3 id='example-scenario-1-bulk-update-supplier-information'>Example scenario 1: Bulk update supplier information</h3>
+<p>You want to update your systems with the latest supplier information from Hellios, but only for suppliers associated with your organisation.</p>
+
+<ul>
+<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
+<li><code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
+</ul>
+
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers</p>
+<h3 id='example-scenario-2-find-information-for-a-supplier'>Example scenario 2: Find information for a supplier</h3>
+<p>You want to find information for an individual supplier.</p>
+
+<ul>
+<li><code>searchTerm: [Enter name of supplier]]</code> - use searchTerm to locate the supplier you want data for<br/></li>
+<li><code>onlyTagged: False</code> - this is not relevant as you are searching for a specific supplier<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all suppliers, including those that have expired, in case the individual supplier you are looking for has expired</li>
+</ul>
+
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for the specific supplier</p>
+<h3 id='example-scenario-3-find-suppliers-with-particular-status-and-or-renewal-date'>Example scenario 3: Find suppliers with particular status and/or renewal date</h3>
+<p>You want to locate your organisation&#39;s suppliers with a particular status and/or renewal date.</p>
+
+<ul>
+<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
+<li><code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
+</ul>
+
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers which you can then loop through to find those suppliers with a particular status and/or renewal date</p>
+<h3 id='example-scenario-4-source-group-of-suppliers-based-on-answers-given'>Example scenario 4: Source group of suppliers based on answers given</h3>
+<p>You want to source a group of suppliers based on specific questions.</p>
+
+<ul>
+<li><code>searchTerm: N/A</code> - no need to specify a search term as you want all suppliers<br/></li>
+<li><code>onlyTagged: False</code> - set to false because you want all suppliers, not just those tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired</li>
+</ul>
+
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. </p>
+<h3 id='example-scenario-5-find-suppliers-whose-documents-have-expired'>Example scenario 5: Find suppliers whose documents have expired</h3>
+<p>You want to find all of your organisation&#39;s suppliers whose insurance documents have expired.</p>
+
+<ul>
+<li><code>searchTerm: N/A</code> - no need to limit your search, you want to find all suppliers<br/></li>
+<li><code>onlyTagged: True</code> - this limits the reponse to include only suppliers tagged to your organisation<br/></li>
+<li><code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired, as they are still relevant to your requirement</li>
+</ul>
+
+<p>Next step: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. </p>
+
+<p>There are of course many other examples, but the ones listed above demonstrate how to approach using the <code>GetSuppliers</code> to request just the suppliers you need.</p>
+
+<p>Now you have your JSON list of suppliers, obtained using <code>GetSuppliers</code>, you can either locate an individual supplier or a group of suppliers by parsing the JSON returned by <code>GetSuppliers</code>.</p>
+<h3 id='locating-an-individual-supplier'>Locating an individual supplier</h3>
+<p><code>GetSuppliers</code> returns an array of suppliers. If you didn&#39;t specify a <code>searchTerm</code> within your <code>GetSuppliers</code> request to limit your response, you will potentially have a large number of suppliers in your array. Parsing (looping through) the JSON returned by <code>GetSuppliers</code>, will enable you to locate a specific supplier by querying the &#39;companyName&#39; attribute.</p>
+
+<p>Once you have located the supplier record, make note of the &#39;externalId&#39; attribute. Pass this value into the <code>GetSupplierDetails</code> method to pull all data for a specific individual supplier.</p>
+<h3 id='looping-through-getsuppliers-response-data'>Looping through GetSuppliers response data</h3>
+<p>Unless you are limiting the response from <code>GetSuppliers</code> by using &#39;searchTerm&#39; to pinpoint specific suppliers (or an individual supplier), the volume of the data typically returned by <code<GetSuppliers</code> will be substantial. <code>GetSuppliers</code> essentially returns an array of suppliers.</p>
+
+<p>In many cases, it will be necessary to loop through the array of suppliers returned by <code>GetSuppliers</code>. Core data such as the supplier&#39;s questionnaire status, risk level, renewal date etc is returned through <code>GetSuppliers</code> so if you are looking to find suppliers based on this level of information, you simply need to filter the JSON data returned by <code>GetSuppliers</code>.</p>
+
+<p>However, often you will want to find suppliers based on data such as answers to specific questions, document validity or H score etc. In such cases, it is necessary to request a full dataset for each supplier using <code>GetSupplierDetails</code>On each cycle of the loop, you will need to pass the &#39;externalId&#39; value from <code>GetSuppliers</code> into <code>GetSupplierDetails</code> to get the full dataset of information for each supplier.</p>
+
+<p>The code opposite shows how to loop through the JSON returned by <code>GetSuppliers</code> and query <code>GetSupplierDetails</code> on each loop.</p>
+<h3 id='finding-answers-to-specific-questions'>Finding answers to specific questions</h3>
+<p>At this point, you will have successfully pulled a list of relevant suppliers using <code>GetSuppliers</code>, looped through this list and pulled the full dataset for each supplier. The data returned includes report labels as the reference point for questionnaire questions. These the same report labels that are used in the Hellios UI reporting and dashboard tools.</p>
+
+<p>To help you match report labels with questionnaire questions, use the <code>GetReportLabels</code> method to retrieve a full list of all current active report labels. Use this information as a &#39;lookup&#39; reference to find the report label(s) for question(s) you are interested in.</p>
+
+<p>To locate suppliers who have answered specific questions in a certain way, filter the data returned using the answers given per report label this data to locate the information you require.</p>
+<h3 id='retrieving-supplier-documents'>Retrieving supplier documents</h3>
+<p>Also included within the data returned (per supplier) via <code>GetSupplierDetails</code> are the unique identifiers and expiry dates of all documents relevant to that supplier. The data information can be used to find suppliers whose documents have expired for example. to obtain a copy of the actual document, pass the unique document identifier (documentId) from <code>GetSupplierDetails</code< into <code>GetDocument</code> as &#39;documentIdentifier&#39; - the PDF file to be returned.</p>
