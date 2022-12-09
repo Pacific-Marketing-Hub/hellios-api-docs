@@ -1,4 +1,4 @@
-# Putting it all together
+# How to use the Hellios API
 
 In this section we'll walk through how to use the Hellios API in practice.
 
@@ -10,7 +10,7 @@ Aside from the pagination parameters, the <code>GetSuppliers</code> method takes
 
 Here are some example scenarios to consider:
 
-**Example scenario 1**
+###Example scenario 1: Bulk update supplier information
 
 You want to update your systems with the latest supplier information from Hellios, but only for suppliers associated with your organisation.
 
@@ -18,9 +18,9 @@ You want to update your systems with the latest supplier information from Hellio
 - <code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/>
 - <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired
 
-Next: Use <code>GetSupplierDetails</code> to return data for suppliers
+Next step: Use <code>GetSupplierDetails</code> to return data for suppliers
 
-**Example scenario 2**
+###Example scenario 2: Find information for a supplier
 
 You want to find information for an individual supplier.
 
@@ -29,9 +29,9 @@ You want to find information for an individual supplier.
 - <code>includeExpired: True</code> - setting this to True ensures you bring back all suppliers, including those that have expired, in case the individual supplier you are looking for has expired
 
 
-Next: Use <code>GetSupplierDetails</code> to return data for the specific supplier
+Next step: Use <code>GetSupplierDetails</code> to return data for the specific supplier
 
-**Example scenario 3**
+###Example scenario 3: Find suppliers with particular status and/or renewal date
 
 You want to locate your organisation's suppliers with a particular status and/or renewal date.
 
@@ -39,9 +39,9 @@ You want to locate your organisation's suppliers with a particular status and/or
 - <code>onlyTagged: True</code> - this limits the reponse to only include suppliers tagged to your organisation<br/>
 - <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired
 
-Next: Use <code>GetSupplierDetails</code> to return data for suppliers which you can then loop through to find those suppliers with a particular status and/or renewal date
+Next step: Use <code>GetSupplierDetails</code> to return data for suppliers which you can then loop through to find those suppliers with a particular status and/or renewal date
 
-**Example scenario 4**
+###Example scenario 4: Source group of suppliers based on answers given
 
 You want to source a group of suppliers based on specific questions.
 
@@ -49,9 +49,9 @@ You want to source a group of suppliers based on specific questions.
 - <code>onlyTagged: False</code> - set to false because you want all suppliers, not just those tagged to your organisation<br/>
 - <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired
 
-Next: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. 
+Next step: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. 
 
-**Example scenario 5**
+###Example scenario 5: Find suppliers whose documents have expired
 
 You want to find all of your organisation's suppliers whose insurance documents have expired.
 
@@ -59,19 +59,19 @@ You want to find all of your organisation's suppliers whose insurance documents 
 - <code>onlyTagged: True</code> - this limits the reponse to include only suppliers tagged to your organisation<br/>
 - <code>includeExpired: True</code> - setting this to True ensures you bring back all relevant suppliers, including those that have expired, as they are still relevant to your requirement
 
-Next: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. 
+Next step: Use <code>GetSupplierDetails</code> to return data for suppliers and loop through, using <code>GetReportLabels</code> to determine which questions you want to check the data for. 
 
 There are of course many other examples, but the ones listed above demonstrate how to approach using the <code>GetSuppliers</code> to request just the suppliers you need.
 
 Now you have your JSON list of suppliers, obtained using <code>GetSuppliers</code>, you can either locate an individual supplier or a group of suppliers by parsing the JSON returned by <code>GetSuppliers</code>.
 
-**Locating an individual supplier**
+###Locating an individual supplier
 
 <code>GetSuppliers</code> returns an array of suppliers. If you didn't specify a <code>searchTerm</code> within your <code>GetSuppliers</code> request to limit your response, you will potentially have a large number of suppliers in your array. Parsing (looping through) the JSON returned by <code>GetSuppliers</code>, will enable you to locate a specific supplier by querying the 'companyName' attribute.
 
 Once you have located the supplier record, make note of the 'externalId' attribute. Pass this value into the <code>GetSupplierDetails</code> method to pull all data for a specific individual supplier.
 
-**Looping through GetSuppliers response data**
+###Looping through GetSuppliers response data
 
 Unless you are limiting the response from <code>GetSuppliers</code> by using 'searchTerm' to pinpoint specific suppliers (or an individual supplier), the volume of the data typically returned by <code<GetSuppliers</code> will be substantial. <code>GetSuppliers</code> essentially returns an array of suppliers.
 
@@ -80,9 +80,8 @@ In many cases, it will be necessary to loop through the array of suppliers retur
 However, often you will want to find suppliers based on data such as answers to specific questions, document validity or H score etc. In such cases, it is necessary to request a full dataset for each supplier using <code>GetSupplierDetails</code>On each cycle of the loop, you will need to pass the 'externalId' value from <code>GetSuppliers</code> into <code>GetSupplierDetails</code> to get the full dataset of information for each supplier.
 
 The code opposite shows how to loop through the JSON returned by <code>GetSuppliers</code> and query <code>GetSupplierDetails</code> on each loop.
-<span style="background-color:#39FF14">EXAMPLE CODE OF HOW TO LOOP THROUGH JSON REQUIRED????</span>
 
-**Finding answers to specific questions**
+###Finding answers to specific questions
 At this point, you will have successfully pulled a list of relevant suppliers using <code>GetSuppliers</code>, looped through this list and pulled the full dataset for each supplier. The data returned includes report labels as the reference point for questionnaire questions. These the same report labels that are used in the Hellios UI reporting and dashboard tools.
 
 To help you match report labels with questionnaire questions, use the <code>GetReportLabels</code> method to retrieve a full list of all current active report labels. Use this information as a 'lookup' reference to find the report label(s) for question(s) you are interested in.
@@ -90,6 +89,6 @@ To help you match report labels with questionnaire questions, use the <code>GetR
 To locate suppliers who have answered specific questions in a certain way, filter the data returned using the answers given per report label this data to locate the information you require.
 
 
-**Retrieving supplier documents**
+###Retrieving supplier documents
 Also included within the data returned (per supplier) via <code>GetSupplierDetails</code> are the unique identifiers and expiry dates of all documents relevant to that supplier. The data information can be used to find suppliers whose documents have expired for example. to obtain a copy of the actual document, pass the unique document identifier (documentId) from <code>GetSupplierDetails</code< into <code>GetDocument</code> as 'documentIdentifier' - the PDF file to be returned.
 

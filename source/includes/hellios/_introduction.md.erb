@@ -1,8 +1,70 @@
 # Introduction: Hellios API
+
+##Overview
+
 Welcome to the Hellios API documentation.
 
 The Hellios API has been built to allow Hellios' customers to access their supplier questionnaire information programmatically without needing to sign into the Hellios portal. 
 
-The API adheres to the principles of <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. <span style="background-color:#39FF14">It uses resource-oriented URLs, accepts <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms" target="blank">form-encoded</a> request bodies and returns <a href="https://www.json.org/json-en.html" target="_blank">JSON</a>-encoded responses. It uses standard HTTP response codes, authentication, and verbs.</span>
+The Hellios API provides access to validated and published supplier information, including:
 
+- Questionnaire and document statuses
+- Contact information
+- Risk Level
+- HScore & Financial information
+- Renewal date
+- All answers to validated and published questionnaire questions
+- All validated and published documents uploaded by the supplier
+
+The API is built around four core methods that enable the customer to access:
+
+- A list of all suppliers, both those tagged to their organisation and the wider pool within the community
+- All information validated and published by Hellios for an individual supplier, including answers to specific questions
+- All validated and published documents uploaded by each supplier
+- A list of report labels
+
+We envisage customers using the API to in one of two ways:
+
+- To access validated and published supplier information on demand
+- To download and locally cache validated and published supplier information in bulk
+
+In both scenarios, the primary objective is to allow customers to integrate supplier information validated and published on the Hellios platform into their own systems. 
+
+##Example Use Cases
+
+The examples below show just some of the way the Hellios API could be used. 
+
+In each case, the information could be for all suppliers on the Hellios platform or just those suppliers tagged to your organisation
+
+- Get status information for  suppliers
+- Get validated and published questionnaire answers for suppliers 
+- Find suppliers whose information has recently changed
+- Get an individual supplier's status information
+- Get an individual supplier validated and published questionnaire answers
+- Identify groups and volume of your suppliers based on common status (eg. Completed, Expired etc)
+- Source a group of suppliers based on particular answers given / information provided
+- Shortlist suppliers based on product/service code(s)
+- Download documents for a specific supplier or for groups of suppliers (eg. insurance certificates, policy documents etc)
+
+##Principles
+The API adheres to the principles of <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. It uses resource-oriented URLs, accepts <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms" target="blank">form-encoded</a> request bodies and returns <a href="https://www.json.org/json-en.html" target="_blank">JSON</a>-encoded and <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a>-encoded responses. It uses standard HTTP response codes, authentication, and verbs, although please note that the Hellios API is read-only so only the GET HTTP verb is applicable.
+
+##Data format
+Data can be returned from the Hellios API in either <a href="https://www.json.org/json-en.html" target="_blank">JSON</a> or <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a> format to enable the widest possibility of integrations.
+
+##Direction
 The Hellios API is READ-ONLY. Data can only be consumed, no changes or updates can be made via the API.
+
+##Throttling & Limits
+The Hellios API enforces the following limits per customer:
+
+Rate/hr -> 3600<br/>
+- This is the max number of api calls within 1 hour and equals a steady state rate of 1 request per second.
+
+Burst -> 5<br/>
+- This is the max number of concurrent requests and equals a maximum of 5 requests per second.
+
+##Environments
+The Hellios API is available for both Staging and Production environments. Separate <a href="#authcreds">authentication credentials</a> will be required for each environment.
+
+By providing access to the Hellios Staging environment, customers are able to post test data when developing their integration.

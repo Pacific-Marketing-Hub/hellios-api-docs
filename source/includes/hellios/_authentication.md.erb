@@ -1,4 +1,81 @@
 # Authentication
-The Hellios API uses API Keys for authentication.
 
-<span style="background-color:#39FF14">Need Authentication content to go here</span>
+##Credentials
+<a name="authcreds"></a>
+To access the Hellios API, you will need the following five credentials:
+
+- Authentication URL
+- External API Base URL
+- Client ID
+- Client Secret
+- API Key
+
+These credentials will be issued to you by Hellios.
+
+##Authentication process
+Regardless of whether you are connecting to the Staging or Production environment, the method for authentication is the same, but please note that Staging and Production environments each require their own set of credentials.
+
+The authentication process flow is summarised in the following diagram:
+
+<img src="../images/authentication_flow.png">
+
+###Step 1: Authenticate
+
+<a name="authstep1"></a>
+
+Authentication is through the Hellios authentication server and requires the following credentials to be provided:
+
+- Client ID
+- Client Secret
+
+The API call configuration is as follows:
+
+<span style="font-family:Courier;">
+URL: xxxxxxxx<br/>
+Method: POST<br/>
+Headers:<br/>
+Content-Type application/x-www-form-urlencoded<br/>
+Body:<br/>
+grant_type=client_credentials&client_id={CLIENT ID HERE}&client_secret=
+{CLIENT SECRET HERE}
+</span>
+
+###Step 2: Authentication Token
+
+If the request is successful you will receive an authentication token which you can use to get data from the Hellios API.
+
+###Step 3: Making an authenticated call to get data from the Hellios API
+
+To make a call you will require the following:
+
+- The token generated in <a href="#authstep1">step 1</a>
+- An API key which will be supplied by Hellios
+
+The following sample code shows how the GetSuppliers method would be called for example. Note the 'Accept' header being used to specify whether the response is returned as XML or JSON.
+
+<span style="font-family:Courier;">
+URL: /v1_0/buyer/supplier?pageIndex=1&pageSize=10<br/>
+Method: GET<br/>
+Headers:<br/>
+Authorization Bearer {Token generated on step 1}<br/>
+x-api-key {Supplied bu Hellios}<br/>
+Accept application/xml OR application/json<br/>
+Body:<br/>
+</span>
+
+
+
+###Step 4: API response
+
+The response will be received in the format requested in the Accept header (either XML or JSON.)
+
+### Expired authentication
+If the response status is 401 unauthorized a new authentication request must be made using step 1 and step 2.
+
+###Troubleshooting other 401 response statuses
+
+401 - Unauthorized<br/>
+Check client secret and client id.
+
+401 - Forbidden<br/>
+Check api key is correct

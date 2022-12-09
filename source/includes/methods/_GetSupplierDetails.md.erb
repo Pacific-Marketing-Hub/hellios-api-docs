@@ -8,7 +8,7 @@ It is designed to work in association with <code>GetSuppliers</code>, and uses t
 
 ### Endpoint
 
-<code>GET /buyer/supplierdetails/v1_0/{supplierExternalId} </code>
+<code>GET /v1_0/buyer/supplierdetails/{supplierExternalId} </code>
 
 ### Parameters
 
@@ -16,7 +16,7 @@ The <code>GetSupplierDetails</code> method accepts the following parameters.
 
 <code>supplierExternalId</code>
 
-Use to specify which supplier you want to retrieve information for. <span style="background-color:#39FF14">The supplierExternalId value is a 16-digit, alphanumeric _guid_ and will look similar to '1234-sdfsd-we34-QEW3'.</span>
+Use <code>supplierExternalId</code> to specify which supplier you want to retrieve information for.
 
 _Type:_ String<br/>
 _Value(s):_ externalId (obtained from <code>GetSuppliers</code> method)<br/>
@@ -105,6 +105,199 @@ The <code>GetSupplierDetails</code> method returns all information held about th
 
 | Attribute      | Type                                            | Description                                                                      |
 | -------------- | ----------------------------------------------- | -------------------------------------------------------------------------------- |
-| supplier       | _<a href="/#supplierdetails">SupplierDetails</a>_ | Information about the supplier <span style="background-color:#39FF14">???</span> |
-| specificFields | _<a href="#specificfield">SpecificField[]</a>_    | <span style="background-color:#39FF14">???</span>                                |
-| questionnaire  | _<a href="#question">Question[]</a>_              | An array of questions related to the supplier                                    |
+| supplier       | _<a href="/#supplierdetails">SupplierDetails</a>_ | Identification for the supplier, contact information and statuses  |
+| specificFields | _<a href="#specificfield">SpecificField[]</a>_    | Fields/data that are defined by and specific to your organisation only (eg. Business units, comments.) These fields can be viewed in the Hellios platform via the 'Your information' screen.              |
+| questionnaire  | _<a href="#question">Question[]</a>_              | An array of answers provided by the supplier when completing their questionnaire |
+
+Please note: <code>GetSupplierDetails</code> will only return validated and published data for suppliers.
+
+Each response includes an element called "questionnaire" which contains the reportLabel (used to identify the question) and an answer. Each answer can be one of the following eight types:
+
+- Free text
+- Number
+- Single select
+- Date
+- Multiple select (comma separated)
+- True/False
+- Document
+- taxonomy
+
+The first six types are answer to a question given by the supplier when completing their questionnaire.
+
+The Document type contains a unique identifier for an individual document associated to the supplier
+
+The taxonomy type contains product/service codes selected by the supplier when completing their questionnaire
+
+**Examples**<br>
+In the examples below, we have highlighted the answer values. For the first the six types, the answer is included within the "values" element. For documents, the answer is includded in the "document" element and for taxonomy, the answer is included in the "taxonomy" element.
+
+**Free Text**<br/>
+{
+      "reportLabel": "1.1.3.1_Address1",
+      "response": {
+        "questionType": 1,
+        "repeatableGroupId": null,
+        **"values": [
+          "Across the street, no 7"
+        ]**,
+        "document": null,
+        "taxonomy": null
+      },
+      "repeatableGroupId": null
+    }
+
+**Number**<br/>
+{
+      "reportLabel": "1.3.6_CompAnnualRevenue",
+      "response": {
+        "questionType": 2,
+        "repeatableGroupId": null,
+        **"values": [
+          "10000000"
+        ]**,
+        "document": null,
+        "taxonomy": null
+      },
+      "repeatableGroupId": null
+    }
+
+**Single Select**<br/>
+{
+"reportLabel": "1.1.3.6_Country",
+"response": {
+  "questionType": 3,
+  "repeatableGroupId": null,
+  **"values": [
+    "United Kingdom"
+  ]**,
+  "document": null,
+  "taxonomy": null
+},
+"repeatableGroupId": null
+}
+
+**Date**<br/>
+{
+    "reportLabel": "2.11.2.7_CEPlusExpiryDate",
+    "response":
+    {
+      "questionType": 4,
+      "repeatableGroupId": null,
+      **"values": [
+        "2023-02-24T00:00:00.000+02:00"
+      ]**,
+      "document": null,
+      "taxonomy": null
+    },
+    "repeatableGroupId": null
+  }
+
+**Multiple Select**
+{
+      "reportLabel": "1.4.2_SelectProviderTypes",
+      "response": {
+        "questionType": 5,
+        "repeatableGroupId": null,
+        **"values": [
+          "Manufacturer",
+          "Agent"
+        ]**,
+        "document": null,
+        "taxonomy": null
+      },
+      "repeatableGroupId": null
+    }
+
+**True/False**<br/>
+  {
+    "reportLabel": "2.11.2_AnnualIdentifyCritInfo",
+    "response":
+    {
+      "questionType": 6,
+      "repeatableGroupId": null,
+      **"values": [
+        "false"
+      ]**,
+      "document": null,
+      "taxonomy": null
+    },
+    "repeatableGroupId": null
+  }
+
+**Document**<br/>
+{
+    "reportLabel": "2.11.2.6_CEPlusCertUpload",
+    "response":
+    {
+      "questionType": 7,
+      "repeatableGroupId": null,
+      "values": null,
+      **"document":
+      {
+        "documentId": "8505ef76-c265-4769-809b-cbc45e44bb6e",
+        "fileName": "pdf-test3.pdf"
+      }**,
+      "taxonomy": null
+    },
+    "repeatableGroupId": null
+  }
+
+**Taxonomy**<br/>
+{
+    "reportLabel": "1.4.1_SelectProductsServices",
+    "response":
+    {
+      "questionType": 8,
+      "repeatableGroupId": null,
+      "values": null,
+      "document": null,
+      **"taxonomy": [
+        {
+          "taxonomyId": "98841548-93bb-47f6-b7c7-856e7a05e017",
+          "description": "Office Communications Equipment",
+          "code": "2.1.1"
+        }
+      ]
+    }**,
+    "repeatableGroupId": null
+  }
+
+**Repeatable Groups**<br/>
+Some questions will include 'repeatable' answers, for example, financial information provided for the past three years would include the fields such as 'Revenue' and 'Gross Profit' for each financial year. 
+
+For this type of question, the answer will include a "repeatableGroupId" value as shown in the example below. Each group (in this case financial year) can be identified by a common "repeatableGroupId" value. In our example below, the 2022 'Financial Year', 'Revenue' and 'Profit/Loss' all contain the "repeatableGroupId" value '88b7a47b-af71-422a-872c-ffe5421f8efe'. Similarly, for the 2021 financial year values, the "repeatableGroupId" value is 'f822c705-4106-4839-b8a6-70b3d8d84287'.
+
+<span style="font-family:Courier;">
+{<br/>
+  "reportLabel": "2.3.1.1_FinancialYear",<br/>
+  "response": { "values": [ "2022" ], },<br/>
+  **"repeatableGroupId": "88b7a47b-af71-422a-872c-ffe5421f8efe"**<br/>
+},<br/>
+{<br/>
+  "reportLabel": "2.3.1.2_Revenue",<br/>
+  "response": { "values": [ "101" ] },<br/>
+  **"repeatableGroupId": "88b7a47b-af71-422a-872c-ffe5421f8efe"**<br/>
+},<br/>
+{<br/>
+  "reportLabel": "2.3.1.3_Profit/Loss",<br/>
+  "response": { "values": [ "10" ] },<br/>
+  **"repeatableGroupId": "88b7a47b-af71-422a-872c-ffe5421f8efe"**<br/>
+}<br/>
+{<br/>
+  "reportLabel": "2.3.1.1_FinancialYear",<br/>
+  "response": { "values": [ "2021" ], },<br/>
+  "repeatableGroupId": "f822c705-4106-4839-b8a6-70b3d8d84287"<br/>
+},<br/>
+{<br/>
+  "reportLabel": "2.3.1.2_Revenue",<br/>
+  "response": { "values": [ "202" ] },<br/>
+  "repeatableGroupId": "f822c705-4106-4839-b8a6-70b3d8d84287"<br/>
+},<br/>
+{<br/>
+  "reportLabel": "2.3.1.3_Profit/Loss",<br/>
+  "response": { "values": [ "20" ] },<br/>
+  "repeatableGroupId": "f822c705-4106-4839-b8a6-70b3d8d84287"<br/>
+}<br/>
+
+</span>
+

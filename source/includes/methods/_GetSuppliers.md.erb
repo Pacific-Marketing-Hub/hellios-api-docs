@@ -2,7 +2,9 @@
 
 ## GetSuppliers
 
-The <code>GetSuppliers</code> method can be used to retrieve a list of suppliers from the Hellios Odyssey platform via the external API. The method accepts various parameters to allow you to:
+The <code>GetSuppliers</code> method can be used to retrieve a list of suppliers from the Hellios platform via the external API. 
+
+The method accepts various parameters to allow you to:
 
 - Search for a specific group of suppliers
 - Choose between all suppliers or only those tagged to your organisation
@@ -12,7 +14,7 @@ The <code>GetSuppliers</code> method can be used to retrieve a list of suppliers
 
 ### Endpoint
 
-<code>GET /buyer/supplier/v1_0</code>
+<code>GET /v1_0/buyer/supplier</code>
 
 ### Parameters
 
@@ -20,10 +22,19 @@ The <code>GetSuppliers</code> method accepts the following parameters.
 
 **<code>searchTerm</code>**
 
-Can be used to search for a specific group of suppliers or an individual supplier. The <code>searchTerm</code> parameter accepts alphanumeric characters to search for supplier name(s), Vendor ID to search for suppliers tagged to your organisation, or Hellios ID to search for an individual supplier. <span style="background-color:#39FF14">When searching against supplier name(s), the search will look for an exact match to the characters specified in the search term, within any part of the supplier name.</span>
+Can be used to search for a specific group of suppliers or an individual supplier. The <code>searchTerm</code> parameter accepts alphanumeric characters to search for
+
+- Supplier name
+- Location
+- Company registration number
+- Trading name, trading name2 or trading name 3
+- Vendor ID to search for suppliers tagged to your organisation
+- Hellios ID to search for an individual supplier. 
+
+When searching against supplier name(s), the search will look for a contained match to the characters specified in the search term, within any part of the supplier name. Please note: the search does not accept wildcard characters.
 
 _Type_: String<br/>
-_Value(s):_ Alphanumeric characters <span style="background-color:#39FF14">(min 3 alphanumeric characters)</span>, Vendor ID or Hellios ID<br/>
+_Value(s):_ Alphanumeric characters (min 3 alphanumeric characters), Vendor ID or Hellios ID<br/>
 _Requirement:_ Optional
 
 **<code>onlyTagged</code>**
@@ -45,19 +56,20 @@ _Requirement:_ Optional (if not specified, will default to False)
 <a name="GetSuppliersPageSize"></a>
 **<code>pageSize</code>**
 
-We recommend specifying a page size to limit the total number of results returned via each API call. Use this parameter to set the number of records to be returned per page. <span style="background-color:#39FF14">All results returned will include the number of pages of results available.</span>
+We recommend specifying a page size to limit the total number of results returned via each API call. Use this parameter to set the number of records to be returned per page. All responses will include the number of pages of results available. Please note: <code>pageSize</code> is a mandatory field.
 
 _Type_: Integer ($int32)<br/>
-_Value(s):_ Numeric Integer <span style="background-color:#39FF14">(defaults to 100??????)</span><br>
-_Requirement:_ Optional
+_Value(s):_ Numeric Integer (min. 1 / no max.)<br>
+_Requirement:_ Required
 
 **<code>pageIndex</code>**
 
-Used in conjunction with the <code>pageSize</code> parameter, <code>pageIndex</code> allows a specific page of results to be returned. <span style="background-color:#39FF14">All results returned will include the number of pages of results available.</span>
+Used in conjunction with the <code>pageSize</code> parameter, <code>pageIndex</code> allows a specific page of results to be returned. All responses will include the number of pages of results available. Please note: <code>pageIndex</code> is a mandatory field.
+
 
 _Type_: Integer ($int32)<br/>
-_Value(s):_ Numeric Integer<br>
-_Requirement:_ Optional
+_Value(s):_ Numeric Integer (min. 1 / no max.)<br>
+_Requirement:_ Required
 
 ### GetSuppliers Response
 

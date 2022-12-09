@@ -1,12 +1,15 @@
-# Errors
+# Response &amp; Error Codes
 
 Hellios uses standard response codes to show the result of a request. The following table shows the possible response codes and their meaning.
+
+<span style="background-color:#39FF14">Val - please check/confirm how many of these error codes are being used. For example is Forbidden, 401 or 403</span>
 
 | Error Code | Meaning                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------- |
 | 200        | Success - The request completed without issues.                                           |
 | 400        | Bad Request - Your request is invalid.                                                    |
-| 401        | Unauthorized - Your API key is missing or wrong.                                          |
+| 401        | Unauthorized - Your Client ID and/or Client Secret is missing or wrong.                                          |
+| 401        | Forbidden - Your API key is missing or wrong.                                          |
 | 403        | Forbidden - Your API does not have access to the method.                                  |
 | 404        | Not Found - Method not found.                                                             |
 | 405        | Method Not Allowed - For example you tried to use GET on a POST method.                   |
