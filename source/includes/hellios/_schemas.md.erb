@@ -1,29 +1,31 @@
 # Schemas
-The Hellios API includes 14 response schemas, as follows:
+The Hellios API includes 13 response schemas, as follows:
 
-- <code>Answer</code><br/>
-- <code>Contact</code><br/>
-- <code>Document</code><br/>
-- <code>File</code><br/>
-- <code>HScore</code><br/>
-- <code>Question</code><br/>
-- <code>SpecificField</code><br/>
-- <code>SpecificFieldOption</code><br/>
-- <code>SpecificFieldValue</code><br/>
-- <code>SupplierDetails</code><br/>
-- <code>SupplierInfo</code><br/>
-- <code>Taxonomy</code>
+- <code>CompanyWatch.HScore</code><br/>
+- <code>GetSupplierDetails.Answer</code><br/>
+- <code>GetSupplierDetails.Contact</code><br/>
+- <code>GetSupplierDetails.Document</code><br/>
+- <code>GetSupplierDetails.Question</code><br/>
+- <code>GetSupplierDetails.SpecificField</code><br/>
+- <code>GetSupplierDetails.SpecificFieldOption</code><br/>
+- <code>GetSupplierDetails.SpecificFieldValue</code><br/>
+- <code>GetSupplierDetails.SupplierDetails</code><br/>
+- <code>GetSupplierDetails.Taxonomy</code><br/>
+- <code>SearchSuppliers.SupplierInfo</code><br/>
+- <code>GetTemplateDetails.Question</code><br/>
+- <code>GetTemplateDetails.AnswerOption</code>
 
+<%= partial "includes/schemas/HScore.md.erb" %>
 <%= partial "includes/schemas/Answer.md.erb" %>
 <%= partial "includes/schemas/Contact.md.erb" %>
 <%= partial "includes/schemas/Document.md.erb" %>
-<%= partial "includes/schemas/File.md.erb" %>
-<%= partial "includes/schemas/HScore.md.erb" %>
 <%= partial "includes/schemas/Question.md.erb" %>
 <%= partial "includes/schemas/SpecificField.md.erb" %>
 <%= partial "includes/schemas/SpecificFieldOption.md.erb" %>
 <%= partial "includes/schemas/SpecificFieldValue.md.erb" %>
 <%= partial "includes/schemas/SupplierDetails.md.erb" %>
-<%= partial "includes/schemas/SupplierInfo.md.erb" %>
 <%= partial "includes/schemas/Taxonomy.md.erb" %>
+<%= partial "includes/schemas/SupplierInfo.md.erb" %>
+<%= partial "includes/schemas/ReportLabels.Question.md.erb" %>
+<%= partial "includes/schemas/ReportLabels.AnswerOption.md.erb" %>
 

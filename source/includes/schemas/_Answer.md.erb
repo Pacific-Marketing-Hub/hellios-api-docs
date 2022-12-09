@@ -1,4 +1,4 @@
-## Answer
+## GetSupplierDetails.Answer
 
 > Answer Example
 
@@ -8,14 +8,25 @@
     "string"
   ],
   "questionType": "None",
-  "repeatableGroupId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  "repeatableGroupId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "document":  {
+    "documentId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "fileName": "filename.pdf"
+  },
+  "taxonomy": {
+    "taxonomyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "description": "string",
+    "code": "string"
+  }
 }
 ```
 
-The `Answer` schema is used in the [Question](#question) schema and contains the following properties:
+The `Answer` schema is used in the [GetSupplierDetails.Question](#getsupplierdetails-question) schema and contains the following properties:
 
-| Attribute         | Type                                                                                                      | Description                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| values            | _String[]_                                                                                                | The possible options to the question.         |
-| questionType      | _["None", "FreeText", "Number", "SingleSelect", "Date", "MultipleSelect", "YesNo", "Document", "Taxonomy"]_ | The input types of the questions.             |
-| repeatableGroupId | _UUID_                                                                                                      | <span style="background-color:#39FF14">???</span> |
+| Attribute         | Type                                                                                                            | Description                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| values            | _String[]_                                                                                                      | The possible options to the question.                                                                         |
+| questionType      | _Enum["None", "FreeText", "Number", "SingleSelect", "Date", "MultipleSelect", "YesNo", "Document", "Taxonomy"]_ | The input types of the questions.                                                                             |
+| repeatableGroupId | _UUID_                                                                                                          | The ID of the repeatableGroup this answer belongs to.                                                         |
+| document          | _[GetSupplierDetails.Document](#getsupplierdetails-document)_                                                                                         | Document identifier and filename                                                                              |
+| taxonomy          | _[GetSupplierDetails.Taxonomy[]](#getsupplierdetails-taxonomy)_                                                                                         | The taxonomy type contains product/service codes selected by the supplier when completing their questionnaire |

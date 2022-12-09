@@ -1,0 +1,29 @@
+## <span style="background-color:#39FF14">GetTemplateDetails.Question</span>
+<span style="background-color:#39FF14">Should this be called GetReportLabels.Question</span>
+> Taxonomy Example
+
+```json
+"question":  {
+    "shortId": "string",
+    "content": "string",
+    "expiryDateForDocumentQuestion": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "answerType": "None",
+    "answerOptions": [
+      {
+        "value": "string"
+      }
+    ],
+    "reportLabel": "string"
+  }
+```
+
+The `Question` schema is used in the [GetReportLabels](#getreportlabels) method and contains the following properties:
+
+| Attribute                     | Type                                                                                                            | Description                                       |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| shortId                       | _String_                                                                                                        | A unique indentifer for the question              |
+| content                       | _String_                                                                                                        | The question text                                 |
+| expiryDateForDocumentQuestion | _UUID_                                                                                                          | <span style="background-color:#39FF14">???</span> |
+| answerType                    | _Enum["None", "FreeText", "Number", "SingleSelect", "Date", "MultipleSelect", "YesNo", "Document", "Taxonomy"]_ | The input type of the question                    |
+| answerOptions                 | _[GetTemplateDetails.AnswerOption[]](#gettemplatedetails-answeroption)_                                         | An array of the possible options                  |
+| reportLabel                   | _String_                                                                                                        | Report label as visible via reporting module UI   |

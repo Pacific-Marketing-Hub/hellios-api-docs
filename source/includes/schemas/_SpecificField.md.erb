@@ -1,4 +1,4 @@
-## SpecificField
+## GetSupplierDetails.SpecificField
 
 > SpecificField Example
 
@@ -28,12 +28,12 @@
 
 The `SpecificField` schema is returned from the [GetSupplierDetails](#getsupplierdetails) method and contains the following properties:
 
-| Attribute     | Type                                                                     | Description                                   |
-| ------------- | ------------------------------------------------------------------------ | --------------------------------------------- |
-| id            | _UUID_                                                                     | The specific fields unique identifier         |
-| name          | _String_                                                                   | <span style="background-color:#39FF14">???</span> |
-| type          | _["Document", "Text", "MultilineText", "Select", "MultiSelect", "Toggle"]_| The input type of the options                 |
-| businessValue | _["None", "VendorStatus", "SupplierInactive", "BusinessUnits"]_            | <span style="background-color:#39FF14">???</span> |
-| options       | _[SpecificFieldOption[]](#specificfieldoption)_                           | <span style="background-color:#39FF14">???</span> |
-| values        | _[SpecificFieldValue[]](#specificfieldvalue)_                             | <span style="background-color:#39FF14">???</span> |
-| order         | _Integer_                                                                  | <span style="background-color:#39FF14">???</span> |
+| Attribute     | Type                                                                           | Description                                             |
+| ------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------- |
+| id            | _UUID_                                                                         | The specific fields unique identifier                   |
+| name          | _String_                                                                       | The name of the specific field                          |
+| type          | _Enum["Document", "Text", "MultilineText", "Select", "MultiSelect", "Toggle"]_ | The input type of the options                           |
+| businessValue | _Enum["None", "VendorStatus", "SupplierInactive", "BusinessUnits"]_            | <span style="background-color:#39FF14">???</span>       |
+| options       | _[GetSupplierDetails.SpecificFieldOption[]](#getsupplierdetails-specificfieldoption)_                                | An array of the possible options for the specific field |
+| values        | _[GetSupplierDetails.SpecificFieldValue[]](#getsupplierdetails-specificfieldvalue)_                                  | An array of current values of this field                |
+| order         | _Integer_                                                                      | <span style="background-color:#39FF14">???</span>       |

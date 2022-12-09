@@ -1,8 +1,10 @@
 <a name="GetReportLabelsMethod"></a>
-## GetReportLabels
-The <code>GetReportLabels</code> method can be used to retrieve the actual question text that the supplier was presented with when providing their answers and information. 
 
-We recommend only using this method perodically as the data returned is large (all text for all questions is returned) and is purely for reference (lookup) purposes. 
+## GetReportLabels
+
+The <code>GetReportLabels</code> method can be used to retrieve the actual question text that the supplier was presented with when providing their answers and information.
+
+We recommend only using this method perodically as the data returned is large (all text for all questions is returned) and is purely for reference (lookup) purposes.
 
 Typically this method would only be used when first building an integration with the Hellios API or when a new questionnaire is published, which currently happens perodically.
 
@@ -12,26 +14,28 @@ Typically this method would only be used when first building an integration with
 ###Parameters
 The <code>GetReportLabels</code> method does not require any parameters.
 
-
 ### GetReportLabels Response
+
+> Example JSON Response
+
+```json
+"questions": [
+    {
+      "shortId": "string",
+      "content": "string",
+      "expiryDateForDocumentQuestion": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "answerType": "None",
+      "answerOptions": [
+        {
+          "value": "string"
+        }
+      ],
+      "reportLabel": "string"
+    }
+```
+
 The <code>GetReportLabels</code> method returns the following attributes.
 
-Attribute | Type | Description
---- | --- | ---
-Question Text | *String* | Questionnaire, question text as presented to supplier via UI
-Report Label | *String* | Report label as visible via reporting module UI
-
-Example response:
-
-<span style="font-family:'Courier New';">
-{<br/>
-    questionText: "What ..."<br/>
-    reportLabel: "What ..."<br/>
-},<br/>
-{<br/>
-    questionText: "What ..."<br/>
-    reportLabel: "What ..."<br/>
-}
-</span>
-
-
+| Attribute | Type         | Description                                         |
+| --------- | ------------ | --------------------------------------------------- |
+| questions | _[GetTemplateDetails.Question[]](#gettemplatedetails-question)_ | An array containing every question for the supplier |

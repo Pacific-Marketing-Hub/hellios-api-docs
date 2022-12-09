@@ -1,4 +1,4 @@
-## SupplierDetails
+## GetSupplierDetails.SupplierDetails
 
 > SupplierDetails Example
 
@@ -21,9 +21,7 @@
     "lastName": "string",
     "jobTitle": "string",
     "emailAddress": "string",
-    "phoneWorkCode": "string",
     "phoneWork": "string",
-    "phoneMobileCode": "string",
     "phoneMobile": "string"
   },
   "completionDeadlineDate": "2022-11-28T10:59:14.694Z",
@@ -33,17 +31,17 @@
 
 The `SupplierDetails` schema is returned from the [GetSupplierDetails](#getsupplierdetails) method and contains the following properties:
 
-| Attribute              | Type                                                                                                                                                                                        | Description                                                                  |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| helliosId              | _UUID_                                                                                                                                                                                        | Unique Hellios ID issued to each supplier                                    |
-| name                   | _String_                                                                                                                                                                                      | Name of the supplier                                                         |
-| latestHScore           | _[HScore](#hscore)_                                                                                                                                                                          | Latest HScore for the supplier <span style="background-color:#39FF14">???</span> |
-| riskLevel              | _["None", "Low", "Medium", "High"]_                                                                                                                                                           | <span style="background-color:#39FF14">???</span>                                |
-| smeLevel               | _["None", "Micro", "Small", "Medium", "Large", "Undetermined"]_                                                                                                                               | <span style="background-color:#39FF14">???</span>                                |
-| ragwStatus             | _["None", "Red", "Amber", "Green", "White"]_                                                                                                                                                  | <span style="background-color:#39FF14">???</span>                                |
-| questionnaireStatus    | _["None", "Invited", "InProgress", "Invalidation", "UpdateInValidation", "Completed", "RenewalInvited", "RenewalInProgress", "RenewalInValidation", "Expired", "DocumentUpdateInValidation"]_ | <span style="background-color:#39FF14">???</span>                                |
-| documentStatus         | _["None", "Red", "Amber", "Green", "White"]_                                                                                                                                                  | <span style="background-color:#39FF14">???</span>                                |
-| overallStatus          | _["None", "Red", "Amber", "Green", "InValidation", "UpdateInValidation", "RenewalInValidation"]_                                                                                              | <span style="background-color:#39FF14">???</span>                                |
-| primaryContact         | _[Contact](#contact)_                                                                                                                                                                        | Primary contact for the supplier                                             |
-| completionDeadlineDate | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                        | <span style="background-color:#39FF14">???</span>                                |
-| renewalDeadlineDate    | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                        | <span style="background-color:#39FF14">???</span>                                |
+| Attribute              | Type                                                                                                                                                                                              | Description                                                                               |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| helliosId              | _UUID_                                                                                                                                                                                            | Unique Hellios ID issued to each supplier                                                 |
+| name                   | _String_                                                                                                                                                                                          | Name of the supplier                                                                      |
+| latestHScore           | _[CompanyWatch.HScore](#companywatch-hscore)_                                                                                                                                                     | Latest HScore for the supplier                                                            |
+| riskLevel              | _Enum["None", "Low", "Medium", "High"]_                                                                                                                                                           | The risk level of the supplier                                                            |
+| smeLevel               | _Enum["None", "Micro", "Small", "Medium", "Large", "Undetermined"]_                                                                                                                               | The size of the supplier                                                                  |
+| ragwStatus             | _Enum["None", "Red", "Amber", "Green", "White"]_                                                                                                                                                  | The RAG status of the supplier's questionnaire                                            |
+| questionnaireStatus    | _Enum["None", "Invited", "InProgress", "Invalidation", "UpdateInValidation", "Completed", "RenewalInvited", "RenewalInProgress", "RenewalInValidation", "Expired", "DocumentUpdateInValidation"]_ | The status of the supplier's questionnaire                                                |
+| documentStatus         | _Enum["None", "Red", "Amber", "Green", "White"]_                                                                                                                                                  | The RAG status of the supplier's uploaded documents                                       |
+| overallStatus          | _Enum["None", "Red", "Amber", "Green", "InValidation", "UpdateInValidation", "RenewalInValidation"]_                                                                                              | The overall RAG status of the supplier (questionnaire and document RAG statuses combined) |
+| primaryContact         | _[GetSupplierDetails.Contact](#getsupplierdetails-lancontact)_                                                                                                                                    | Primary contact for the supplier                                                          |
+| completionDeadlineDate | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                            | The deadline date for the supplier to complete and submit their questionnaire             |
+| renewalDeadlineDate    | _Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)_                                                                                                                                                            | The date by which the supplier is required to renew their information                     |
