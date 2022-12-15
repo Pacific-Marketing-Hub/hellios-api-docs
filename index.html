@@ -399,7 +399,7 @@
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#companywatch-hscore" class="toc-h2 toc-link" data-title="CompanyWatch.HScore"><span style="background-color:#39FF14">CompanyWatch<span>.HScore</span></span></a>
+                    <a href="#companywatch-hscore" class="toc-h2 toc-link" data-title="CompanyWatch.HScore">CompanyWatch.HScore</a>
                   </li>
                   <li>
                     <a href="#getsupplierdetails-answer" class="toc-h2 toc-link" data-title="GetSupplierDetails.Answer">GetSupplierDetails.Answer</a>
@@ -432,10 +432,10 @@
                     <a href="#searchsuppliers-supplierinfo" class="toc-h2 toc-link" data-title="SearchSuppliers.SupplierInfo">SearchSuppliers.SupplierInfo</a>
                   </li>
                   <li>
-                    <a href="#gettemplatedetails-question" class="toc-h2 toc-link" data-title="GetTemplateDetails.Question"><span style="background-color:#39FF14">GetTemplateDetails.Question</span></a>
+                    <a href="#getreportlabels-question" class="toc-h2 toc-link" data-title="GetReportLabels.Question">GetReportLabels.Question</a>
                   </li>
                   <li>
-                    <a href="#gettemplatedetails-answeroption" class="toc-h2 toc-link" data-title="GetTemplateDetails.AnswerOption"><span style="background-color:#39FF14">GetTemplateDetails.AnswerOption<span></span></span></a>
+                    <a href="#getreportlabels-answeroption" class="toc-h2 toc-link" data-title="GetReportLabels.AnswerOption">GetReportLabels.AnswerOption</a>
                   </li>
               </ul>
           </li>
@@ -482,7 +482,7 @@
 
 <p>In both scenarios, the primary objective is to allow customers to integrate supplier information validated and published on the Hellios platform into their own systems. </p>
 <h2 id='example-use-cases'>Example Use Cases</h2>
-<p>The examples below show just some of the way the Hellios API could be used. </p>
+<p>The examples below show just some of the ways the Hellios API could be used. </p>
 
 <p>In each case, the information could be for all suppliers on the Hellios platform or just those suppliers tagged to your organisation</p>
 
@@ -496,6 +496,7 @@
 <li>Source a group of suppliers based on particular answers given / information provided</li>
 <li>Shortlist suppliers based on product/service code(s)</li>
 <li>Download documents for a specific supplier or for groups of suppliers (eg. insurance certificates, policy documents etc)</li>
+<li>Buyer specific information entered by the buyer on a supplier record</li>
 </ul>
 <h2 id='principles'>Principles</h2>
 <p>The API adheres to the principles of <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>. It uses resource-oriented URLs, accepts <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms" target="blank">form-encoded</a> request bodies and returns <a href="https://www.json.org/json-en.html" target="_blank">JSON</a>-encoded and <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a>-encoded responses. It uses standard HTTP response codes, authentication, and verbs, although please note that the Hellios API is read-only so only the GET HTTP verb is applicable.</p>
@@ -610,7 +611,7 @@ Check api key is correct</p>
 <li>Include &#39;expired&#39; suppliers</li>
 </ul>
 
-<p><code>GetSuppliers</code> is the typical starting point for most interactions with the Hellios API. The returned JSON on the right includes the <code>SupplierID</code> value for each supplier, which is required when using the <code>GetSupplierDetails</code> method.</p>
+<p><code>GetSuppliers</code> is the typical starting point for most interactions with the Hellios API. The response includes the <code>externalId</code> value for each supplier, which is required when using the <code>GetSupplierDetails</code> method.</p>
 
 <h3 id='endpoint'>Endpoint</h3>
 
@@ -794,12 +795,10 @@ Check api key is correct</p>
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"businessValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -809,7 +808,6 @@ Check api key is correct</p>
           </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"questionnaire"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -898,8 +896,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 ]</strong>,
 &quot;document&quot;: null,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>Number</strong><br/>
@@ -913,8 +910,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 ]</strong>,
 &quot;document&quot;: null,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>Single Select</strong><br/>
@@ -928,8 +924,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 ]</strong>,
 &quot;document&quot;: null,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>Date</strong><br/>
@@ -944,8 +939,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 ]</strong>,
 &quot;document&quot;: null,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>Multiple Select</strong>
@@ -960,8 +954,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 ]</strong>,
 &quot;document&quot;: null,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>True/False</strong><br/>
@@ -976,8 +969,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 ]</strong>,
 &quot;document&quot;: null,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>Document</strong><br/>
@@ -994,8 +986,7 @@ In the examples below, we have highlighted the answer values. For the first the 
 &quot;fileName&quot;: &quot;pdf-test3.pdf&quot;
 }</strong>,
 &quot;taxonomy&quot;: null
-},
-&quot;repeatableGroupId&quot;: null
+}
 }</p>
 
 <p><strong>Taxonomy</strong><br/>
@@ -1013,9 +1004,8 @@ In the examples below, we have highlighted the answer values. For the first the 
 &quot;description&quot;: &quot;Office Communications Equipment&quot;,
 &quot;code&quot;: &quot;2.1.1&quot;
 }
-]
-}</strong>,
-&quot;repeatableGroupId&quot;: null
+]</strong>
+}
 }</p>
 
 <p><strong>Repeatable Groups</strong><br/>
@@ -1113,6 +1103,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"shortId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"expiryDateForDocumentQuestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
@@ -1137,7 +1128,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 </thead><tbody>
 <tr>
 <td>questions</td>
-<td><em><a href="#gettemplatedetails-question">GetTemplateDetails.Question[]</a></em></td>
+<td><em><a href="#getreportlabels-question">GetReportLabels.Question[]</a></em></td>
 <td>An array containing every question for the supplier</td>
 </tr>
 </tbody></table>
@@ -1215,8 +1206,6 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <p>In many cases, it will be necessary to loop through the array of suppliers returned by <code>GetSuppliers</code>. Core data such as the supplier&#39;s questionnaire status, risk level, renewal date etc is returned through <code>GetSuppliers</code> so if you are looking to find suppliers based on this level of information, you simply need to filter the JSON data returned by <code>GetSuppliers</code>.</p>
 
 <p>However, often you will want to find suppliers based on data such as answers to specific questions, document validity or H score etc. In such cases, it is necessary to request a full dataset for each supplier using <code>GetSupplierDetails</code>On each cycle of the loop, you will need to pass the &#39;externalId&#39; value from <code>GetSuppliers</code> into <code>GetSupplierDetails</code> to get the full dataset of information for each supplier.</p>
-
-<p>The code opposite shows how to loop through the JSON returned by <code>GetSuppliers</code> and query <code>GetSupplierDetails</code> on each loop.</p>
 <h3 id='finding-answers-to-specific-questions'>Finding answers to specific questions</h3>
 <p>At this point, you will have successfully pulled a list of relevant suppliers using <code>GetSuppliers</code>, looped through this list and pulled the full dataset for each supplier. The data returned includes report labels as the reference point for questionnaire questions. These the same report labels that are used in the Hellios UI reporting and dashboard tools.</p>
 
@@ -1240,13 +1229,11 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <li><code>GetSupplierDetails.SupplierDetails</code><br/></li>
 <li><code>GetSupplierDetails.Taxonomy</code><br/></li>
 <li><code>SearchSuppliers.SupplierInfo</code><br/></li>
-<li><code>GetTemplateDetails.Question</code><br/></li>
-<li><code>GetTemplateDetails.AnswerOption</code></li>
+<li><code>GetReportLabels.Question</code><br/></li>
+<li><code>GetReportLabels.AnswerOption</code></li>
 </ul>
 
-<h2 id='companywatch-hscore'><span style="background-color:#39FF14">CompanyWatch<span>.HScore</h2>
-
-<p><span style="background-color:#39FF14">What is CompanyWatch</span> </p>
+<h2 id='companywatch-hscore'>CompanyWatch.HScore</h2>
 
 <blockquote>
 <p>HScore Example</p>
@@ -1270,12 +1257,12 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <tr>
 <td>date</td>
 <td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>Date of H-Score</td>
 </tr>
 <tr>
 <td>score</td>
 <td><em>Integer</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>H-Score value</td>
 </tr>
 </tbody></table>
 
@@ -1495,12 +1482,10 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"businessValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1509,8 +1494,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
       </span><span class="nl">"fieldId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
@@ -1539,11 +1523,6 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>The input type of the options</td>
 </tr>
 <tr>
-<td>businessValue</td>
-<td><em>Enum[&quot;None&quot;, &quot;VendorStatus&quot;, &quot;SupplierInactive&quot;, &quot;BusinessUnits&quot;]</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-<tr>
 <td>options</td>
 <td><em><a href="#getsupplierdetails-specificfieldoption">GetSupplierDetails.SpecificFieldOption[]</a></em></td>
 <td>An array of the possible options for the specific field</td>
@@ -1552,11 +1531,6 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>values</td>
 <td><em><a href="#getsupplierdetails-specificfieldvalue">GetSupplierDetails.SpecificFieldValue[]</a></em></td>
 <td>An array of current values of this field</td>
-</tr>
-<tr>
-<td>order</td>
-<td><em>Integer</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
 </tr>
 </tbody></table>
 
@@ -1568,8 +1542,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"specificFieldOption"</span><span class="p">:{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
@@ -1590,12 +1563,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <tr>
 <td>text</td>
 <td><em>String</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
-</tr>
-<tr>
-<td>order</td>
-<td><em>Integer</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>THe user friendly label of the option</td>
 </tr>
 </tbody></table>
 
@@ -1825,7 +1793,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <tr>
 <td>location</td>
 <td><em>String</em></td>
-<td>The location of the supplier (<span style="background-color:#39FF14">Full Address? Country? City?</span>)</td>
+<td>The suppliers city</td>
 </tr>
 <tr>
 <td>vendorId</td>
@@ -1879,15 +1847,14 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 </tr>
 </tbody></table>
 
-<h2 id='gettemplatedetails-question'><span style="background-color:#39FF14">GetTemplateDetails.Question</span></h2>
-
-<p><span style="background-color:#39FF14">Should this be called GetReportLabels.Question</span></p>
+<h2 id='getreportlabels-question'>GetReportLabels.Question</h2>
 
 <blockquote>
 <p>Taxonomy Example</p>
 </blockquote>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"question"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"shortId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"expiryDateForDocumentQuestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
@@ -1911,6 +1878,11 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td><em>UUID</em></td>
+<td>The unique indentifer for the question</td>
+</tr>
+<tr>
 <td>shortId</td>
 <td><em>String</em></td>
 <td>A unique indentifer for the question</td>
@@ -1923,7 +1895,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <tr>
 <td>expiryDateForDocumentQuestion</td>
 <td><em>UUID</em></td>
-<td><span style="background-color:#39FF14">???</span></td>
+<td>If present, the id represents the question field that contains the contains the document expiry date</td>
 </tr>
 <tr>
 <td>answerType</td>
@@ -1932,7 +1904,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 </tr>
 <tr>
 <td>answerOptions</td>
-<td><em><a href="#gettemplatedetails-answeroption">GetTemplateDetails.AnswerOption[]</a></em></td>
+<td><em><a href="#getreportlabels-answeroption">GetReportDetails.AnswerOption[]</a></em></td>
 <td>An array of the possible options</td>
 </tr>
 <tr>
@@ -1942,9 +1914,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 </tr>
 </tbody></table>
 
-<h2 id='gettemplatedetails-answeroption'><span style="background-color:#39FF14">GetTemplateDetails.AnswerOption<span></h2>
-
-<p><span style="background-color:#39FF14">Should this be called GetReportLabels.AnswerOption</span></p>
+<h2 id='getreportlabels-answeroption'>GetReportLabels.AnswerOption</h2>
 
 <blockquote>
 <p>Taxonomy Example</p>
@@ -1955,7 +1925,7 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
       </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<p>The <code>AnswerOption</code> schema is used in the <a href="#gettemplatedetails-question">GetTemplateDetails.Question</a> schema and contains the following properties:</p>
+<p>The <code>AnswerOption</code> schema is used in the <a href="#getreportlabels-question">GetReportLabels.Question</a> schema and contains the following properties:</p>
 
 <table><thead>
 <tr>
@@ -1972,8 +1942,6 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 </tbody></table>
 <h1 id='response-amp-error-codes'>Response &amp; Error Codes</h1>
 <p>Hellios uses standard response codes to show the result of a request. The following table shows the possible response codes and their meaning.</p>
-
-<p><span style="background-color:#39FF14">Val - please check/confirm how many of these error codes are being used. For example is Forbidden, 401 or 403</span></p>
 
 <table><thead>
 <tr>
@@ -1998,16 +1966,8 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>Forbidden - Your API key is missing or wrong.</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden - Your API does not have access to the method.</td>
-</tr>
-<tr>
 <td>404</td>
 <td>Not Found - Method not found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed - For example you tried to use GET on a POST method.</td>
 </tr>
 <tr>
 <td>429</td>

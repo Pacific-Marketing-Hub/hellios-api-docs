@@ -72,8 +72,6 @@
 <p>In many cases, it will be necessary to loop through the array of suppliers returned by <code>GetSuppliers</code>. Core data such as the supplier&#39;s questionnaire status, risk level, renewal date etc is returned through <code>GetSuppliers</code> so if you are looking to find suppliers based on this level of information, you simply need to filter the JSON data returned by <code>GetSuppliers</code>.</p>
 
 <p>However, often you will want to find suppliers based on data such as answers to specific questions, document validity or H score etc. In such cases, it is necessary to request a full dataset for each supplier using <code>GetSupplierDetails</code>On each cycle of the loop, you will need to pass the &#39;externalId&#39; value from <code>GetSuppliers</code> into <code>GetSupplierDetails</code> to get the full dataset of information for each supplier.</p>
-
-<p>The code opposite shows how to loop through the JSON returned by <code>GetSuppliers</code> and query <code>GetSupplierDetails</code> on each loop.</p>
 <h3 id='finding-answers-to-specific-questions'>Finding answers to specific questions</h3>
 <p>At this point, you will have successfully pulled a list of relevant suppliers using <code>GetSuppliers</code>, looped through this list and pulled the full dataset for each supplier. The data returned includes report labels as the reference point for questionnaire questions. These the same report labels that are used in the Hellios UI reporting and dashboard tools.</p>
 
