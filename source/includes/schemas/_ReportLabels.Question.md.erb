@@ -1,9 +1,9 @@
-## <span style="background-color:#39FF14">GetTemplateDetails.Question</span>
-<span style="background-color:#39FF14">Should this be called GetReportLabels.Question</span>
+## GetReportLabels.Question
 > Taxonomy Example
 
 ```json
 "question":  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "shortId": "string",
     "content": "string",
     "expiryDateForDocumentQuestion": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
@@ -21,9 +21,10 @@ The `Question` schema is used in the [GetReportLabels](#getreportlabels) method 
 
 | Attribute                     | Type                                                                                                            | Description                                       |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| id | _UUID_ | The unique indentifer for the question
 | shortId                       | _String_                                                                                                        | A unique indentifer for the question              |
 | content                       | _String_                                                                                                        | The question text                                 |
-| expiryDateForDocumentQuestion | _UUID_                                                                                                          | <span style="background-color:#39FF14">???</span> |
+| expiryDateForDocumentQuestion | _UUID_                                                                                                          | If present, the id represents the question field that contains the contains the document expiry date |
 | answerType                    | _Enum["None", "FreeText", "Number", "SingleSelect", "Date", "MultipleSelect", "YesNo", "Document", "Taxonomy"]_ | The input type of the question                    |
-| answerOptions                 | _[GetTemplateDetails.AnswerOption[]](#gettemplatedetails-answeroption)_                                         | An array of the possible options                  |
+| answerOptions                 | _[GetReportDetails.AnswerOption[]](#getreportlabels-answeroption)_                                         | An array of the possible options                  |
 | reportLabel                   | _String_                                                                                                        | Report label as visible via reporting module UI   |
