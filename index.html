@@ -15,16 +15,16 @@
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
-  color: #888888;
+  color: #999999;
 }
 .highlight .sr {
-  color: #888888;
+  color: #f6aa11;
 }
 .highlight .go {
   color: #888888;
 }
 .highlight .gp {
-  color: #888888;
+  color: #555555;
 }
 .highlight .gs {
 }
@@ -32,7 +32,7 @@
   color: #aaaaaa;
 }
 .highlight .nb {
-  color: #888888;
+  color: #f6aa11;
 }
 .highlight .cm {
   color: #75715e;
@@ -50,13 +50,13 @@
   color: #75715e;
 }
 .highlight .err {
-  color: #888888;
+  color: #960050;
 }
 .highlight .gr {
-  color: #888888;
+  color: #960050;
 }
 .highlight .gt {
-  color: #888888;
+  color: #960050;
 }
 .highlight .gd {
   color: #49483e;
@@ -68,85 +68,85 @@
   color: #49483e;
 }
 .highlight .kc {
-  color: #888888;
+  color: #66d9ef;
 }
 .highlight .kd {
-  color: #888888;
+  color: #66d9ef;
 }
 .highlight .kr {
-  color: #888888;
+  color: #66d9ef;
 }
 .highlight .no {
-  color: #888888;
+  color: #66d9ef;
 }
 .highlight .kt {
-  color: #888888;
+  color: #66d9ef;
 }
 .highlight .mf {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .mh {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .il {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .mi {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .mo {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .m, .highlight .mb, .highlight .mx {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .sc {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .se {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .ss {
-  color: #888888;
+  color: #ae81ff;
 }
 .highlight .sd {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .s2 {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .sb {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .sh {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .si {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .sx {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .s1 {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .s, .highlight .sa, .highlight .dl {
-  color: #888888;
+  color: #e6db74;
 }
 .highlight .na {
-  color: #888888;
+  color: #a6e22e;
 }
 .highlight .nc {
-  color: #888888;
+  color: #a6e22e;
 }
 .highlight .nd {
-  color: #888888;
+  color: #a6e22e;
 }
 .highlight .ne {
-  color: #888888;
+  color: #a6e22e;
 }
 .highlight .nf, .highlight .fm {
-  color: #888888;
+  color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
@@ -179,25 +179,25 @@
   color: #ffffff;
 }
 .highlight .nl {
-  color: #e5186b;
+  color: #f92672;
 }
 .highlight .ow {
-  color: #e5186b;
+  color: #f92672;
 }
 .highlight .nt {
-  color: #e5186b;
+  color: #f92672;
 }
 .highlight .k, .highlight .kv {
-  color: #e5186b;
+  color: #f92672;
 }
 .highlight .kn {
-  color: #e5186b;
+  color: #f92672;
 }
 .highlight .kp {
-  color: #e5186b;
+  color: #f92672;
 }
 .highlight .o {
-  color: #e5186b;
+  color: #f92672;
 }
     </style>
     <style media="print">
@@ -361,6 +361,15 @@
                   <li>
                     <a href="#getreportlabels" class="toc-h2 toc-link" data-title="GetReportLabels">GetReportLabels</a>
                   </li>
+                  <li>
+                    <a href="#getesgscores" class="toc-h2 toc-link" data-title="GetESGScores">GetESGScores</a>
+                  </li>
+                  <li>
+                    <a href="#getadversemedia" class="toc-h2 toc-link" data-title="GetAdverseMedia">GetAdverseMedia</a>
+                  </li>
+                  <li>
+                    <a href="#getnominatedriskdomains" class="toc-h2 toc-link" data-title="GetNominatedRiskDomains">GetNominatedRiskDomains</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -402,6 +411,9 @@
                     <a href="#companywatch-hscore" class="toc-h2 toc-link" data-title="CompanyWatch.HScore">CompanyWatch.HScore</a>
                   </li>
                   <li>
+                    <a href="#getsupplierdetails-adversemediaandsanctions" class="toc-h2 toc-link" data-title="GetSupplierDetails.AdverseMediaAndSanctions">GetSupplierDetails.AdverseMediaAndSanctions</a>
+                  </li>
+                  <li>
                     <a href="#getsupplierdetails-answer" class="toc-h2 toc-link" data-title="GetSupplierDetails.Answer">GetSupplierDetails.Answer</a>
                   </li>
                   <li>
@@ -409,6 +421,9 @@
                   </li>
                   <li>
                     <a href="#getsupplierdetails-document" class="toc-h2 toc-link" data-title="GetSupplierDetails.Document">GetSupplierDetails.Document</a>
+                  </li>
+                  <li>
+                    <a href="#getsupplierdetails-nominatedriskdomain" class="toc-h2 toc-link" data-title="GetSupplierDetails.NominatedRiskDomain">GetSupplierDetails.NominatedRiskDomain</a>
                   </li>
                   <li>
                     <a href="#getsupplierdetails-question" class="toc-h2 toc-link" data-title="GetSupplierDetails.Question">GetSupplierDetails.Question</a>
@@ -437,6 +452,21 @@
                   <li>
                     <a href="#getreportlabels-answeroption" class="toc-h2 toc-link" data-title="GetReportLabels.AnswerOption">GetReportLabels.AnswerOption</a>
                   </li>
+                  <li>
+                    <a href="#getadversemedia-adversemedia" class="toc-h2 toc-link" data-title="GetAdverseMedia.AdverseMedia">GetAdverseMedia.AdverseMedia</a>
+                  </li>
+                  <li>
+                    <a href="#getadversemedia-sanction" class="toc-h2 toc-link" data-title="GetAdverseMedia.Sanction">GetAdverseMedia.Sanction</a>
+                  </li>
+                  <li>
+                    <a href="#getnominatedriskdomains-response" class="toc-h2 toc-link" data-title="GetNominatedRiskDomains.Response">GetNominatedRiskDomains.Response</a>
+                  </li>
+                  <li>
+                    <a href="#getnominatedriskdomains-answer" class="toc-h2 toc-link" data-title="GetNominatedRiskDomains.Answer">GetNominatedRiskDomains.Answer</a>
+                  </li>
+                  <li>
+                    <a href="#getnominatedriskdomains-document" class="toc-h2 toc-link" data-title="GetNominatedRiskDomains.Document">GetNominatedRiskDomains.Document</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -450,7 +480,7 @@
         <h1 id='introduction-hellios-api'>Introduction: Hellios API</h1><h2 id='overview'>Overview</h2>
 <p>Welcome to the Hellios API documentation.</p>
 
-<p>The Hellios API has been built to allow Hellios&#39; customers to access their supplier questionnaire information programmatically without needing to sign into the Hellios portal. </p>
+<p>The Hellios API has been built to allow Hellios&#39; customers to access their supplier questionnaire information programmatically without needing to sign into the Hellios portal.</p>
 
 <p>The Hellios API provides access to validated and published supplier information, including:</p>
 
@@ -480,15 +510,15 @@
 <li>To download and locally cache validated and published supplier information in bulk</li>
 </ul>
 
-<p>In both scenarios, the primary objective is to allow customers to integrate supplier information validated and published on the Hellios platform into their own systems. </p>
+<p>In both scenarios, the primary objective is to allow customers to integrate supplier information validated and published on the Hellios platform into their own systems.</p>
 <h2 id='example-use-cases'>Example Use Cases</h2>
-<p>The examples below show just some of the ways the Hellios API could be used. </p>
+<p>The examples below show just some of the ways the Hellios API could be used.</p>
 
 <p>In each case, the information could be for all suppliers on the Hellios platform or just those suppliers tagged to your organisation</p>
 
 <ul>
 <li>Get status information for  suppliers</li>
-<li>Get validated and published questionnaire answers for suppliers </li>
+<li>Get validated and published questionnaire answers for suppliers</li>
 <li>Find suppliers whose information has recently changed</li>
 <li>Get an individual supplier&#39;s status information</li>
 <li>Get an individual supplier validated and published questionnaire answers</li>
@@ -595,6 +625,9 @@ Check api key is correct</p>
 <li><code>GetSupplierDetails</code><br/></li>
 <li><code>GetDocument</code><br/></li>
 <li><code>GetReportLabels</code></li>
+<li><code>GetESGScores</code></li>
+<li><code>GetAdverseMedia</code></li>
+<li><code>GetNominatedRiskDomain</code></li>
 </ul>
 
 <p><a name="GetSuppliersMethod"></a></p>
@@ -788,7 +821,12 @@ Check api key is correct</p>
       </span><span class="nl">"phoneMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"completionDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T09:31:41.092Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"renewalDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T09:31:41.092Z"</span><span class="w">
+    </span><span class="nl">"renewalDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T09:31:41.092Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adverseMediaAndSanctions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"hasAdverseMediaOrSanctions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastReport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T10:13:31.324Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastReportedMediaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"specificFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -829,9 +867,20 @@ Check api key is correct</p>
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"repeatableGroupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"repeatableGroupId"</span><span class="err">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"nominatedRiskDomains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"riskDomainId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"riskDomainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"serviceCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"taxonomyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"taxonomyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responseStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"serviceSpecificQuestionsEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
@@ -858,6 +907,16 @@ Check api key is correct</p>
 <td>questionnaire</td>
 <td><em><a href="#getsupplierdetails-question">GetSupplierDetails.Question[]</a></em></td>
 <td>An array of answers provided by the supplier when completing their questionnaire</td>
+</tr>
+<tr>
+<td>nominatedRiskDomains</td>
+<td><em><a href="#getsupplierdetails-nominatedriskdomain">GetSupplierDetails.NominatedRiskDomain[]</a></em></td>
+<td>An array of Risk Domains (i.e SSQ Questions)</td>
+</tr>
+<tr>
+<td>serviceSpecificQuestionsEnabled</td>
+<td><em>Boolean</em></td>
+<td>Whether this supplier has Service Specific questions enabled</td>
 </tr>
 </tbody></table>
 
@@ -1132,6 +1191,244 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>An array containing every question for the supplier</td>
 </tr>
 </tbody></table>
+
+<p><a name="GetESGScoresMethod"></a></p>
+
+<h2 id='getesgscores'>GetESGScores</h2>
+
+<p>The <code>GetESGScores</code> method can be used to retrieve the ESG Scores for a specified supplier.</p>
+
+<h3 id='endpoint'>Endpoint</h3>
+
+<p><code>GET /v1_0/buyer/esgscores/{supplierExternalId}</code></p>
+
+<h3 id='parameters'>Parameters</h3>
+
+<p>The <code>GetESGScores</code> method accepts the following parameters.</p>
+
+<p><code>supplierExternalId</code></p>
+
+<p>Used to specify which supplier you want to retrieve ESG scores for.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> supplierExternalId (obtained from <code>GetSuppliers</code> method)<br/>
+<em>Requirement:</em> Required<br></p>
+
+<p><code>language</code></p>
+
+<p>Query String to specify the language. Should only be used in multilanguage communities.
+Possible values are &quot;fr&quot;, &quot;nl&quot; &quot;de&quot;.
+Example: <code>GET /v1_0/buyer/esgscores/{supplierExternalId}?language=en</code></p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> <code>&quot;fr&quot; | &quot;nl&quot; | &quot;de&quot;</code><br>
+<em>Requirement:</em> Optional<br></p>
+
+<h3 id='getesgscores-response'>GetESGScores Response</h3>
+
+<p><a name="GetAdverseMediaMethod"></a></p>
+
+<h2 id='getadversemedia'>GetAdverseMedia</h2>
+
+<p>The <code>GetAdverseMedia</code> method can be used to retrieve Adverse Media and Sanctions for a specified supplier.</p>
+
+<p>Prior to calling <code>GetAdverseMedia</code> you can check the <a href="#getsupplierdetails-adversemediaandsanctions">GetSupplierDetails.AdverseMediaAndSanctions</a>
+sections within the <a href="#getsupplierdetails">GetSupplierDetails Method</a>, to check if the supplier has any adverse media/sanctions and when the last report was.</p>
+
+<h3 id='endpoint'>Endpoint</h3>
+
+<p><code>GET /v1_0/buyer/adversemedia/{supplierExternalId}</code></p>
+
+<h3 id='parameters'>Parameters</h3>
+
+<p>The <code>GetAdverseMedia</code> method accepts the following parameters.</p>
+
+<p><code>supplierExternalId</code></p>
+
+<p>Used to specify which supplier you want to retrieve ESG scores for.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> supplierExternalId (obtained from <code>GetSuppliers</code> method)<br/>
+<em>Requirement:</em> Required<br></p>
+
+<p><code>pageIndex</code></p>
+
+<p>Query String value to specify the page.</p>
+
+<p><em>Type:</em> Integer ($int32)<br>
+<em>Value(s):</em> Numeric Integer<br>
+<em>Requirement:</em> Optional<br></p>
+
+<p><code>pageSize</code></p>
+
+<p>Query String value to specify the results per page.</p>
+
+<p><em>Type:</em> Integer ($int32)<br>
+<em>Value(s):</em> Numeric Integer<br>
+<em>Requirement:</em> Optional<br></p>
+
+<h3 id='getadversemedia-response'>GetAdverseMedia Response</h3>
+
+<blockquote>
+<p>Example JSON Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sanctions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sanctionSubTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"alertDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T13:15:39.244Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"adverseMedias"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"riskCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"predicateCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"alertDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T13:15:39.244Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"totalNumberOfRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalNumberOfPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>GetAdverseMedia</code> method returns the following attributes.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sanctions</td>
+<td><em><a href="#getadversemedia-sanction">GetAdverseMedia.Sanction[]</a></em></td>
+<td>An array containing the suppliers sanctions details</td>
+</tr>
+<tr>
+<td>adverseMedias</td>
+<td><em><a href="#getadversemedia-adversemedia">GetAdverseMedia.AdverseMedia[]</a></em></td>
+<td>An array containing the suppliers adverse media details</td>
+</tr>
+<tr>
+<td>totalNumberofRecords</td>
+<td><em>Integer</em></td>
+<td>How many total AdverseMedia/Sanctions the supplier has</td>
+</tr>
+<tr>
+<td>totalNumberofPages</td>
+<td><em>Integer</em></td>
+<td>How many total pages the supplier has at the current <code>pageSize</code></td>
+</tr>
+</tbody></table>
+
+<p><a name="GetNominatedRiskDomainsMethod"></a></p>
+
+<h2 id='getnominatedriskdomains'>GetNominatedRiskDomains</h2>
+
+<p>The <code>GetNominatedRiskDomains</code> method can be used to retrieve all nominated risk domains for a specified supplier.</p>
+
+<p>All parameters below can be found by using the <a href="#getsupplierdetails">GetSupplierDetails</a> method in the <code>nominatedRiskDomain</code> section.</p>
+
+<h3 id='endpoint'>Endpoint</h3>
+
+<p><code>GET /v1_0/buyer/nominatedriskdomain/responses/supplier/{supplierExternalId}/riskdomain/{riskDomainId}/taxonomy/{taxonomyId}/servicecode/{serviceCode}</code></p>
+
+<h3 id='parameters'>Parameters</h3>
+
+<p>The <code>GetNominatedRiskDomains</code> method accepts the following parameters.</p>
+
+<p><code>supplierExternalId</code></p>
+
+<p>Used to specify which supplier you want to retrieve ESG scores for.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> supplierExternalId (obtained from <code>GetSuppliers</code> method)<br/>
+<em>Requirement:</em> Required<br></p>
+
+<p><code>riskDomainId</code></p>
+
+<p>The ID of the risk domain to retrieve.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> riskDomainId (obtained from <a href="#getsupplierdetails">GetSupplierDetails</a> method)<br/>
+<em>Requirement:</em> Required<br></p>
+
+<p><code>taxonomyId</code></p>
+
+<p>The ID of the risk domain taxonomy to retrieve.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> taxonomyId (obtained from <a href="#getsupplierdetails">GetSupplierDetails</a> method)<br/>
+<em>Requirement:</em> Required<br></p>
+
+<p><code>serviceCode</code></p>
+
+<p>The ID of the risk domain service code to retrieve.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> serviceCode (obtained from <a href="#getsupplierdetails">GetSupplierDetails</a> method)<br/>
+<em>Requirement:</em> Required<br></p>
+
+<p><code>language</code></p>
+
+<p>Query String to specify the language. Should only be used in multilanguage communities.
+Possible values are &quot;fr&quot;, &quot;nl&quot; &quot;de&quot;.</p>
+
+<p><em>Type:</em> String<br>
+<em>Value(s):</em> <code>&quot;fr&quot; | &quot;nl&quot; | &quot;de&quot;</code><br>
+<em>Requirement:</em> Optional<br></p>
+
+<h3 id='getadversemedia-response'>GetAdverseMedia Response</h3>
+
+<blockquote>
+<p>Example JSON Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shortId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reportLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"questionTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T14:09:41.060Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>GetNominatedRiskDomains</code> method returns the following attributes.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>responses</td>
+<td><em><a href="#getnominatedriskdomains-response">GetNominatedRiskDomains.Response[]</a></em></td>
+<td>An array containing the suppliers responses</td>
+</tr>
+</tbody></table>
 <h1 id='how-to-use-the-hellios-api'>How to use the Hellios API</h1>
 <p>In this section we&#39;ll walk through how to use the Hellios API in practice.</p>
 
@@ -1219,9 +1516,11 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 
 <ul>
 <li><code>CompanyWatch.HScore</code><br/></li>
+<li><code>GetSupplierDetails.AdverseMediaAndSanctions</code><br/></li>
 <li><code>GetSupplierDetails.Answer</code><br/></li>
 <li><code>GetSupplierDetails.Contact</code><br/></li>
 <li><code>GetSupplierDetails.Document</code><br/></li>
+<li><code>GetSupplierDetails.NominatedRiskDomain</code><br/></li>
 <li><code>GetSupplierDetails.Question</code><br/></li>
 <li><code>GetSupplierDetails.SpecificField</code><br/></li>
 <li><code>GetSupplierDetails.SpecificFieldOption</code><br/></li>
@@ -1231,6 +1530,11 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <li><code>SearchSuppliers.SupplierInfo</code><br/></li>
 <li><code>GetReportLabels.Question</code><br/></li>
 <li><code>GetReportLabels.AnswerOption</code></li>
+<li><code>GetAdverseMedia.AdverseMedia</code></li>
+<li><code>GetAdverseMedia.Sanction</code></li>
+<li><code>GetNominatedRiskDomain.Response</code></li>
+<li><code>GetNominatedRiskDomain.Answer</code></li>
+<li><code>GetNominatedRiskDomain.Document</code></li>
 </ul>
 
 <h2 id='companywatch-hscore'>CompanyWatch.HScore</h2>
@@ -1263,6 +1567,45 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>score</td>
 <td><em>Integer</em></td>
 <td>H-Score value</td>
+</tr>
+</tbody></table>
+
+<h2 id='getsupplierdetails-adversemediaandsanctions'>GetSupplierDetails.AdverseMediaAndSanctions</h2>
+
+<blockquote>
+<p>AdverseMediaAndSanctions Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"adverseMediaAndSanctions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"hasAdverseMediaOrSanctions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastReport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-03-31T09:02:57.377Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastReportedMediaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>AdverseMediaAndSanctions</code> schema is used in the <a href="#getsupplierdetails-supplierdetails">GetSupplierDetails.SupplierDetails</a> method and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hasAdverseMediaOrSanctions</td>
+<td><em>Boolean</em></td>
+<td>Whether the Supplier has Adverse Media or Sanctions.</td>
+</tr>
+<tr>
+<td>lastReport</td>
+<td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
+<td>Datetime of the last report.</td>
+</tr>
+<tr>
+<td>lastReportedMediaType</td>
+<td><em>String</em></td>
+<td>The type of media last reported.</td>
 </tr>
 </tbody></table>
 
@@ -1413,6 +1756,63 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>fileName</td>
 <td><em>String</em></td>
 <td>The document&#39;s file name.</td>
+</tr>
+</tbody></table>
+
+<h2 id='getsupplierdetails-nominatedriskdomain'>GetSupplierDetails.NominatedRiskDomain</h2>
+
+<blockquote>
+<p>NominatedRiskDomain Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"nominatedRiskDomain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"riskDomainId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"riskDomainName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"serviceCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"taxonomyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"taxonomyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"responseStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>NominatedRiskDomain</code> schema is used returned from the <a href="#getsupplierdetails">GetSupplierDetails</a> method and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>riskDomainId</td>
+<td><em>UUID</em></td>
+<td>The risk domains unique identifier.</td>
+</tr>
+<tr>
+<td>riskDomainName</td>
+<td><em>String</em></td>
+<td>The risk domains name.</td>
+</tr>
+<tr>
+<td>serviceCode</td>
+<td><em>String</em></td>
+<td>The risk domains related service.</td>
+</tr>
+<tr>
+<td>taxonomyCode</td>
+<td><em>UUID</em></td>
+<td>The risk domains related taxonomy unique identifier.</td>
+</tr>
+<tr>
+<td>taxonomyName</td>
+<td><em>String</em></td>
+<td>The risk domains related taxonomy name.</td>
+</tr>
+<tr>
+<td>responseStatus</td>
+<td><em>String</em></td>
+<td>The risk domains response status.</td>
 </tr>
 </tbody></table>
 
@@ -1634,7 +2034,12 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
     </span><span class="nl">"phoneMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"completionDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T10:59:14.694Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"renewalDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T10:59:14.694Z"</span><span class="w">
+  </span><span class="nl">"renewalDeadlineDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-28T10:59:14.694Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"adverseMediaAndSanctions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"hasAdverseMediaOrSanctions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastReport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T10:13:31.324Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastReportedMediaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
@@ -1706,6 +2111,11 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>renewalDeadlineDate</td>
 <td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
 <td>The date by which the supplier is required to renew their information</td>
+</tr>
+<tr>
+<td>adverseMediaAndSanctions</td>
+<td><em><a href="#getsupplierdetails-adversemediaandsanctions">GetSupplierDetails.AdverseMediaAndSanctions</a></em></td>
+<td>Details about the suppliers Adverse Media and Sanctions</td>
 </tr>
 </tbody></table>
 
@@ -1938,6 +2348,244 @@ Some questions will include &#39;repeatable&#39; answers, for example, financial
 <td>value</td>
 <td><em>String</em></td>
 <td>A possible answer to the question</td>
+</tr>
+</tbody></table>
+
+<h2 id='getadversemedia-adversemedia'>GetAdverseMedia.AdverseMedia</h2>
+
+<blockquote>
+<p>AdverseMedia Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"AdverseMedia"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"riskCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"predicateCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alertDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T13:15:39.244Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>AdverseMedia</code> schema is returned from the <a href="#getadversemedia">GetAdverseMedia</a> method and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>riskCode</td>
+<td><em>String</em></td>
+<td>The risk code.</td>
+</tr>
+<tr>
+<td>predicateCode</td>
+<td><em>String</em></td>
+<td>The predicate code.</td>
+</tr>
+<tr>
+<td>alertDate</td>
+<td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
+<td>Date of the sanction.</td>
+</tr>
+<tr>
+<td>count</td>
+<td><em>Integer</em></td>
+<td>Number of times the supplier has recieved this risk warning</td>
+</tr>
+</tbody></table>
+
+<h2 id='getadversemedia-sanction'>GetAdverseMedia.Sanction</h2>
+
+<blockquote>
+<p>Sanction Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"sanction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"sanctionSubTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alertDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T13:15:39.244Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>Sanction</code> schema is returned from the <a href="#getadversemedia">GetAdverseMedia</a> method and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sanctionSubTypeCode</td>
+<td><em>String</em></td>
+<td>The type of sanction.</td>
+</tr>
+<tr>
+<td>alertDate</td>
+<td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
+<td>Date of the sanction.</td>
+</tr>
+<tr>
+<td>count</td>
+<td><em>Integer</em></td>
+<td>Number of times the supplier has recieved this sanction</td>
+</tr>
+</tbody></table>
+
+<h2 id='getnominatedriskdomains-response'>GetNominatedRiskDomains.Response</h2>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"adverseMediaAndSanctions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shortId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reportLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"questionTypeLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T14:15:36.606Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>GetNominatedRiskDomains.Response</code> schema is used in the <a href="#getnominatedriskdomains">GetNominatedRiskDomains</a> method and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>questionId</td>
+<td><em>UUID</em></td>
+<td>The unique identifer for the question</td>
+</tr>
+<tr>
+<td>shortId</td>
+<td><em>String</em></td>
+<td>Shorter id for the question.</td>
+</tr>
+<tr>
+<td>content</td>
+<td><em>String</em></td>
+<td>The content of the question.</td>
+</tr>
+<tr>
+<td>reportLabel</td>
+<td><em>String</em></td>
+<td>The report label of the question.</td>
+</tr>
+<tr>
+<td>questionType</td>
+<td><em>Enum[&quot;None&quot;, &quot;FreeText&quot;, &quot;Number&quot;, &quot;SingleSelect&quot;, &quot;Date&quot;, &quot;MultipleSelect&quot;, &quot;YesNo&quot;, &quot;Document&quot;, &quot;Taxonomy&quot;, &quot;SectionHeading&quot;, &quot;GroupHeading&quot;, &quot;DocumentWithDate&quot;, &quot;Year&quot;, &quot;Decimal&quot;, &quot;Email&quot;, &quot;Vat&quot;, &quot;Duns&quot;, &quot;WebSite&quot;]</em></td>
+<td>The type of the question.</td>
+</tr>
+<tr>
+<td>questionTypeLabel</td>
+<td><em>String</em></td>
+<td>The question type label for the question.</td>
+</tr>
+<tr>
+<td>order</td>
+<td><em>Integer</em></td>
+<td>The order of question.</td>
+</tr>
+<tr>
+<td>required</td>
+<td><em>Boolean</em></td>
+<td>Whether the question is required to be filled out.</td>
+</tr>
+<tr>
+<td>answer</td>
+<td><em><a href="#getnominatedriskdomains-answer">GetNominatedRiskDomains.Answer</a></em></td>
+<td>The suppliers answer to the question.</td>
+</tr>
+</tbody></table>
+
+<h2 id='getnominatedriskdomains-answer'>GetNominatedRiskDomains.Answer</h2>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T14:15:36.606Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>GetNominatedRiskDomain.Answer</code> schema is used in the <a href="#getnominatedriskdomains-response">GetNominatedRiskDomains.Response</a> schema and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>values</td>
+<td><em>String[]</em></td>
+<td>The chosen answer to the question.</td>
+</tr>
+<tr>
+<td>document</td>
+<td><em><a href="#getnominatedriskdomains-document">GetNominatedRiskDomains.Document</a></em></td>
+<td>Uploaded document answer.</td>
+</tr>
+</tbody></table>
+
+<h2 id='getnominatedriskdomains-document'>GetNominatedRiskDomains.Document</h2>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-07T14:15:36.606Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>GetNominatedRiskDomain.Document</code> schema is used in the <a href="#getnominatedriskdomains-answer">GetNominatedRiskDomains.Answer</a> schema and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td><em>String</em></td>
+<td>The name of the document.</td>
+</tr>
+<tr>
+<td>date</td>
+<td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
+<td>The date/time the document was submitted.</td>
 </tr>
 </tbody></table>
 <h1 id='response-amp-error-codes'>Response &amp; Error Codes</h1>
