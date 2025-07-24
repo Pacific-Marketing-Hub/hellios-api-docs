@@ -467,6 +467,12 @@
                   <li>
                     <a href="#getnominatedriskdomains-document" class="toc-h2 toc-link" data-title="GetNominatedRiskDomains.Document">GetNominatedRiskDomains.Document</a>
                   </li>
+                  <li>
+                    <a href="#getesgscores-esgsupplierpillar" class="toc-h2 toc-link" data-title="GetESGScores.ESGSupplierPillar">GetESGScores.ESGSupplierPillar</a>
+                  </li>
+                  <li>
+                    <a href="#getesgscores-esgsuppliertheme" class="toc-h2 toc-link" data-title="GetESGScores.ESGSupplierTheme">GetESGScores.ESGSupplierTheme</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1225,6 +1231,67 @@ Example: <code>GET /v1_0/buyer/esgscores/{supplierExternalId}?language=en</code>
 <em>Requirement:</em> Optional<br></p>
 
 <h3 id='getesgscores-response'>GetESGScores Response</h3>
+
+<blockquote>
+<p>Example JSON Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"totalScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalQuestionsAnswered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfQuestionsAnsweredPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"esgSupplierPillars"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalQuestionsAnswered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"numberOfQuestionsAnsweredPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"esgSupplierThemes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"pillarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalQuestionsAnswered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"numberOfQuestionsAnsweredPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>GetESGScores</code> method returns the following attributes.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>totalScore</td>
+<td><em>Double</em></td>
+<td>Total ESG score</td>
+</tr>
+<tr>
+<td>totalQuestionsAnswered</td>
+<td><em>Integer</em></td>
+<td>Total questions answered</td>
+</tr>
+<tr>
+<td>numberOfQuestionsAnsweredPositive</td>
+<td><em>Integer</em></td>
+<td>Total questions answered positively</td>
+</tr>
+<tr>
+<td>esgSupplierPillars</td>
+<td><em><a href="#getesgscores-esgsupplierpillar">GetESGScores.ESGSupplierPillar[]</a></em></td>
+<td>ESG Supplier Pillars</td>
+</tr>
+</tbody></table>
 
 <p><a name="GetAdverseMediaMethod"></a></p>
 
@@ -2586,6 +2653,127 @@ Possible values are &quot;fr&quot;, &quot;nl&quot; &quot;de&quot;.</p>
 <td>date</td>
 <td><em>Date/Time (yyyy-MM-ddThh:mm:ss:SSSZ)</em></td>
 <td>The date/time the document was submitted.</td>
+</tr>
+</tbody></table>
+
+<h2 id='getesgscores-esgsupplierpillar'>GetESGScores.ESGSupplierPillar</h2>
+
+<blockquote>
+<p>ESGSupplierPillar Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"ESGSupplierPillar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalQuestionsAnswered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfQuestionsAnsweredPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"esgSupplierThemes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"pillarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalQuestionsAnswered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"numberOfQuestionsAnsweredPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>ESGSupplierPillar</code> schema is returned from the <a href="#getesgscores">GetESGScores</a> method and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>score</td>
+<td><em>Double</em></td>
+<td>ESG Score</td>
+</tr>
+<tr>
+<td>name</td>
+<td><em>String</em></td>
+<td>Name of the ESG Pillar</td>
+</tr>
+<tr>
+<td>totalQuestionsAnswered</td>
+<td><em>Integer</em></td>
+<td>Number of questions answered across all themes</td>
+</tr>
+<tr>
+<td>order</td>
+<td><em>Integer</em></td>
+<td>Order of the ESG Pillar</td>
+</tr>
+<tr>
+<td>esgSupplierThemes</td>
+<td><em><a href="#getesgscores-esgsuppliertheme">GetESGScores.ESGSupplierTheme[]</a></em></td>
+<td>ESG Themes within this pillar</td>
+</tr>
+</tbody></table>
+
+<p>getsupplieresgscores-esgsupplierpillar
+getesgscores-esgsupplierpillar</p>
+
+<h2 id='getesgscores-esgsuppliertheme'>GetESGScores.ESGSupplierTheme</h2>
+
+<blockquote>
+<p>ESGSupplierTheme Example</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"esgSupplierTheme"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"pillarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalQuestionsAnswered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfQuestionsAnsweredPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>The <code>ESGSupplierTheme</code> schema is used in the <a href="#getesgscores-esgsuppliertheme">GetESGScores.ESGSupplierPillar</a> schema and contains the following properties:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pillarId</td>
+<td><em>UUID</em></td>
+<td>ID of ESG  theme</td>
+</tr>
+<tr>
+<td>score</td>
+<td><em>Double</em></td>
+<td>ESG Score</td>
+</tr>
+<tr>
+<td>name</td>
+<td><em>String</em></td>
+<td>Name of the ESG theme</td>
+</tr>
+<tr>
+<td>totalQuestionsAnswered</td>
+<td><em>Integer</em></td>
+<td>Total questions answered</td>
+</tr>
+<tr>
+<td>numberOfQuestionsAnsweredPositive</td>
+<td><em>Integer</em></td>
+<td>Total questions answered positively</td>
+</tr>
+<tr>
+<td>order</td>
+<td><em>Integer</em></td>
+<td>Order of the ESG theme</td>
 </tr>
 </tbody></table>
 <h1 id='response-amp-error-codes'>Response &amp; Error Codes</h1>
